@@ -7,7 +7,7 @@ public class TwoSum {
 
 	public static int[] twoSum(int[] nums, int target) {
 
-		if (nums == null || nums.length == 0 || nums.length == 1) {
+		if (nums == null || nums.length <= 1) {
 			return new int[2];
 		}
 
