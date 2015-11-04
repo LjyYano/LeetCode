@@ -13,7 +13,7 @@ public class TwoSum {
 
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-		// key为target - nums[i]，不用担心重复，题目说明只有一个解
+		// key = target - nums[i], just one solution
 		for (int i = 0; i < nums.length; i++) {
 			map.put(target - nums[i], i);
 		}
@@ -21,7 +21,7 @@ public class TwoSum {
 		for (int i = 0; i < nums.length; i++) {
 			Integer v = map.get(nums[i]);
 
-			// 元素不能使用自身
+			// can't use itself
 			if (v != null && v != i) {
 				return new int[] { i + 1, v + 1 };
 			}
