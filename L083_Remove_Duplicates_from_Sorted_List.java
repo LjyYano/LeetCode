@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L083_Remove_Duplicates_from_Sorted_List {
 
-	public ListNode deleteDuplicates(ListNode head) {
+	public static ListNode deleteDuplicates(ListNode head) {
 
 		if (head == null) {
 			return null;
@@ -16,9 +16,11 @@ public class L083_Remove_Duplicates_from_Sorted_List {
 
 		while (node.next != null) {
 
+			// 如果元素不重复，跳过
 			if (node.val != node.next.val) {
 				node = node.next;
 			} else {
+				// 重复，则跳过下一个
 				while (node.next != null && node.val == node.next.val) {
 					node.next = node.next.next;
 				}

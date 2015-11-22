@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class L065_Valid_Number {
 
-	public int[] plusOne(int[] digits) {
+	public static int[] plusOne(int[] digits) {
 
 		if (digits == null || digits.length == 0) {
 			return null;
@@ -26,7 +26,7 @@ public class L065_Valid_Number {
 		}
 	}
 
-	public boolean isNumber(String s) {
+	public static boolean isNumber(String s) {
 
 		if (s == null || s.length() == 0) {
 			return false;
@@ -35,6 +35,7 @@ public class L065_Valid_Number {
 		char[] chars = s.toCharArray();
 		int start = 0, end = chars.length - 1;
 
+		// 除去前后的空格
 		while ((start < end) && chars[start] == ' ') {
 			start++;
 		}
@@ -42,6 +43,7 @@ public class L065_Valid_Number {
 			end--;
 		}
 
+		// 因为while的循环条件是start < end，s为空格时，会剩下一个空格
 		if (chars[start] == ' ') {
 			return false;
 		}

@@ -11,11 +11,13 @@ public class L092_Reverse_Linked_List_II {
 		ListNode fakeHead = new ListNode(-1);
 		fakeHead.next = head;
 
+		// 先向后移m步
 		ListNode pre = fakeHead;
 		for (int i = 1; i < m; i++) {
 			pre = pre.next;
 		}
 
+		// 对后面的n-m个结点，逆置
 		ListNode mNode = pre.next;
 		for (int i = m; i < n; i++) {
 			ListNode cur = mNode.next;

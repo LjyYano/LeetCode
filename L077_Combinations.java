@@ -6,24 +6,28 @@ import java.util.List;
 
 public class L077_Combinations {
 
-	int target;
-	Integer[] stack;
-	Integer[] nums;
+	int target;// 次数
+	Integer[] stack;// 存储每次排列
+	Integer[] nums;// 存储1~n
 
-	List<List<Integer>> result;
+	List<List<Integer>> result;// 存储结果
 
 	public void search(int p) {
 
+		// 若长度为k，则stack是其中一个结果，保存结果
 		if (p == target) {
 			result.add(new ArrayList<Integer>(Arrays.asList(stack)));
 			return;
 		}
 
+		// 对于nums(1~n)中的每个元素
 		for (Integer n : nums) {
+			// 找到nums中第一个比stack最后元素大的元素
 			if (p > 0 && n <= stack[p - 1]) {
 				continue;
 			}
 
+			// 找到下一个元素，递归
 			stack[p] = n;
 			search(p + 1);
 		}
