@@ -7,6 +7,21 @@ import java.util.List;
 
 public class L102_Binary_Tree_Level_Order_Traversal {
 
+	public static void main(String[] args) {
+		TreeNode n1 = new TreeNode(1);
+		TreeNode n2 = new TreeNode(2);
+		TreeNode n3 = new TreeNode(3);
+		TreeNode n4 = new TreeNode(4);
+		TreeNode n5 = new TreeNode(5);
+
+		n1.left = n2;
+		n1.right = n3;
+		n2.left = n4;
+		n3.right = n5;
+
+		System.out.println(levelOrder(n1));
+	}
+
 	public static List<List<Integer>> levelOrder(TreeNode root) {
 
 		List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -16,31 +31,18 @@ public class L102_Binary_Tree_Level_Order_Traversal {
 		}
 
 		Deque<TreeNode> deque = new LinkedList<TreeNode>();
+		deque.add(root);
 
-		int curLevel = 0;
+		int toBePrinted = 1;
 		int nextLevel = 0;
 
 		List<Integer> level = new LinkedList<Integer>();
-
-		level.add(root.val);
-		result.add(new ArrayList<Integer>(level));
-		level.clear();
-
-		if (root.left != null) {
-			deque.addLast(root.left);
-			curLevel++;
-		}
-
-		if (root.right != null) {
-			deque.addLast(root.right);
-			curLevel++;
-		}
 
 		while (!deque.isEmpty()) {
 
 			TreeNode p = deque.poll();
 			level.add(p.val);
-			curLevel--;
+			toBePrinted--;
 
 			if (p.left != null) {
 				deque.addLast(p.left);
@@ -52,8 +54,8 @@ public class L102_Binary_Tree_Level_Order_Traversal {
 				nextLevel++;
 			}
 
-			if (curLevel == 0) {
-				curLevel = nextLevel;
+			if (toBePrinted == 0) {
+				toBePrinted = nextLevel;
 				nextLevel = 0;
 				result.add(new ArrayList<Integer>(level));
 				level.clear();
