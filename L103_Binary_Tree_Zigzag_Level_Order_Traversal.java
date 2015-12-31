@@ -8,12 +8,12 @@ import java.util.List;
 
 public class L103_Binary_Tree_Zigzag_Level_Order_Traversal {
 
-	public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<List<Integer>> rt = new ArrayList<List<Integer>>();
 
 		if (root == null) {
-			return result;
+			return rt;
 		}
 
 		final TreeNode END = new TreeNode(0);
@@ -37,7 +37,7 @@ public class L103_Binary_Tree_Zigzag_Level_Order_Traversal {
 
 				count++;
 
-				result.add(new ArrayList<Integer>(level));
+				rt.add(new ArrayList<Integer>(level));
 				level.clear();
 
 				if (!deque.isEmpty()) {
@@ -56,7 +56,7 @@ public class L103_Binary_Tree_Zigzag_Level_Order_Traversal {
 			}
 		}
 
-		return result;
+		return rt;
 	}
 
 }

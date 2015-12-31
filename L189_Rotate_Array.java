@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L189_Rotate_Array {
 
-	static void reverse(int[] nums, int st, int ed) {
+	void reverse(int[] nums, int st, int ed) {
 
 		while (st < ed) {
 			int t = nums[st];
@@ -13,7 +13,7 @@ public class L189_Rotate_Array {
 		}
 	}
 
-	public static void rotate(int[] nums, int k) {
+	public void rotate(int[] nums, int k) {
 
 		int length = nums.length;
 

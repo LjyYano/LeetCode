@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class L213_House_Robber_II {
 
-	public static int rob(int[] nums) {
+	public int rob(int[] nums) {
 
 		if (nums == null || nums.length == 0) {
 			return 0;
@@ -22,7 +22,7 @@ public class L213_House_Robber_II {
 				help(Arrays.copyOfRange(nums, 1, nums.length)));
 	}
 
-	public static int help(int[] nums) {
+	public int help(int[] nums) {
 
 		if (nums.length == 0) {
 			return 0;

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L058_Length_of_Last_Word {
 
-	public static int lengthOfLastWord(String s) {
+	public int lengthOfLastWord(String s) {
 
 		if (s == null || s.length() == 0) {
 			return 0;

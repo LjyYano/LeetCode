@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class L217_Contains_Duplicate {
 
-	public static boolean containsDuplicate(int[] nums) {
+	public boolean containsDuplicate(int[] nums) {
 
 		Set<Integer> s = new HashSet<Integer>();
 

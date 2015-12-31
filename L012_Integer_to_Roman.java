@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L012_Integer_to_Roman {
 
-	public static String intToRoman(int num) {
+	public String intToRoman(int num) {
 
 		final int[] values = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5,
 				4, 1 };

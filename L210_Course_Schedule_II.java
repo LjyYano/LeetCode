@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class L210_Course_Schedule_II {
 
-	public static int[] findOrder(int numCourses, int[][] prerequisites) {
+	public int[] findOrder(int numCourses, int[][] prerequisites) {
 
 		// ²ÎÊı¼ì²é
 		if (prerequisites == null) {

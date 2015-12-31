@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L110_Balanced_Binary_Tree {
 
-	public static boolean isBalanced(TreeNode root) {
+	public boolean isBalanced(TreeNode root) {
 
 		if (root == null) {
 			return true;
@@ -13,7 +13,7 @@ public class L110_Balanced_Binary_Tree {
 
 	}
 
-	static int height(TreeNode node) {
+	int height(TreeNode node) {
 
 		if (node == null) {
 			return 0;

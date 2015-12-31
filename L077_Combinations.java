@@ -10,13 +10,13 @@ public class L077_Combinations {
 	Integer[] stack;// 存储每次排列
 	Integer[] nums;// 存储1~n
 
-	List<List<Integer>> result;// 存储结果
+	List<List<Integer>> rt;// 存储结果
 
 	public void search(int p) {
 
 		// 若长度为k，则stack是其中一个结果，保存结果
 		if (p == target) {
-			result.add(new ArrayList<Integer>(Arrays.asList(stack)));
+			rt.add(new ArrayList<Integer>(Arrays.asList(stack)));
 			return;
 		}
 
@@ -43,11 +43,11 @@ public class L077_Combinations {
 			nums[i] = i + 1;
 		}
 
-		result = new ArrayList<List<Integer>>();
+		rt = new ArrayList<List<Integer>>();
 
 		search(0);
 
-		return result;
+		return rt;
 	}
 
 }

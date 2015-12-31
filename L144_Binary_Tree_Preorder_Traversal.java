@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class L144_Binary_Tree_Preorder_Traversal {
 
-	public static List<Integer> preorderTraversal(TreeNode root) {
+	public List<Integer> preorderTraversal(TreeNode root) {
 
 		List<Integer> rt = new ArrayList<Integer>();
 

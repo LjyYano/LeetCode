@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class L155_Min_Stack {
 
-	static class MinStack {
+	class MinStack {
 
 		Stack<Integer> stack = new Stack<Integer>();
 		Stack<Integer> min = new Stack<Integer>();

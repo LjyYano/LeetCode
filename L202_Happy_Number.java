@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class L202_Happy_Number {
 
-	public static boolean isHappy(int n) {
+	public boolean isHappy(int n) {
 
 		if (n < 1) {
 			return false;
@@ -35,7 +35,7 @@ public class L202_Happy_Number {
 		}
 	}
 
-	public static boolean isHappy2(int n) {
+	public boolean isHappy2(int n) {
 
 		if (n < 1) {
 			return false;

@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class L020_Valid_Parentheses {
 
-	public static boolean isValid(String s) {
+	public boolean isValid(String s) {
 
 		if (s == null || s.length() % 2 == 1) {
 			return false;

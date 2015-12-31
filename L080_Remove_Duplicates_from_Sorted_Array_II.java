@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L080_Remove_Duplicates_from_Sorted_Array_II {
 
-	public static int removeDuplicates(int[] nums) {
+	public int removeDuplicates(int[] nums) {
 
 		int cur = 2;
 		for (int i = cur; i < nums.length; i++) {

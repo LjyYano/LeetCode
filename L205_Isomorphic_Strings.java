@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class L205_Isomorphic_Strings {
 
-	public static boolean isIsomorphic(String s, String t) {
+	public boolean isIsomorphic(String s, String t) {
 
 		if (s == null || t == null) {
 			return false;
@@ -24,6 +24,7 @@ public class L205_Isomorphic_Strings {
 			char c1 = s.charAt(i);
 			char c2 = t.charAt(i);
 
+			// 保证一对一的映射关系
 			if (map.containsKey(c1)) {
 				if (map.get(c1) != c2) {
 					return false;

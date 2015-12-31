@@ -4,7 +4,7 @@ import java.util.List;
 
 public class L120_Triangle {
 
-	public static int minimumTotal(List<List<Integer>> triangle) {
+	public int minimumTotal(List<List<Integer>> triangle) {
 
 		int size = triangle.size();
 

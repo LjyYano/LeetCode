@@ -5,7 +5,7 @@ import java.util.List;
 
 public class L229_Majority_Element_II {
 
-	public static List<Integer> majorityElement(int[] nums) {
+	public List<Integer> majorityElement(int[] nums) {
 
 		List<Integer> rt = new ArrayList<Integer>();
 

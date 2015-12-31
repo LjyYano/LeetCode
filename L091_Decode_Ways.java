@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L091_Decode_Ways {
 
-	public static int numDecodings(String s) {
+	public int numDecodings(String s) {
 
 		if (s == null || s.length() == 0) {
 			return 0;

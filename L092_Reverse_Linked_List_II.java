@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L092_Reverse_Linked_List_II {
 
-	public static ListNode reverseBetween(ListNode head, int m, int n) {
+	public ListNode reverseBetween(ListNode head, int m, int n) {
 
 		if (head == null || head.next == null || m == n) {
 			return head;

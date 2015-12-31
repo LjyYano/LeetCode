@@ -5,7 +5,7 @@ import java.util.List;
 
 public class L216_Combination_Sum_III {
 
-	public static List<List<Integer>> combinationSum3(int k, int n) {
+	public List<List<Integer>> combinationSum3(int k, int n) {
 
 		List<List<Integer>> rt = new ArrayList<List<Integer>>();
 
@@ -18,8 +18,8 @@ public class L216_Combination_Sum_III {
 		return rt;
 	}
 
-	private static void dfs(List<List<Integer>> rt, List<Integer> cur, int sum,
-			int k, int n, int level) {
+	private void dfs(List<List<Integer>> rt, List<Integer> cur, int sum, int k,
+			int n, int level) {
 
 		if (sum == n && k == 0) {
 			rt.add(new ArrayList<Integer>(cur));
@@ -33,7 +33,6 @@ public class L216_Combination_Sum_III {
 			dfs(rt, cur, sum + i, k - 1, n, i + 1);
 			cur.remove(cur.size() - 1);
 		}
-
 	}
 
 }

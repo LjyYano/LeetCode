@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class L219_Contains_Duplicate_II {
 
-	public static boolean containsNearbyDuplicate(int[] nums, int k) {
+	public boolean containsNearbyDuplicate(int[] nums, int k) {
 
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 

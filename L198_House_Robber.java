@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L198_House_Robber {
 
-	public static int rob(int[] nums) {
+	public int rob(int[] nums) {
 
 		int take = 0;
 		int nonTake = 0;
@@ -17,7 +17,7 @@ public class L198_House_Robber {
 		return max;
 	}
 
-	public static int rob2(int[] nums) {
+	public int rob2(int[] nums) {
 
 		if (nums.length == 0) {
 			return 0;

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class L153_Find_Minimum_in_Rotated_Sorted_Array {
 
-	public static int findMin(int[] nums) {
+	public int findMin(int[] nums) {
 
 		if (nums.length == 1) {
 			return nums[0];

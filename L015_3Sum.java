@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class L015_3Sum {
 
-	public static List<List<Integer>> threeSum(int[] nums) {
+	public List<List<Integer>> threeSum(int[] nums) {
 
 		if (nums == null || nums.length < 3) {
 			return new ArrayList<List<Integer>>();

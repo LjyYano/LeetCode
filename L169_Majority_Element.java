@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L169_Majority_Element {
 
-	public static int majorityElement(int[] nums) {
+	public int majorityElement(int[] nums) {
 
 		int m = nums[0];
 		int c = 1;

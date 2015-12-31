@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L074_Search_a_2D_Matrix {
 
-	public static boolean searchMatrix(int[][] matrix, int target) {
+	public boolean searchMatrix(int[][] matrix, int target) {
 
 		int mx = matrix.length;
 		int my = matrix[0].length;

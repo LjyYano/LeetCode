@@ -6,13 +6,13 @@ import java.util.List;
 
 public class L047_Permutations_II {
 
-	static void swap(int x[], int a, int b) {
+	void swap(int x[], int a, int b) {
 		int t = x[a];
 		x[a] = x[b];
 		x[b] = t;
 	}
 
-	public static boolean nextPermutation(int[] num) {
+	public boolean nextPermutation(int[] num) {
 
 		if (num.length < 2)
 			return false;

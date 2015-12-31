@@ -26,7 +26,7 @@ public class L095_Unique_Binary_Search_Trees_II {
 					Collections.<TreeNode> singletonList(null));
 		}
 
-		ArrayList<TreeNode> result = new ArrayList<TreeNode>();
+		ArrayList<TreeNode> rt = new ArrayList<TreeNode>();
 
 		// 数组的每一个元素（array[i]），分别作为根结点
 		for (int i = 0; i < array.length; i++) {
@@ -39,12 +39,12 @@ public class L095_Unique_Binary_Search_Trees_II {
 					root.left = left;
 					root.right = right;
 
-					result.add(root);
+					rt.add(root);
 				}
 			}
 		}
 
-		return result;
+		return rt;
 	}
 
 }

@@ -31,7 +31,6 @@ public class L222_Count_Complete_Tree_Nodes {
 		}
 
 		return 1 + countNodes(root.left) + countNodes(root.right);
-
 	}
 
 }

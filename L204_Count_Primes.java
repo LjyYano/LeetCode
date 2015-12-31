@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L204_Count_Primes {
 
-	public static int countPrimes(int n) {
+	public int countPrimes(int n) {
 
 		boolean[] b = new boolean[n];
 

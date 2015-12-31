@@ -6,12 +6,12 @@ import java.util.Stack;
 
 public class L145_Binary_Tree_Postorder_Traversal {
 
-	public static class PostTreeNode {
+	public class PostTreeNode {
 		TreeNode node;
 		boolean first;
 	}
 
-	public static List<Integer> postorderTraversal(TreeNode root) {
+	public List<Integer> postorderTraversal(TreeNode root) {
 
 		List<Integer> rt = new ArrayList<Integer>();
 

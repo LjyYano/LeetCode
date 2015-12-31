@@ -7,17 +7,17 @@ public class L089_Gray_Code {
 
 	public List<Integer> grayCode(int n) {
 
-		List<Integer> result = new ArrayList<Integer>();
+		List<Integer> rt = new ArrayList<Integer>();
 
 		if (n < 0) {
-			return result;
+			return rt;
 		}
 
 		for (int i = 0; i < Math.pow(2, n); i++) {
-			result.add((i >> 1) ^ i);
+			rt.add((i >> 1) ^ i);
 		}
 
-		return result;
+		return rt;
 	}
 
 }

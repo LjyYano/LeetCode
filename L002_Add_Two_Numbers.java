@@ -2,15 +2,6 @@ package LeetCode;
 
 public class L002_Add_Two_Numbers {
 
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-	}
-
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
 		if (l1 == null && l2 == null) {

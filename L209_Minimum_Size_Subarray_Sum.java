@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L209_Minimum_Size_Subarray_Sum {
 
-	public static int minSubArrayLen(int s, int[] nums) {
+	public int minSubArrayLen(int s, int[] nums) {
 
 		int sum = 0;
 		int st = 0;

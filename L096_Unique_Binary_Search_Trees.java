@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L096_Unique_Binary_Search_Trees {
 
-	public static int numTrees(int n) {
+	public int numTrees(int n) {
 
 		if (n == 1 || n == 2) {
 			return n;

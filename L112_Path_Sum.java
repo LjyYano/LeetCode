@@ -2,9 +2,9 @@ package LeetCode;
 
 public class L112_Path_Sum {
 
-	static boolean hasPath;
+	boolean hasPath;
 
-	public static boolean hasPathSum(TreeNode root, int sum) {
+	public boolean hasPathSum(TreeNode root, int sum) {
 
 		if (root == null) {
 			return false;
@@ -15,7 +15,7 @@ public class L112_Path_Sum {
 		return hasPath;
 	}
 
-	static void help(TreeNode node, int cur, int sum) {
+	void help(TreeNode node, int cur, int sum) {
 
 		cur += node.val;
 
@@ -36,7 +36,7 @@ public class L112_Path_Sum {
 		cur -= node.val;
 	}
 
-	public static boolean hasPathSum2(TreeNode root, int sum) {
+	public boolean hasPathSum2(TreeNode root, int sum) {
 
 		if (root == null) {
 			return false;

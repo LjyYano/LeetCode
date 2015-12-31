@@ -5,7 +5,7 @@ import java.util.List;
 
 public class L093_Restore_IP_Addresses {
 
-	List<String> result = new ArrayList<String>();
+	List<String> rt = new ArrayList<String>();
 	String[] stack = new String[4];
 
 	public List<String> restoreIpAddresses(String s) {
@@ -14,7 +14,7 @@ public class L093_Restore_IP_Addresses {
 			return new ArrayList<String>();
 		}
 		dfs(s, 0, 0);
-		return result;
+		return rt;
 	}
 
 	/**
@@ -33,7 +33,7 @@ public class L093_Restore_IP_Addresses {
 			// 则stack[0...3]存了一个结果
 			if (p >= s.length()) {
 				String ip = String.join(".", stack);
-				result.add(ip);
+				rt.add(ip);
 			}
 			return;
 		}

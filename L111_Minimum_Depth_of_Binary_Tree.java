@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L111_Minimum_Depth_of_Binary_Tree {
 
-	public static int minDepth(TreeNode root) {
+	public int minDepth(TreeNode root) {
 
 		if (root == null) {
 			return 0;

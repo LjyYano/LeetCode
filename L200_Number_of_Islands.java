@@ -2,9 +2,9 @@ package LeetCode;
 
 public class L200_Number_of_Islands {
 
-	static int mx, my;
+	int mx, my;
 
-	public static int numIslands(char[][] grid) {
+	public int numIslands(char[][] grid) {
 
 		if (grid == null || grid.length == 0 || grid[0].length == 0) {
 			return 0;
@@ -28,7 +28,7 @@ public class L200_Number_of_Islands {
 		return rt;
 	}
 
-	static void dfs(char[][] grid, int x, int y) {
+	void dfs(char[][] grid, int x, int y) {
 
 		if (x < 0 || x >= mx || y < 0 || y >= my) {
 			return;

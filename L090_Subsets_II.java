@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class L090_Subsets_II {
 
-	public static List<List<Integer>> subsetsWithDup(int[] nums) {
+	public List<List<Integer>> subsetsWithDup(int[] nums) {
 
 		if (nums == null) {
 			return null;

@@ -8,12 +8,12 @@ import java.util.List;
 
 public class L107_Binary_Tree_Level_Order_Traversal_II {
 
-	public static List<List<Integer>> levelOrderBottom(TreeNode root) {
+	public List<List<Integer>> levelOrderBottom(TreeNode root) {
 
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<List<Integer>> rt = new ArrayList<List<Integer>>();
 
 		if (root == null) {
-			return result;
+			return rt;
 		}
 
 		final TreeNode END = new TreeNode(0);
@@ -29,7 +29,7 @@ public class L107_Binary_Tree_Level_Order_Traversal_II {
 			TreeNode p = deque.pop();
 
 			if (p == END) {
-				result.add(new ArrayList<Integer>(level));
+				rt.add(new ArrayList<Integer>(level));
 				level.clear();
 
 				if (!deque.isEmpty()) {
@@ -48,8 +48,8 @@ public class L107_Binary_Tree_Level_Order_Traversal_II {
 			}
 		}
 
-		Collections.reverse(result);
-		return result;
+		Collections.reverse(rt);
+		return rt;
 	}
 
 }

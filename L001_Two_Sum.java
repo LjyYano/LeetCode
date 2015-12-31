@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class L001_Two_Sum {
 
-	public static int[] twoSum(int[] nums, int target) {
+	public int[] twoSum(int[] nums, int target) {
 
 		if (nums == null || nums.length <= 1) {
 			return new int[2];

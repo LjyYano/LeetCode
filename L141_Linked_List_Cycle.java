@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L141_Linked_List_Cycle {
 
-	public static boolean hasCycle(ListNode head) {
+	public boolean hasCycle(ListNode head) {
 
 		if (head == null) {
 			return false;

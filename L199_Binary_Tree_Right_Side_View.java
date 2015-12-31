@@ -7,7 +7,7 @@ import java.util.List;
 
 public class L199_Binary_Tree_Right_Side_View {
 
-	public static List<Integer> rightSideView(TreeNode root) {
+	public List<Integer> rightSideView(TreeNode root) {
 
 		List<Integer> rt = new ArrayList<Integer>();
 
@@ -30,7 +30,7 @@ public class L199_Binary_Tree_Right_Side_View {
 
 	}
 
-	public static List<Integer> rightSideView2(TreeNode root) {
+	public List<Integer> rightSideView2(TreeNode root) {
 
 		List<Integer> rt = new ArrayList<Integer>();
 		if (root == null) {
@@ -72,7 +72,7 @@ public class L199_Binary_Tree_Right_Side_View {
 		return rt;
 	}
 
-	public static List<Integer> rightSideView3(TreeNode root) {
+	public List<Integer> rightSideView3(TreeNode root) {
 
 		List<Integer> rt = new ArrayList<Integer>();
 

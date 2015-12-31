@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L190_Reverse_Bits {
 
-	public static int reverseBits(int n) {
+	public int reverseBits(int n) {
 
 		int rt = 0;
 

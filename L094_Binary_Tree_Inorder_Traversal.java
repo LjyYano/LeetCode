@@ -5,13 +5,13 @@ import java.util.List;
 
 public class L094_Binary_Tree_Inorder_Traversal {
 
-	List<Integer> result = new ArrayList<Integer>();
+	List<Integer> rt = new ArrayList<Integer>();
 
 	public List<Integer> inorderTraversal(TreeNode root) {
 
-		result.clear();
+		rt.clear();
 		inorder(root);
-		return result;
+		return rt;
 	}
 
 	void inorder(TreeNode node) {
@@ -21,7 +21,7 @@ public class L094_Binary_Tree_Inorder_Traversal {
 		}
 
 		inorder(node.left);
-		result.add(node.val);
+		rt.add(node.val);
 		inorder(node.right);
 	}
 

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L005_Longest_Palindromic_Substring {
 
-	public static String longestPalindrome(String s) {
+	public String longestPalindrome(String s) {
 
 		if (s == null || s.length() == 0) {
 			return "";
@@ -28,7 +28,7 @@ public class L005_Longest_Palindromic_Substring {
 		return s.substring(start, end + 1);
 	}
 
-	private static int longest(String s, int left, int right) {
+	private int longest(String s, int left, int right) {
 
 		while (left >= 0 && right < s.length()
 				&& s.charAt(left) == s.charAt(right)) {

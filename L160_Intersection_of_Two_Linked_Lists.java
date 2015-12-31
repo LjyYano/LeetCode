@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L160_Intersection_of_Two_Linked_Lists {
 
-	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
 		if (headA == null || headB == null) {
 			return null;

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L070_Climbing_Stairs {
 
-	public static int climbStairs(int n) {
+	public int climbStairs(int n) {
 
 		if (n < 0) {
 			return -1;

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L073_Set_Matrix_Zeroes {
 
-	public static void setZeroes(int[][] matrix) {
+	public void setZeroes(int[][] matrix) {
 
 		if (matrix == null || matrix.length == 0) {
 			return;

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L168_Excel_Sheet_Column_Title {
 
-	public static String convertToTitle(int n) {
+	public String convertToTitle(int n) {
 
 		if (n < 27) {
 			return (char) ('A' + (n - 1)) + "";

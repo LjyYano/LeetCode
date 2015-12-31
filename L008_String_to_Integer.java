@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L008_String_to_Integer {
 
-	public static int myAtoi(String str) {
+	public int myAtoi(String str) {
 
 		if (str == null || str.length() == 0) {
 			return 0;
@@ -10,7 +10,7 @@ public class L008_String_to_Integer {
 
 		char[] c = str.toCharArray();
 
-		int i = 0, flag = 1, result = 0;
+		int i = 0, flag = 1, rt = 0;
 
 		for (; i < c.length; i++) {
 			if (c[i] == ' ') {
@@ -33,15 +33,15 @@ public class L008_String_to_Integer {
 				break;
 			}
 
-			if (result > Integer.MAX_VALUE / 10
-					|| (result == Integer.MAX_VALUE / 10 && (c[i] - '0') > Integer.MAX_VALUE % 10)) {
+			if (rt > Integer.MAX_VALUE / 10
+					|| (rt == Integer.MAX_VALUE / 10 && (c[i] - '0') > Integer.MAX_VALUE % 10)) {
 				return (flag == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
 			}
 
-			result = result * 10 + c[i] - '0';
+			rt = rt * 10 + c[i] - '0';
 		}
 
-		return result * flag;
+		return rt * flag;
 	}
 
 }

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L137_Single_Number_II {
 
-	public static int singleNumber(int[] nums) {
+	public int singleNumber(int[] nums) {
 
 		int rt = 0, bit = 1;
 

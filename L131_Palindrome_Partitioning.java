@@ -6,7 +6,7 @@ import java.util.List;
 
 public class L131_Palindrome_Partitioning {
 
-	public static List<List<String>> partition(String s) {
+	public List<List<String>> partition(String s) {
 
 		List<List<String>> rt = new ArrayList<List<String>>();
 

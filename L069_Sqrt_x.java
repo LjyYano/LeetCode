@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L069_Sqrt_x {
 
-	public static int mySqrt(int x) {
+	public int mySqrt(int x) {
 
 		// 首先对负数和0进行处理
 		if (x < 0) {

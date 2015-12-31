@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L191_Number_of_1_Bits {
 
-	public static int hammingWeight(int n) {
+	public int hammingWeight(int n) {
 
 		int rt = 0;
 

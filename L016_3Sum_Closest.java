@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class L016_3Sum_Closest {
 
-	public static int threeSumClosest(int[] nums, int target) {
+	public int threeSumClosest(int[] nums, int target) {
 
 		if (nums == null || nums.length < 3) {
 			return Integer.MIN_VALUE;

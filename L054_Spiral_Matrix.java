@@ -7,10 +7,10 @@ public class L054_Spiral_Matrix {
 
 	public List<Integer> spiralOrder(int[][] matrix) {
 
-		List<Integer> result = new ArrayList<Integer>();
+		List<Integer> rt = new ArrayList<Integer>();
 
 		if (matrix == null || matrix.length == 0) {
-			return result;
+			return rt;
 		}
 
 		int startx = 0, endx = matrix.length - 1;
@@ -18,24 +18,29 @@ public class L054_Spiral_Matrix {
 
 		while (startx <= endx && starty <= endy) {
 
+			// 上边的行，从左向右
 			for (int y = starty; y <= endy; y++) {
-				result.add(matrix[startx][y]);
+				rt.add(matrix[startx][y]);
 			}
 
+			// 右边的列，从上到下
 			for (int x = startx + 1; x <= endx; x++) {
-				result.add(matrix[x][endy]);
+				rt.add(matrix[x][endy]);
 			}
 
+			// 如果行或列遍历完，则退出循环
 			if (startx == endx || starty == endy) {
 				break;
 			}
 
+			// 下边的行，从右向左
 			for (int y = endy - 1; y >= starty; y--) {
-				result.add(matrix[endx][y]);
+				rt.add(matrix[endx][y]);
 			}
 
+			// 左边的列，从下到上
 			for (int x = endx - 1; x >= startx + 1; x--) {
-				result.add(matrix[x][starty]);
+				rt.add(matrix[x][starty]);
 			}
 
 			startx++;
@@ -44,7 +49,7 @@ public class L054_Spiral_Matrix {
 			endy--;
 		}
 
-		return result;
+		return rt;
 	}
 
 }

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L125_Valid_Palindrome {
 
-	public static boolean isPalindrome(String s) {
+	public boolean isPalindrome(String s) {
 
 		if (s.length() <= 1) {
 			return true;
@@ -25,7 +25,7 @@ public class L125_Valid_Palindrome {
 		return true;
 	}
 
-	static boolean isValid(String s, int i) {
+	boolean isValid(String s, int i) {
 
 		char c = s.charAt(i);
 

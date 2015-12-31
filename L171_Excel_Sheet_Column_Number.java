@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L171_Excel_Sheet_Column_Number {
 
-	public static int titleToNumber(String s) {
+	public int titleToNumber(String s) {
 
 		int n = 0;
 		int p = 1;

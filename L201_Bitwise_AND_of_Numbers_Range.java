@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L201_Bitwise_AND_of_Numbers_Range {
 
-	public static int rangeBitwiseAnd(int m, int n) {
+	public int rangeBitwiseAnd(int m, int n) {
 
 		int bit = 0;
 

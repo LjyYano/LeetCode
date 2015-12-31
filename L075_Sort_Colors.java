@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L075_Sort_Colors {
 
-	public static void sortColors(int[] nums) {
+	public void sortColors(int[] nums) {
 
 		if (nums == null || nums.length == 0) {
 			return;

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L083_Remove_Duplicates_from_Sorted_List {
 
-	public static ListNode deleteDuplicates(ListNode head) {
+	public ListNode deleteDuplicates(ListNode head) {
 
 		if (head == null) {
 			return null;

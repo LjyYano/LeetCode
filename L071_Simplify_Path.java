@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class L071_Simplify_Path {
 
-	public static String simplifyPath(String path) {
+	public String simplifyPath(String path) {
 
 		if (path == null) {
 			return null;

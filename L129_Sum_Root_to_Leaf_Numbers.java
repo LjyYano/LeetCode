@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L129_Sum_Root_to_Leaf_Numbers {
 
-	static int sumNumbers(TreeNode root, int parentval) {
+	int sumNumbers(TreeNode root, int parentval) {
 
 		if (root == null) {
 			return 0;

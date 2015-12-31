@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L152_Maximum_Product_Subarray {
 
-	public static int maxProduct(int[] nums) {
+	public int maxProduct(int[] nums) {
 
 		int max = nums[0];
 		int positive = nums[0];
@@ -26,7 +26,6 @@ public class L152_Maximum_Product_Subarray {
 		}
 
 		return max;
-
 	}
 
 }

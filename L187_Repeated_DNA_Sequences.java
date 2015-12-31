@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class L187_Repeated_DNA_Sequences {
 
-	public static List<String> findRepeatedDnaSequences(String s) {
+	public List<String> findRepeatedDnaSequences(String s) {
 
 		if (s == null || s.length() < 11) {
 			return new ArrayList<String>();

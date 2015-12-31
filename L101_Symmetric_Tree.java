@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class L101_Symmetric_Tree {
 
 	// recursively
-	public static boolean isSymmetric(TreeNode root) {
+	public boolean isSymmetric(TreeNode root) {
 
 		if (root == null) {
 			return true;
@@ -15,7 +15,7 @@ public class L101_Symmetric_Tree {
 		return isSymmetric(root.left, root.right);
 	}
 
-	static boolean isSymmetric(TreeNode p, TreeNode q) {
+	boolean isSymmetric(TreeNode p, TreeNode q) {
 
 		if (p == null && q == null) {
 			return true;
@@ -28,7 +28,7 @@ public class L101_Symmetric_Tree {
 	}
 
 	// iteratively
-	public static boolean isSymmetric2(TreeNode root) {
+	public boolean isSymmetric2(TreeNode root) {
 
 		if (root == null) {
 			return true;
@@ -73,7 +73,6 @@ public class L101_Symmetric_Tree {
 		}
 
 		return true;
-
 	}
 
 }

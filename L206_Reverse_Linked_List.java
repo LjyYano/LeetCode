@@ -20,7 +20,6 @@ public class L206_Reverse_Linked_List {
 		head.next = null;
 
 		return reversed;
-
 	}
 
 }

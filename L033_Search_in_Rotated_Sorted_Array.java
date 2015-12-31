@@ -1,8 +1,8 @@
 package LeetCode;
 
-public class L081_Search_in_Rotated_Sorted_Array_II {
+public class L033_Search_in_Rotated_Sorted_Array {
 
-	public boolean search(int[] nums, int target) {
+	public int search(int[] nums, int target) {
 
 		int l = 0, r = nums.length - 1;
 
@@ -11,8 +11,7 @@ public class L081_Search_in_Rotated_Sorted_Array_II {
 			int m = (l + r) / 2;
 
 			if (nums[m] == target)
-				return true;
-
+				return m;
 			if (nums[l] < nums[m]) {
 				if (target <= nums[m] && target >= nums[l])
 					r = m - 1;
@@ -26,8 +25,6 @@ public class L081_Search_in_Rotated_Sorted_Array_II {
 			} else
 				l++;
 		}
-
-		return false;
+		return -1;
 	}
-
 }

@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L104_Maximum_Depth_of_Binary_Tree {
 
-	public static int maxDepth(TreeNode root) {
+	public int maxDepth(TreeNode root) {
 
 		if (root == null) {
 			return 0;

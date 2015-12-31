@@ -2,7 +2,7 @@ package LeetCode;
 
 public class L100_Same_Tree {
 
-	public static boolean isSameTree(TreeNode p, TreeNode q) {
+	public boolean isSameTree(TreeNode p, TreeNode q) {
 
 		if (p == null && q == null) {
 			return true;

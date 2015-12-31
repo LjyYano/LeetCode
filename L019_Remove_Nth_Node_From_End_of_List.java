@@ -11,7 +11,7 @@ public class L019_Remove_Nth_Node_From_End_of_List {
 		}
 	}
 
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
+	public ListNode removeNthFromEnd(ListNode head, int n) {
 
 		if (head == null || head.next == null) {
 			return null;

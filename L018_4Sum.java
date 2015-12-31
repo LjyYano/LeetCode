@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class L018_4Sum {
 
-	public static List<List<Integer>> fourSum(int[] nums, int target) {
+	public List<List<Integer>> fourSum(int[] nums, int target) {
 
 		if (nums == null || nums.length < 4) {
 			return new ArrayList<List<Integer>>();
@@ -18,38 +18,40 @@ public class L018_4Sum {
 
 		Set<List<Integer>> set = new HashSet<List<Integer>>();
 
-		for (int first = 0; first < nums.length - 3; first++) {
+		// 和3Sum一样，只是多了一个循环
+		for (int a = 0; a < nums.length - 3; a++) {
 
-			int target_3Sum = target - nums[first];
+			int target_3Sum = target - nums[a];
 
-			for (int second = first + 1; second < nums.length - 2; second++) {
+			for (int b = a + 1; b < nums.length - 2; b++) {
 
-				int third = second + 1, fourth = nums.length - 1;
+				int c = b + 1, d = nums.length - 1;
 
-				while (third < fourth) {
+				while (c < d) {
 
-					int sum = nums[second] + nums[third] + nums[fourth];
+					int sum = nums[b] + nums[c] + nums[d];
 
 					if (sum == target_3Sum) {
+
+						// 将结果加入集合
 						List<Integer> tmp = new ArrayList<Integer>();
-						tmp.add(nums[first]);
-						tmp.add(nums[second]);
-						tmp.add(nums[third]);
-						tmp.add(nums[fourth]);
+						tmp.add(nums[a]);
+						tmp.add(nums[b]);
+						tmp.add(nums[c]);
+						tmp.add(nums[d]);
 						set.add(tmp);
 
-						while (++third < fourth
-								&& nums[third - 1] == nums[third])
+						// 去重
+						while (++c < d && nums[c - 1] == nums[c])
 							;
-						while (--fourth > third
-								&& nums[fourth + 1] == nums[fourth])
+						while (--d > c && nums[d + 1] == nums[d])
 							;
 					}
 
 					else if (sum < target_3Sum) {
-						third++;
+						c++;
 					} else {
-						fourth--;
+						d--;
 					}
 				}
 			}

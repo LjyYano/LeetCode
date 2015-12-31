@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class L150_Evaluate_Reverse_Polish_Notation {
 
-	public static int evalRPN(String[] tokens) {
+	public int evalRPN(String[] tokens) {
 
 		Stack<Integer> stack = new Stack<Integer>();
 

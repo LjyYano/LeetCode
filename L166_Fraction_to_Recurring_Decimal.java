@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class L166_Fraction_to_Recurring_Decimal {
 
-	public static String fractionToDecimal(int numerator, int denominator) {
+	public String fractionToDecimal(int numerator, int denominator) {
 
 		String sign = "";
 

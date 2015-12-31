@@ -11,27 +11,27 @@ public class L022_Generate_Parentheses {
 			return new ArrayList<String>();
 		}
 
-		ArrayList<String> result = new ArrayList<String>();
-		dfs(result, "", n, n);
-		return result;
+		ArrayList<String> rt = new ArrayList<String>();
+		dfs(rt, "", n, n);
+		return rt;
 	}
 
-	void dfs(ArrayList<String> result, String s, int left, int right) {
+	void dfs(ArrayList<String> rt, String s, int left, int right) {
 
 		if (left > right) {
 			return;
 		}
 
 		if (left == 0 && right == 0) {
-			result.add(s);
+			rt.add(s);
 		}
 
 		if (left > 0) {
-			dfs(result, s + "(", left - 1, right);
+			dfs(rt, s + "(", left - 1, right);
 		}
 
 		if (right > 0) {
-			dfs(result, s + ")", left, right - 1);
+			dfs(rt, s + ")", left, right - 1);
 		}
 	}
 }

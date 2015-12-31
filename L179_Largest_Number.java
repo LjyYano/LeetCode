@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class L179_Largest_Number {
 
-	public static String largestNumber(int[] nums) {
+	public String largestNumber(int[] nums) {
 
 		String[] strs = new String[nums.length];
 

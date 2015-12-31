@@ -7,12 +7,12 @@ import java.util.List;
 
 public class L102_Binary_Tree_Level_Order_Traversal {
 
-	public static List<List<Integer>> levelOrder(TreeNode root) {
+	public List<List<Integer>> levelOrder(TreeNode root) {
 
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<List<Integer>> rt = new ArrayList<List<Integer>>();
 
 		if (root == null) {
-			return result;
+			return rt;
 		}
 
 		Deque<TreeNode> deque = new LinkedList<TreeNode>();
@@ -42,21 +42,21 @@ public class L102_Binary_Tree_Level_Order_Traversal {
 			if (toBePrinted == 0) {
 				toBePrinted = nextLevel;
 				nextLevel = 0;
-				result.add(new ArrayList<Integer>(level));
+				rt.add(new ArrayList<Integer>(level));
 				level.clear();
 			}
 
 		}
 
-		return result;
+		return rt;
 	}
 
-	public static List<List<Integer>> levelOrder2(TreeNode root) {
+	public List<List<Integer>> levelOrder2(TreeNode root) {
 
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<List<Integer>> rt = new ArrayList<List<Integer>>();
 
 		if (root == null) {
-			return result;
+			return rt;
 		}
 
 		final TreeNode END = new TreeNode(0);
@@ -72,7 +72,7 @@ public class L102_Binary_Tree_Level_Order_Traversal {
 			TreeNode p = deque.pop();
 
 			if (p == END) {
-				result.add(new ArrayList<Integer>(level));
+				rt.add(new ArrayList<Integer>(level));
 				level.clear();
 
 				if (!deque.isEmpty()) {
@@ -91,6 +91,6 @@ public class L102_Binary_Tree_Level_Order_Traversal {
 			}
 		}
 
-		return result;
+		return rt;
 	}
 }

@@ -11,7 +11,7 @@ public class L060_Permutation_Sequence {
 			return "";
 		}
 
-		String result = "";
+		String rt = "";
 
 		List<Integer> list = new ArrayList<Integer>();
 		int fact = 1;
@@ -26,12 +26,12 @@ public class L060_Permutation_Sequence {
 		for (int i = 0; i < n; i++) {
 			fact /= (n - i);
 			int index = k / fact;
-			result += list.get(index);
+			rt += list.get(index);
 			list.remove(index);
 			k %= fact;
 		}
 
-		return result;
+		return rt;
 	}
 
 }
