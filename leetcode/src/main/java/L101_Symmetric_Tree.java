@@ -1,78 +1,63 @@
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.Stack;
 
 import common.TreeNode;
 
 public class L101_Symmetric_Tree {
 
-	// recursively
-	public boolean isSymmetric(TreeNode root) {
+    // recursively
+    public boolean isSymmetric(TreeNode root) {
+        return robot(root, root);
+    }
 
-		if (root == null) {
-			return true;
-		}
+    boolean robot(TreeNode p, TreeNode q) {
 
-		return isSymmetric(root.left, root.right);
-	}
+        if (p == null && q == null) {
+            return true;
+        }
 
-	boolean isSymmetric(TreeNode p, TreeNode q) {
+        if (p == null || q == null) {
+            return false;
+        }
 
-		if (p == null && q == null) {
-			return true;
-		} else if (p == null || q == null) {
-			return false;
-		}
+        return p.val == q.val && robot(p.left, q.right) && robot(p.right, q.left);
+    }
 
-		return p.val == q.val && isSymmetric(p.left, q.right)
-				&& isSymmetric(p.right, q.left);
-	}
+    // iteratively
+    public boolean isSymmetric2(TreeNode root) {
 
-	// iteratively
-	public boolean isSymmetric2(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
 
-		if (root == null) {
-			return true;
-		}
+        Stack<TreeNode> stack = new Stack<>();
 
-		Deque<TreeNode> deque = new LinkedList<TreeNode>();
+        stack.push(root.left);
+        stack.push(root.right);
 
-		if (root.left == null && root.right == null) {
-			return true;
-		} else if (root.left == null || root.right == null) {
-			return false;
-		} else {
-			deque.addLast(root.left);
-			deque.addLast(root.right);
-		}
+        while (!stack.isEmpty()) {
+            TreeNode p = stack.pop();
+            TreeNode q = stack.pop();
 
-		while (deque.size() != 0) {
-			TreeNode p = deque.pop();
-			TreeNode q = deque.pop();
+            if (p == null && q == null) {
+                continue;
+            }
 
-			if (p.val != q.val) {
-				return false;
-			}
+            if (p == null || q == null) {
+                return false;
+            }
 
-			if (p.left == null && q.right == null) {
-				// do nothing
-			} else if (p.left == null || q.right == null) {
-				return false;
-			} else {
-				deque.addLast(p.left);
-				deque.addLast(q.right);
-			}
+            if (p.val != q.val) {
+                return false;
+            }
 
-			if (p.right == null && q.left == null) {
-				// do nothing
-			} else if (p.right == null || q.left == null) {
-				return false;
-			} else {
-				deque.addLast(p.right);
-				deque.addLast(q.left);
-			}
-		}
+            stack.push(p.left);
+            stack.push(q.right);
 
-		return true;
-	}
+            stack.push(p.right);
+            stack.push(q.left);
+        }
+
+        return true;
+    }
 
 }

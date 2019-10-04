@@ -2,16 +2,16 @@ import common.TreeNode;
 
 public class L104_Maximum_Depth_of_Binary_Tree {
 
-	public int maxDepth(TreeNode root) {
+    public int maxDepth(TreeNode root) {
 
-		if (root == null) {
-			return 0;
-		}
+        if (root == null) {
+            return 0;
+        }
 
-		int nLeft = maxDepth(root.left);
-		int nRight = maxDepth(root.right);
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
 
-		return nLeft > nRight ? (nLeft + 1) : (nRight + 1);
-	}
+        return left > right ? (left + 1) : (right + 1);
+    }
 
 }

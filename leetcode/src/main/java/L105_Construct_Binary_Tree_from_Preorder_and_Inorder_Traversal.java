@@ -2,34 +2,25 @@ import common.TreeNode;
 
 public class L105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
 
-	int p = 0;
-	int[] preorder;
-	int[] inorder;
+    public TreeNode buildTree(int[] pre, int[] in) {
+        return robot(pre, in, 0, 0, in.length - 1);
+    }
 
-	public TreeNode buildTree(int[] preorder, int[] inorder) {
-
-		this.preorder = preorder;
-		this.inorder = inorder;
-
-		return buildTree(0, preorder.length);
-	}
-
-	TreeNode buildTree(int start, int end) {
-
-		if (start >= end) {
+    private TreeNode robot(int[] pre, int[] in, int preStart, int inStart, int inEnd) {
+        if (preStart >= pre.length || inStart > inEnd) {
 			return null;
 		}
-
-		TreeNode root = new TreeNode(preorder[p]);
-
-		int i;
-		for (i = start; i < end && preorder[p] != inorder[i]; i++)
-			;
-
-		p++;
-		root.left = buildTree(start, i);
-		root.right = buildTree(i + 1, end);
-
-		return root;
-	}
+        // 找到pos
+        TreeNode root = new TreeNode(pre[preStart]);
+        int index = 0;
+        for (int i = inStart; i <= inEnd; i++) {
+            if (in[i] == root.val) {
+                index = i;
+                break;
+            }
+        }
+        root.left = robot(pre, in, preStart + 1, inStart, index - 1);
+        root.right = robot(pre, in, preStart + 1 + index - inStart, index + 1, inEnd);
+        return root;
+    }
 }

@@ -1,65 +1,63 @@
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Objects;
 
 import common.TreeNode;
 
 public class L297_Serialize_and_Deserialize_Binary_Tree {
 
-	public String serialize(TreeNode root) {
+    public String serialize(TreeNode root) {
 
-		if (root == null) {
-			return "";
-		}
+        if (root == null) {
+            return "";
+        }
 
-		StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
-		Deque<TreeNode> deque = new LinkedList<TreeNode>();
-		deque.add(root);
+        Deque<TreeNode> deque = new LinkedList<>();
+        deque.add(root);
 
-		while (!deque.isEmpty()) {
-			TreeNode p = deque.pop();
+        while (!deque.isEmpty()) {
+            TreeNode p = deque.pop();
 
-			if (p == null) {
-				sb.append(",#");
-			} else {
-				sb.append("," + p.val);
-				deque.add(p.left);
-				deque.add(p.right);
-			}
-		}
+            if (p == null) {
+                sb.append(",#");
+            } else {
+                sb.append(",").append(p.val);
+                deque.add(p.left);
+                deque.add(p.right);
+            }
+        }
 
-		// ��һ��Ԫ��ǰҲ��һ�����ţ���ȡ
-		return sb.toString().substring(1);
-	}
+        return sb.toString().substring(1);
+    }
 
-	public TreeNode deserialize(String data) {
+    public TreeNode deserialize(String data) {
 
-		if (data == null || data.length() == 0) {
-			return null;
-		}
+        if (data == null || Objects.equals(data, "")) {
+            return null;
+        }
 
-		String[] s = data.split(",");
+        String[] s = data.split(",");
 
-		TreeNode[] node = new TreeNode[s.length];
+        TreeNode[] root = new TreeNode[s.length];
 
-		// �½�common.TreeNode������ʼ��
-		for (int i = 0; i < node.length; i++) {
-			if (!"#".equals(s[i])) {
-				node[i] = new TreeNode(Integer.valueOf(s[i]));
-			}
-		}
+        for (int i = 0; i < root.length; i++) {
+            if (!Objects.equals(s[i], "#")) {
+                root[i] = new TreeNode(Integer.valueOf(s[i]));
+            }
+        }
 
-		int parent = 0;
+        int parent = 0;
 
-		// �������������
-		for (int i = 0; parent * 2 + 2 < s.length; i++) {
-			if (node[i] != null) {
-				node[i].left = node[parent * 2 + 1];
-				node[i].right = node[parent * 2 + 2];
-				parent++;
-			}
-		}
+        for (int i = 0; parent * 2 + 2 < s.length; i++) {
+            if (root[i] != null) {
+                root[i].left = root[parent * 2 + 1];
+                root[i].right = root[parent * 2 + 2];
+                parent++;
+            }
+        }
 
-		return node[0];
-	}
+        return root[0];
+    }
 }

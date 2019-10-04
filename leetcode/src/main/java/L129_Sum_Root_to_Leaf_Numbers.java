@@ -2,19 +2,22 @@ import common.TreeNode;
 
 public class L129_Sum_Root_to_Leaf_Numbers {
 
-	int sumNumbers(TreeNode root, int parentval) {
+    public int sumNumbers(TreeNode root) {
+        return robot(root, 0);
+    }
 
-		if (root == null) {
-			return 0;
-		}
+    private int robot(TreeNode root, int p) {
+        if (root == null) {
+            return 0;
+        }
 
-		int p = parentval * 10 + root.val;
+        p = p * 10 + root.val;
 
-		if (root.left == null && root.right == null) {
-			return p;
-		}
+        if (root.left == null && root.right == null) {
+            return p;
+        }
 
-		return sumNumbers(root.left, p) + sumNumbers(root.right, p);
-	}
+        return robot(root.left, p) + robot(root.right, p);
+    }
 
 }

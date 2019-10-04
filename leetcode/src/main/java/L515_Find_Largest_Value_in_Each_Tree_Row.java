@@ -3,9 +3,9 @@ import java.util.List;
 
 import common.TreeNode;
 
-public class L199_Binary_Tree_Right_Side_View {
+public class L515_Find_Largest_Value_in_Each_Tree_Row {
 
-    public List<Integer> rightSideView(TreeNode root) {
+    public List<Integer> largestValues(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         robot(root, ans, 0);
         return ans;
@@ -15,10 +15,12 @@ public class L199_Binary_Tree_Right_Side_View {
         if (root == null) {
             return;
         }
+
         if (ans.size() <= level) {
-            ans.add(root.val);
+            ans.add(Integer.MIN_VALUE);
         }
-        ans.set(level, root.val);
+
+        ans.set(level, Math.max(ans.get(level), root.val));
         robot(root.left, ans, level + 1);
         robot(root.right, ans, level + 1);
     }

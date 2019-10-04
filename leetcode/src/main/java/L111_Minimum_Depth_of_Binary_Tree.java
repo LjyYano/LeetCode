@@ -2,21 +2,13 @@ import common.TreeNode;
 
 public class L111_Minimum_Depth_of_Binary_Tree {
 
-	public int minDepth(TreeNode root) {
-
-		if (root == null) {
+    public int minDepth(TreeNode root) {
+        if (root == null) {
 			return 0;
 		}
-
-		if (root.left == null && root.right == null) {
-			return 1;
-		} else if (root.left != null && root.right == null) {
-			return minDepth(root.left) + 1;
-		} else if (root.left == null && root.right != null) {
-			return minDepth(root.right) + 1;
-		}
-
-		return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
-	}
+        int left = minDepth(root.left);
+        int right = minDepth(root.right);
+        return (left == 0 || right == 0) ? (left + right + 1) : Math.min(left, right) + 1;
+    }
 
 }

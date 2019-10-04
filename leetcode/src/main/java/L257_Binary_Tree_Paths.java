@@ -5,35 +5,21 @@ import common.TreeNode;
 
 public class L257_Binary_Tree_Paths {
 
-	List<String> rt = new ArrayList<String>();
-	List<Integer> path = new ArrayList<Integer>();
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> ans = new ArrayList<>();
+        robot(root, ans, "");
+        return ans;
+    }
 
-	public List<String> binaryTreePaths(TreeNode root) {
-		findPath(root);
-		return rt;
-	}
-
-	void findPath(TreeNode root) {
-
-		if (root == null) {
+    private void robot(TreeNode root, List<String> ans, String path) {
+        if (root == null) {
 			return;
 		}
-
-		path.add(root.val);
-
-		// ��һ��·������path��ӵ�rt��
-		if (root.left == null && root.right == null) {
-			StringBuffer sb = new StringBuffer();
-			sb.append(path.get(0));
-			for (int i = 1; i < path.size(); i++) {
-				sb.append("->" + path.get(i));
-			}
-			rt.add(sb.toString());
-		}
-
-		findPath(root.left);
-		findPath(root.right);
-
-		path.remove(path.size() - 1);
-	}
+        if (root.left == null && root.right == null) {
+            ans.add(path + root.val);
+            return;
+        }
+        robot(root.left, ans, path + root.val + "->");
+        robot(root.right, ans, path + root.val + "->");
+    }
 }
