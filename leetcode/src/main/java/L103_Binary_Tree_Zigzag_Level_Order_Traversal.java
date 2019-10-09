@@ -1,62 +1,71 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import common.TreeNode;
 
 public class L103_Binary_Tree_Zigzag_Level_Order_Traversal {
 
-	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    // solution 1：递归
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        robot(root, ans, 0);
+        // 与层序遍历相比，变化的部分
+        for (int i = 1; i < ans.size(); i += 2) {
+            Collections.reverse(ans.get(i));
+        }
+        return ans;
+    }
 
-		List<List<Integer>> rt = new ArrayList<List<Integer>>();
+    private void robot(TreeNode root, List<List<Integer>> ans, int level) {
+        if (root == null) {
+            return;
+        }
+        if (ans.size() == level) {
+            ans.add(new ArrayList());
+        }
+        ans.get(level).add(root.val);
+        robot(root.left, ans, level + 1);
+        robot(root.right, ans, level + 1);
+    }
 
-		if (root == null) {
-			return rt;
-		}
+    // solution 2：迭代
+    public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
 
-		final TreeNode END = new TreeNode(0);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
 
-		Deque<TreeNode> deque = new LinkedList<TreeNode>();
-		List<Integer> level = new LinkedList<Integer>();
-		int count = 0;
+        while (!queue.isEmpty()) {
+            List<Integer> current = new ArrayList<>();
 
-		deque.add(root);
-		deque.add(END);
+            // 当前层的元素个数
+            int length = queue.size();
+            for (int i = 0; i < length; ++i) {
+                TreeNode node = queue.remove();
 
-		while (!deque.isEmpty()) {
+                // 放入结果
+                current.add(node.val);
 
-			TreeNode p = deque.pop();
-
-			if (p == END) {
-
-				if (count % 2 == 1) {
-					Collections.reverse(level);
-				}
-
-				count++;
-
-				rt.add(new ArrayList<Integer>(level));
-				level.clear();
-
-				if (!deque.isEmpty()) {
-					deque.add(END);
-				}
-			} else {
-				level.add(p.val);
-
-				if (p.left != null) {
-					deque.add(p.left);
-				}
-
-				if (p.right != null) {
-					deque.add(p.right);
-				}
-			}
-		}
-
-		return rt;
-	}
-
+                // 依次将 node 的左右子节点加入队列
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            ans.add(current);
+        }
+        // 与层序遍历相比，变化的部分
+        for (int i = 1; i < ans.size(); i += 2) {
+            Collections.reverse(ans.get(i));
+        }
+        return ans;
+    }
 }
