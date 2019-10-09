@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -6,53 +7,84 @@ import common.TreeNode;
 
 public class L145_Binary_Tree_Postorder_Traversal {
 
-	public class PostTreeNode {
-		TreeNode node;
-		boolean first;
-	}
+    // solution 1：递归
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        robot(root, ans);
+        return ans;
+    }
 
-	public List<Integer> postorderTraversal(TreeNode root) {
+    private void robot(TreeNode p, List<Integer> ans) {
+        if (p == null) {
+            return;
+        }
+        // 左右根
+        robot(p.left, ans);
+        robot(p.right, ans);
+        ans.add(p.val);
+    }
 
-		List<Integer> rt = new ArrayList<Integer>();
+    // solution 2：迭代
+    public static class StackNode {
+        TreeNode root;
+        boolean visit;
 
-		if (root == null) {
-			return rt;
-		}
+        StackNode(TreeNode root) {
+            this.root = root;
+        }
+    }
 
-		Stack<PostTreeNode> stack = new Stack<PostTreeNode>();
-		TreeNode p = root;
-		PostTreeNode t;
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
+        Stack<StackNode> stack = new Stack<>();
+        StackNode node;
+        stack.push(new StackNode(root));
+        while (!stack.isEmpty()) {
+            node = stack.pop();
+            if (node == null) {
+                continue;
+            }
+            if (!node.visit) {
+                node.visit = true;
+                stack.push(node);
+                if (node.root.right != null) {
+                    stack.push(new StackNode(node.root.right));
+                }
+                if (node.root.left != null) {
+                    stack.push(new StackNode(node.root.left));
+                }
+            } else if (node.root != null) {
+                ans.add(node.root.val);
+            }
+        }
+        return ans;
+    }
 
-		while (p != null || !stack.empty()) {
+    // solution 3：迭代，逆序输出
+    public List<Integer> postorderTraversal3(TreeNode root) {
+        LinkedList<Integer> ans = new LinkedList<>();
+        if (root == null) {
+            return ans;
+        }
 
-			while (p != null) {
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
 
-				// �½�һ����㣬���������һ������ֵfirst
-				// �����ж��Ƿ��ǵ�һ����ջ
-				PostTreeNode post = new PostTreeNode();
-				post.node = p;
-				post.first = true;
-				stack.push(post);
-				p = p.left;
-			}
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            ans.addFirst(node.val);
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+        return ans;
+    }
 
-			if (!stack.empty()) {
-
-				t = stack.pop();
-
-				// �������һ�γ�ջ���ٴ���ջ����first��Ϊfalse
-				if (t.first == true) {
-					t.first = false;
-					stack.push(t);
-					p = t.node.right;
-				} else {
-					rt.add(t.node.val);
-					p = null;
-				}
-			}
-		}
-
-		return rt;
-	}
 
 }

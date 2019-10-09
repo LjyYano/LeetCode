@@ -1,96 +1,63 @@
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import common.TreeNode;
 
 public class L102_Binary_Tree_Level_Order_Traversal {
 
-	public List<List<Integer>> levelOrder(TreeNode root) {
+    // solution 1：递归
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        robot(root, ans, 0);
+        return ans;
+    }
 
-		List<List<Integer>> rt = new ArrayList<List<Integer>>();
+    private void robot(TreeNode root, List<List<Integer>> ans, int level) {
+        if (root == null) {
+            return;
+        }
+        if (ans.size() == level) {
+            ans.add(new ArrayList());
+        }
+        ans.get(level).add(root.val);
+        robot(root.left, ans, level + 1);
+        robot(root.right, ans, level + 1);
+    }
 
-		if (root == null) {
-			return rt;
-		}
+    // solution 2：迭代
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
 
-		Deque<TreeNode> deque = new LinkedList<TreeNode>();
-		deque.add(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
 
-		int toBePrinted = 1;
-		int nextLevel = 0;
+        while (!queue.isEmpty()) {
+            List<Integer> current = new ArrayList<>();
 
-		List<Integer> level = new LinkedList<Integer>();
+            // 当前层的元素个数
+            int length = queue.size();
+            for (int i = 0; i < length; ++i) {
+                TreeNode node = queue.remove();
 
-		while (!deque.isEmpty()) {
+                // 放入结果
+                current.add(node.val);
 
-			TreeNode p = deque.poll();
-			level.add(p.val);
-			toBePrinted--;
+                // 依次将 node 的左右子节点加入队列
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            ans.add(current);
+        }
+        return ans;
+    }
 
-			if (p.left != null) {
-				deque.addLast(p.left);
-				nextLevel++;
-			}
-
-			if (p.right != null) {
-				deque.addLast(p.right);
-				nextLevel++;
-			}
-
-			if (toBePrinted == 0) {
-				toBePrinted = nextLevel;
-				nextLevel = 0;
-				rt.add(new ArrayList<Integer>(level));
-				level.clear();
-			}
-
-		}
-
-		return rt;
-	}
-
-	public List<List<Integer>> levelOrder2(TreeNode root) {
-
-		List<List<Integer>> rt = new ArrayList<List<Integer>>();
-
-		if (root == null) {
-			return rt;
-		}
-
-		final TreeNode END = new TreeNode(0);
-
-		Deque<TreeNode> deque = new LinkedList<TreeNode>();
-		List<Integer> level = new LinkedList<Integer>();
-
-		deque.add(root);
-		deque.add(END);
-
-		while (!deque.isEmpty()) {
-
-			TreeNode p = deque.pop();
-
-			if (p == END) {
-				rt.add(new ArrayList<Integer>(level));
-				level.clear();
-
-				if (!deque.isEmpty()) {
-					deque.add(END);
-				}
-			} else {
-				level.add(p.val);
-
-				if (p.left != null) {
-					deque.add(p.left);
-				}
-
-				if (p.right != null) {
-					deque.add(p.right);
-				}
-			}
-		}
-
-		return rt;
-	}
 }

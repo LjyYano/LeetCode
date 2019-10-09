@@ -1,28 +1,45 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import common.TreeNode;
 
 public class L094_Binary_Tree_Inorder_Traversal {
 
-	List<Integer> rt = new ArrayList<Integer>();
+    // solution 1：递归
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        robot(root, ans);
+        return ans;
+    }
 
-	public List<Integer> inorderTraversal(TreeNode root) {
+    private void robot(TreeNode root, List<Integer> ans) {
+        if (root == null) {
+            return;
+        }
+        // 左根右
+        robot(root.left, ans);
+        ans.add(root.val);
+        robot(root.right, ans);
+    }
 
-		rt.clear();
-		inorder(root);
-		return rt;
-	}
-
-	void inorder(TreeNode node) {
-
-		if (node == null) {
-			return;
-		}
-
-		inorder(node.left);
-		rt.add(node.val);
-		inorder(node.right);
-	}
-
+    // solution 2：迭代
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
+            // 一直放入左儿子（左）
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            // 访问当前元素（根），把右儿子入栈（右）
+            if (!stack.isEmpty()) {
+                root = stack.pop();
+                ans.add(root.val);
+                root = root.right;
+            }
+        }
+        return ans;
+    }
 }
