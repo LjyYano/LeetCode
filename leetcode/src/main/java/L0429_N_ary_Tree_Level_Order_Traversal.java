@@ -1,7 +1,6 @@
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
+import java.util.Stack;
 
 import common.Node;
 
@@ -39,17 +38,18 @@ public class L0429_N_ary_Tree_Level_Order_Traversal {
         if (root == null) {
             return ans;
         }
-        Deque<Node> deque = new ArrayDeque<>();
-        deque.push(root);
-        while (!deque.isEmpty()) {
-            Node tmp = deque.pop();
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node tmp = stack.pop();
             if (tmp != null) {
                 ans.add(tmp.val);
-                if (tmp.children == null) {
+                List<Node> children = tmp.children;
+                if (children == null) {
                     continue;
                 }
-                for (int i = tmp.children.size() - 1; i >= 0; i--) {
-                    deque.push(tmp.children.get(i));
+                for (int i = children.size() - 1; i >= 0; i--) {
+                    stack.push(children.get(i));
                 }
             }
         }

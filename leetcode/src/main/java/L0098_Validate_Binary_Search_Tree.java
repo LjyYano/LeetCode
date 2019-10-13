@@ -1,42 +1,48 @@
+import java.util.Stack;
+
 import common.TreeNode;
 
 public class L0098_Validate_Binary_Search_Tree {
 
-	boolean failed = false;
+    // 递归
+    public boolean isValidBST(TreeNode root) {
+        // 用long型
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
 
-	// Ҫ��long��������int
-	// �����漰��Integer.MIN_VALUE����������ִ���
-	// ����{Integer.MIN_VALUE}������������
-	long last = Long.MIN_VALUE;
+    private boolean isValidBST(TreeNode root, long min, long max) {
+        if (root == null) {
+            return true;
+        }
+        if (root.val >= max || root.val <= min) {
+            return false;
+        }
+        return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
+    }
 
-	public boolean isValidBST(TreeNode root) {
+    // 迭代
+    public boolean isValidBST2(TreeNode root) {
+        long min = Long.MIN_VALUE;
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
+            // 一直放入左儿子（左）
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            // 访问当前元素（根），把右儿子入栈（右）
+            if (!stack.isEmpty()) {
+                root = stack.pop();
 
-		if (root == null) {
-			return true;
-		}
+                // 若 root.val <= min，则该树不是 BST
+                if (root.val <= min) {
+                    return false;
+                }
+                min = root.val;
+                root = root.right;
+            }
+        }
+        return true;
+    }
 
-		inorder(root);
-		return !failed;
-	}
-
-	private void inorder(TreeNode root) {
-
-		if (root == null || failed) {
-			return;
-		}
-
-		// ��
-		inorder(root.left);
-
-		// �У��൱����������еĴ�ӡ����
-		// ֻ������һ�����������Կռ临�Ӷ���O(1)
-		// ��ͳ�������ǽ���һ��ArrayList��Ȼ���ж���������Ƿ��ǵ����ģ����ǿռ临�Ӷ���O(n)
-		if (last >= root.val) {
-			failed = true;
-		}
-		last = root.val;
-
-		// ��
-		inorder(root.right);
-	}
 }
