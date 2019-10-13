@@ -4,31 +4,30 @@ import common.TreeNode;
 
 public class L0230_Kth_Smallest_Element_in_a_BST {
 
-	public int kthSmallest(TreeNode root, int k) {
+    public int kthSmallest(TreeNode root, int k) {
 
-		if (root == null) {
-			return -1;
-		}
+        if (root == null) {
+            return 0;
+        }
 
-		Stack<TreeNode> stack = new Stack<TreeNode>();
-		TreeNode p = root;
+        Stack<TreeNode> stack = new Stack<>();
 
-		while (p != null || !stack.isEmpty()) {
+        while (!stack.isEmpty() || root != null) {
 
-			while (p != null) {
-				stack.push(p);
-				p = p.left;
-			}
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
 
-			if (!stack.isEmpty()) {
-				p = stack.pop();
-				if (--k == 0) {
-					return p.val;
-				}
-				p = p.right;
-			}
-		}
+            if (!stack.isEmpty()) {
+                root = stack.pop();
+                if (--k == 0) {
+                    return root.val;
+                }
+                root = root.right;
+            }
+        }
 
-		return 0;
-	}
+        return 0;
+    }
 }
