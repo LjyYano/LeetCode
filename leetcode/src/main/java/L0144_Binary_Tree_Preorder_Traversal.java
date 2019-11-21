@@ -14,13 +14,17 @@ public class L0144_Binary_Tree_Preorder_Traversal {
     }
 
     private void robot(TreeNode p, List<Integer> ans) {
+        // 根左右
         if (p == null) {
             return;
         }
-        // 根左右
         ans.add(p.val);
-        robot(p.left, ans);
-        robot(p.right, ans);
+        if (p.left != null) {
+            robot(p.left, ans);
+        }
+        if (p.right != null) {
+            robot(p.right, ans);
+        }
     }
 
     // solution 2：迭代
@@ -35,8 +39,12 @@ public class L0144_Binary_Tree_Preorder_Traversal {
             if (tmp != null) {
                 ans.add(tmp.val);
                 // 将其孩子节点压入栈中（先右节点、再左节点）
-                stack.add(tmp.right);
-                stack.add(tmp.left);
+                if (tmp.right != null) {
+                    stack.add(tmp.right);
+                }
+                if (tmp.left != null) {
+                    stack.add(tmp.left);
+                }
             }
         }
         return ans;
