@@ -1,12 +1,20 @@
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Objects;
-
+import common.Node;
+import java.util.List;
 import common.TreeNode;
 
-public class L0297_Serialize_and_Deserialize_Binary_Tree {
+// https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Codec {
 
-    public String serialize(TreeNode root) {
+        public String serialize(TreeNode root) {
 
         if (root == null) {
             return "";
@@ -61,3 +69,7 @@ public class L0297_Serialize_and_Deserialize_Binary_Tree {
         return root[0];
     }
 }
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.deserialize(codec.serialize(root));

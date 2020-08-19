@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class L0165_Compare_Version_Numbers {
-
-	public static int compareVersion(String version1, String version2) {
+// https://leetcode-cn.com/problems/compare-version-numbers/
+class L0165_Compare_Version_Numbers {
+    public int compareVersion(String version1, String version2) {
 
 		String[] v1 = version1.split("\\.");
 		String[] v2 = version2.split("\\.");
@@ -34,5 +34,4 @@ public class L0165_Compare_Version_Numbers {
 
 		return 0;
 	}
-
 }

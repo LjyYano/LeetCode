@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+// https://leetcode-cn.com/problems/word-pattern/
 public class L0290_Word_Pattern {
-
-	public boolean wordPattern(String pattern, String str) {
+    public boolean wordPattern(String pattern, String str) {
 
 		if (pattern == null || str == null) {
 			return false;
@@ -26,7 +26,7 @@ public class L0290_Word_Pattern {
 					return false;
 				}
 			} else {
-				// ��֤1��1��ӳ��
+				// 保证1对1的映射
 				if (map.containsValue(strs[i])) {
 					return false;
 				}
@@ -35,5 +35,7 @@ public class L0290_Word_Pattern {
 		}
 
 		return true;
-	}
+	
+        
+    }
 }

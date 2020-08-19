@@ -1,14 +1,14 @@
-import java.util.Iterator;
 
-//Java Iterator interface reference:
-//https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
-public class L0284_Peeking_Iterator implements Iterator<Integer> {
+// https://leetcode-cn.com/problems/peeking-iterator/
+// Java Iterator interface reference:
+// https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
+class PeekingIterator implements Iterator<Integer> {
 
 	private Iterator<Integer> iterator;
 	private boolean hasPeeked;
 	private Integer peekedElement;
 
-	public L0284_Peeking_Iterator(Iterator<Integer> iterator) {
+	public PeekingIterator(Iterator<Integer> iterator) {
 		// initialize any member here.
 		this.iterator = iterator;
 	}

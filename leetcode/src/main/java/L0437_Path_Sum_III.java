@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0437_Path_Sum_III {
-
+// https://leetcode-cn.com/problems/path-sum-iii/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0437_Path_Sum_III {
     public int pathSum(TreeNode root, int sum) {
         if (root == null) {
             return 0;
@@ -25,5 +35,4 @@ public class L0437_Path_Sum_III {
 
         return ans;
     }
-
 }

@@ -1,9 +1,8 @@
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.Set;
 
+// https://leetcode-cn.com/problems/contains-duplicate-iii/
 public class L0220_Contains_Duplicate_III {
-
-	public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
 
 		if (k < 1 || t < 0 || nums == null || nums.length < 2) {
 			return false;
@@ -16,7 +15,6 @@ public class L0220_Contains_Duplicate_III {
 			SortedSet<Long> subSet = set.subSet((long) nums[j] - t,
 					(long) nums[j] + t + 1);
 
-			// ���ϲ�Ϊ�գ����ʾ�ҵ���
 			if (!subSet.isEmpty()) {
 				return true;
 			}
@@ -29,6 +27,6 @@ public class L0220_Contains_Duplicate_III {
 		}
 
 		return false;
-	}
 
+	}
 }

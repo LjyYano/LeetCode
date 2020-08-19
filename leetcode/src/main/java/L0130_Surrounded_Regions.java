@@ -1,100 +1,58 @@
-import java.util.HashSet;
-import java.util.LinkedList;
+import java.util.List;
 
-public class L0130_Surrounded_Regions {
-
-	static class Point {
-		int x;
-		int y;
-
-		Point(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
-	}
-
-	HashSet<String> boarderConnected;
-
-	String pointId(int x, int y) {
-		return x + "," + y;
-	}
-
-	boolean connectIfNotConnected(char[][] board, int x, int y) {
-
-		if (x < 0 || y < 0)
-			return false;
-		if (x >= board.length || y >= board[0].length)
-			return false;
-
-		if (board[x][y] == 'X')
-			return false;
-
-		String id = pointId(x, y);
-		if (boarderConnected.contains(id))
-			return false;
-
-		boarderConnected.add(id);
-
-		return true;
-	}
-
-	void connectBoarder(char[][] board, int x, int y) {
-
-		LinkedList<Point> queue = new LinkedList<Point>();
-
-		queue.add(new Point(x, y));
-
-		while (!queue.isEmpty()) {
-			Point p = queue.poll();
-
-			if (connectIfNotConnected(board, p.x, p.y)) {
-
-				queue.add(new Point(p.x + 1, p.y));
-				queue.add(new Point(p.x - 1, p.y));
-
-				queue.add(new Point(p.x, p.y + 1));
-				queue.add(new Point(p.x, p.y - 1));
-			}
-
-		}
-
-	}
-
+// https://leetcode-cn.com/problems/surrounded-regions/
+class L0130_Surrounded_Regions {
 	public void solve(char[][] board) {
-
-		int mx = board.length;
-		if (mx < 3)
-			return;
-
-		int my = board[0].length;
-		if (my < 3)
-			return;
-
-		boarderConnected = new HashSet<String>();
-
-		int x;
-		int y;
-
-		for (x = 0; x < mx; x++) {
-			connectBoarder(board, x, 0);
-			connectBoarder(board, x, my - 1);
-		}
-
-		for (y = 0; y < my; y++) {
-			connectBoarder(board, 0, y);
-			connectBoarder(board, mx - 1, y);
-		}
-
-		for (x = 0; x < mx; x++) {
-			for (y = 0; y < my; y++) {
-				if (board[x][y] == 'O') {
-					if (!boarderConnected.contains(pointId(x, y))) {
-						board[x][y] = 'X';
-					}
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board[0].length; j++) {
+				if ((i == 0 || i == board.length - 1 || j == 0 || j == board[0].length - 1) && board[i][j] == 'O') {
+					bfs(i, j, board);
 				}
 			}
 		}
 
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board[0].length; j++) {
+				if (board[i][j] == '$') {
+					board[i][j] = 'O';
+				} else if (board[i][j] == 'O') {
+					board[i][j] = 'X';
+				}
+			}
+		}
 	}
 
+	private void bfs(int i, int j, char[][] board) {
+		int m = board.length, n = board[0].length;
+		LinkedList<Integer> queue = new LinkedList<>();
+		queue.offer(i * n + j);
+		board[i][j] = '$';
+
+		while (!queue.isEmpty()) {
+			int index = queue.pop();
+			int x = index / n;
+			int y = index % n;
+
+			// 广度（上下左右）找 O 点
+			if (x > 0 && board[x - 1][y] == 'O') {
+				board[x - 1][y] = '$';
+				queue.offer((x - 1) * n + y);
+			}
+
+			if (y > 0 && board[x][y - 1] == 'O') {
+				board[x][y - 1] = '$';
+				queue.offer(x * n + y - 1);
+			}
+
+			if (x + 1 < m && board[x + 1][y] == 'O') {
+				board[x + 1][y] = '$';
+				queue.offer((x + 1) * n + y);
+			}
+
+			if (y + 1 < n && board[x][y + 1] == 'O') {
+				board[x][y + 1] = '$';
+				queue.offer(x * n + y + 1);
+			}
+		}
+	}
 }

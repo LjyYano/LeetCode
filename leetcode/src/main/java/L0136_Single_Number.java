@@ -1,6 +1,7 @@
-public class L0136_Single_Number {
 
-	public int singleNumber(int[] nums) {
+// https://leetcode-cn.com/problems/single-number/
+public class L0136_Single_Number {
+    public int singleNumber(int[] nums) {
 
 		int n = 0;
 
@@ -9,6 +10,7 @@ public class L0136_Single_Number {
 		}
 
 		return n;
-	}
-
+	
+        
+    }
 }

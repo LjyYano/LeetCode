@@ -1,9 +1,19 @@
+import common.Node;
+import java.util.List;
 import java.util.ArrayList;
-
 import common.TreeNode;
 
-public class L0662_Maximum_Width_of_Binary_Tree {
-
+// https://leetcode-cn.com/problems/maximum-width-of-binary-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0662_Maximum_Width_of_Binary_Tree {
     public int widthOfBinaryTree(TreeNode root) {
         int[] ans = new int[1];
         robot(root, ans, new ArrayList<>(), 0, 1);

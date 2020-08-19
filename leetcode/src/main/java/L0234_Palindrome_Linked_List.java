@@ -1,5 +1,15 @@
 import common.ListNode;
+import common.Node;
 
+// https://leetcode-cn.com/problems/palindrome-linked-list/
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
 public class L0234_Palindrome_Linked_List {
 
 	public boolean isPalindrome(ListNode head) {
@@ -11,13 +21,13 @@ public class L0234_Palindrome_Linked_List {
 		ListNode slow = head;
 		ListNode fast = head;
 
-		// �ҵ������е�
+		// 找到链表中点
 		while (fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;
 		}
 
-		// ��ת�������
+		//翻转后段链表
 		ListNode tail = reverseList(slow);
 
 		while (head != slow) {
@@ -44,7 +54,7 @@ public class L0234_Palindrome_Linked_List {
 		ListNode tail = head.next;
 		ListNode reversed = reverseList(head.next);
 
-		// ǰ��תtail��head
+		// 前后翻转tail和head
 		tail.next = head;
 		head.next = null;
 

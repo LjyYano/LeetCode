@@ -1,15 +1,15 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
+// https://leetcode-cn.com/problems/permutation-sequence/
 public class L0060_Permutation_Sequence {
-
-	public String getPermutation(int n, int k) {
+    public String getPermutation(int n, int k) {
 
 		if (n <= 0 || k <= 0) {
 			return "";
 		}
 
-		String rt = "";
+		String result = "";
 
 		List<Integer> list = new ArrayList<Integer>();
 		int fact = 1;
@@ -24,12 +24,13 @@ public class L0060_Permutation_Sequence {
 		for (int i = 0; i < n; i++) {
 			fact /= (n - i);
 			int index = k / fact;
-			rt += list.get(index);
+			result += list.get(index);
 			list.remove(index);
 			k %= fact;
 		}
 
-		return rt;
-	}
-
+		return result;
+	
+        
+    }
 }

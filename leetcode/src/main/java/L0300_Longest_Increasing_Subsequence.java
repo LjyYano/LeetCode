@@ -1,30 +1,18 @@
-import java.util.Arrays;
 
-public class L0300_Longest_Increasing_Subsequence {
-
+// https://leetcode-cn.com/problems/longest-increasing-subsequence/
+class L0300_Longest_Increasing_Subsequence {
 	public int lengthOfLIS(int[] nums) {
-
-		if (nums == null || nums.length == 0) {
-			return 0;
-		}
-
 		int n = nums.length;
+		int[] dp = new int[n];
+		int ans = 0;
 
-		int max = 1;
-
-		int[] s = new int[n];
-		Arrays.fill(s, 1);
-
-		// �Ե����ϣ���̬�滮���
-		for (int i = 1; i < n; i++) {
+		for (int i = 0; i < n; i++) {
+			dp[i] = 1;
 			for (int j = 0; j < i; j++) {
-				if (nums[j] < nums[i]) {
-					s[i] = Math.max(s[i], s[j] + 1);
-				}
+				dp[i] = Math.max(dp[i], nums[i] > nums[j] ? dp[j] + 1 : 0);
 			}
-			max = Math.max(max, s[i]);
+			ans = Math.max(ans, dp[i]);
 		}
-
-		return max;
+		return ans;
 	}
 }

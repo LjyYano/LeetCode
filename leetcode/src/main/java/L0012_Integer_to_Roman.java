@@ -1,6 +1,7 @@
-public class L0012_Integer_to_Roman {
 
-	public String intToRoman(int num) {
+// https://leetcode-cn.com/problems/integer-to-roman/
+public class L0012_Integer_to_Roman {
+    public String intToRoman(int num) {
 
 		final int[] values = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5,
 				4, 1 };
@@ -10,7 +11,7 @@ public class L0012_Integer_to_Roman {
 
 		StringBuilder result = new StringBuilder();
 
-		for (int i = 0; num > 0; i++) {
+		for (int i = 0; num>0; i++) {
 
 			int count = num / values[i];
 			num %= values[i];

@@ -1,6 +1,9 @@
+
+// https://leetcode-cn.com/problems/valid-palindrome/
 public class L0125_Valid_Palindrome {
 
-	public boolean isPalindrome(String s) {
+
+	public static boolean isPalindrome(String s) {
 
 		if (s.length() <= 1) {
 			return true;
@@ -23,13 +26,11 @@ public class L0125_Valid_Palindrome {
 		return true;
 	}
 
-	boolean isValid(String s, int i) {
+	static boolean isValid(String s, int i) {
 
 		char c = s.charAt(i);
 
-		return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
-				|| (c >= 'A' && c <= 'Z');
+		return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')|| (c >= 'A' && c <= 'Z');
 
 	}
-
 }

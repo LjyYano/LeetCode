@@ -1,10 +1,11 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
+// https://leetcode-cn.com/problems/palindrome-partitioning/
 public class L0131_Palindrome_Partitioning {
-
-	public List<List<String>> partition(String s) {
+    
+    	public static List<List<String>> partition(String s) {
 
 		List<List<String>> rt = new ArrayList<List<String>>();
 
@@ -55,5 +56,4 @@ public class L0131_Palindrome_Partitioning {
 		return true;
 
 	}
-
 }

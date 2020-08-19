@@ -1,27 +1,19 @@
+import common.Node;
 import java.util.Stack;
-
 import common.TreeNode;
 
-public class L0098_Validate_Binary_Search_Tree {
-
-    // 递归
+// https://leetcode-cn.com/problems/validate-binary-search-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0098_Validate_Binary_Search_Tree {
     public boolean isValidBST(TreeNode root) {
-        // 用long型
-        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
-    }
-
-    private boolean isValidBST(TreeNode root, long min, long max) {
-        if (root == null) {
-            return true;
-        }
-        if (root.val >= max || root.val <= min) {
-            return false;
-        }
-        return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
-    }
-
-    // 迭代
-    public boolean isValidBST2(TreeNode root) {
         long min = Long.MIN_VALUE;
         Stack<TreeNode> stack = new Stack<>();
         while (!stack.isEmpty() || root != null) {
@@ -44,5 +36,4 @@ public class L0098_Validate_Binary_Search_Tree {
         }
         return true;
     }
-
 }

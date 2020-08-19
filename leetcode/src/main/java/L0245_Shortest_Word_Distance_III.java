@@ -1,6 +1,6 @@
-import java.util.Objects;
 
-public class L0245_Shortest_Word_Distance_III {
+// https://leetcode-cn.com/problems/shortest-word-distance-iii/
+class L0245_Shortest_Word_Distance_III {
     public int shortestWordDistance(String[] words, String word1, String word2) {
         int w1 = -1, w2 = -1, ans = Integer.MAX_VALUE;
         boolean same = word1.equals(word2);

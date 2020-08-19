@@ -1,6 +1,7 @@
-public class L0171_Excel_Sheet_Column_Number {
 
-	public int titleToNumber(String s) {
+// https://leetcode-cn.com/problems/excel-sheet-column-number/
+public class L0171_Excel_Sheet_Column_Number {
+    public int titleToNumber(String s) {
 
 		int n = 0;
 		int p = 1;
@@ -11,6 +12,7 @@ public class L0171_Excel_Sheet_Column_Number {
 		}
 
 		return n;
-	}
-
+	
+        
+    }
 }

@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0404_Sum_of_Left_Leaves {
-
+// https://leetcode-cn.com/problems/sum-of-left-leaves/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0404_Sum_of_Left_Leaves {
     public int sumOfLeftLeaves(TreeNode root) {
         int[] ans = new int[1];
         robot(root, ans, false);

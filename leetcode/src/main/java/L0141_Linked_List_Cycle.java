@@ -1,31 +1,27 @@
 import common.ListNode;
+import common.Node;
 
+// https://leetcode-cn.com/problems/linked-list-cycle/
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
 public class L0141_Linked_List_Cycle {
-
-	public boolean hasCycle(ListNode head) {
-
-		if (head == null) {
-			return false;
-		}
-
-		ListNode slow = head;
-		ListNode fast = head.next;
-
-		while (fast != null) {
-
-			if (fast.next == null || fast.next.next == null) {
-				return false;
-			}
-
-			if (slow == fast) {
-				return true;
-			}
-
-			fast = fast.next.next;
-			slow = slow.next;
-		}
-
-		return false;
-	}
-
+    public boolean hasCycle(ListNode head) {
+        if(head == null) return false;
+        ListNode slow = head, fast = head;
+        while(slow.next != null && fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) return true; 
+        }
+        return false;
+    }
 }

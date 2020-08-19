@@ -1,6 +1,7 @@
-public class L0221_Maximal_Square {
 
-	public int maximalSquare(char[][] matrix) {
+// https://leetcode-cn.com/problems/maximal-square/
+public class L0221_Maximal_Square {
+    public int maximalSquare(char[][] matrix) {
 
 		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
 			return 0;
@@ -12,7 +13,7 @@ public class L0221_Maximal_Square {
 		int[][] dp = new int[mx][my];
 		int max = 0;
 
-		// ��ʼ����0��
+		// 初始化第0行
 		for (int i = 0; i < my; i++) {
 			if (matrix[0][i] == '1') {
 				dp[0][i] = 1;
@@ -20,7 +21,7 @@ public class L0221_Maximal_Square {
 			}
 		}
 
-		// ��ʼ����0��
+		// 初始化第0列
 		for (int i = 1; i < mx; i++) {
 			if (matrix[i][0] == '1') {
 				dp[i][0] = 1;
@@ -28,7 +29,7 @@ public class L0221_Maximal_Square {
 			}
 		}
 
-		// dp[x][y] = min(dp[x-1][y], dp[x][y-1], dp[x-1][y-1]) + 1
+		// dp[x][y]=min(dp[x-1][y],dp[x][y-1],dp[x-1][y-1])+1
 		for (int x = 1; x < mx; x++) {
 			for (int y = 1; y < my; y++) {
 
@@ -42,6 +43,7 @@ public class L0221_Maximal_Square {
 		}
 
 		return max * max;
-	}
-
+	
+        
+    }
 }

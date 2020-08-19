@@ -1,6 +1,7 @@
-public class L0014_Longest_Common_Prefix {
 
-	public String longestCommonPrefix(String[] strs) {
+// https://leetcode-cn.com/problems/longest-common-prefix/
+public class L0014_Longest_Common_Prefix {
+    public String longestCommonPrefix(String[] strs) {
 
 		if (strs == null || strs.length == 0) {
 			return "";
@@ -23,5 +24,4 @@ public class L0014_Longest_Common_Prefix {
 
 		return string;
 	}
-
 }

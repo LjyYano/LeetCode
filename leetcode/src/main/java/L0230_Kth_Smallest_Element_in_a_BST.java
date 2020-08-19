@@ -1,9 +1,18 @@
+import common.Node;
 import java.util.Stack;
-
 import common.TreeNode;
 
-public class L0230_Kth_Smallest_Element_in_a_BST {
-
+// https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0230_Kth_Smallest_Element_in_a_BST {
     public int kthSmallest(TreeNode root, int k) {
 
         if (root == null) {

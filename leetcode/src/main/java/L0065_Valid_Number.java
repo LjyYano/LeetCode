@@ -1,6 +1,7 @@
-public class L0065_Valid_Number {
 
-	public boolean isNumber(String s) {
+// https://leetcode-cn.com/problems/valid-number/
+public class L0065_Valid_Number {
+    public boolean isNumber(String s) {
 
 		if (s == null || s.length() == 0) {
 			return false;
@@ -9,7 +10,7 @@ public class L0065_Valid_Number {
 		char[] chars = s.toCharArray();
 		int start = 0, end = chars.length - 1;
 
-		// ��ȥǰ��Ŀո�
+		// 除去前后的空格
 		while ((start < end) && chars[start] == ' ') {
 			start++;
 		}
@@ -17,7 +18,7 @@ public class L0065_Valid_Number {
 			end--;
 		}
 
-		// ��Ϊwhile��ѭ��������start < end��sΪ�ո�ʱ����ʣ��һ���ո�
+		// 因为while的循环条件是start < end，s为空格时，会剩下一个空格
 		if (chars[start] == ' ') {
 			return false;
 		}
@@ -60,5 +61,4 @@ public class L0065_Valid_Number {
 
 		return num;
 	}
-
 }

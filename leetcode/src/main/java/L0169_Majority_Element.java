@@ -1,21 +1,21 @@
-public class L0169_Majority_Element {
 
-	public int majorityElement(int[] nums) {
-
-		int m = nums[0];
-		int c = 1;
-
-		for (int i = 1; i < nums.length; i++) {
-			if (m == nums[i]) {
-				c++;
-			} else if (c > 1) {
-				c--;
-			} else {
-				m = nums[i];
-			}
-		}
-
-		return m;
-	}
-
+// https://leetcode-cn.com/problems/majority-element/
+class L0169_Majority_Element {
+    public int majorityElement(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
+        int count = 0, ans = 0;
+        
+        for(int v : nums) {
+            if(count == 0) {
+                ans = v;
+                count = 1;
+            } else if(v != ans) {
+                count--;
+            } else {
+                count++;
+            }
+        }
+        
+        return ans;
+    }
 }

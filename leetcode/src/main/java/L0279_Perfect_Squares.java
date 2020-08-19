@@ -1,26 +1,18 @@
-import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
-public class L0279_Perfect_Squares {
-
+// https://leetcode-cn.com/problems/perfect-squares/
+class L0279_Perfect_Squares {
 	public int numSquares(int n) {
-
-		int[] dp = new int[n + 1];
-
-		Arrays.fill(dp, Integer.MAX_VALUE);
-
-		// ������ƽ������1
-		for (int i = 0; i * i <= n; i++) {
-			dp[i * i] = 1;
-		}
-
-		for (int a = 1; a <= n; a++) {
-			for (int b = 1; a + b * b <= n; b++) {
-				// ȡ��Сֵ��a + b * bҲ������ƽ����
-				dp[a + b * b] = Math.min(dp[a] + 1, dp[a + b * b]);
+		List<Integer> ans = new ArrayList<>();
+		ans.add(0);
+		while (ans.size() <= n) {
+			int m = ans.size(), val = Integer.MAX_VALUE;
+			for (int i = 1; i * i <= m; i++) {
+				val = Math.min(val, ans.get(m - i * i) + 1);
 			}
+			ans.add(val);
 		}
-
-		return dp[n];
+		return ans.get(n);
 	}
-
 }

@@ -1,7 +1,7 @@
-public class L0223_Rectangle_Area {
 
-	public int computeArea(int A, int B, int C, int D, int E, int F, int G,
-			int H) {
+// https://leetcode-cn.com/problems/rectangle-area/
+public class L0223_Rectangle_Area {
+    public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
 
 		int area = (C - A) * (D - B) + (G - E) * (H - F);
 
@@ -16,6 +16,7 @@ public class L0223_Rectangle_Area {
 
 		return area - (top - bottom) * (right - left);
 
-	}
-
+	
+        
+    }
 }

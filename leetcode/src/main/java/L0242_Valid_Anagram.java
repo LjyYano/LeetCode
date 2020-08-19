@@ -1,42 +1,32 @@
-public class L0242_Valid_Anagram {
+import java.util.HashMap;
+import java.util.Map;
 
-	public boolean isAnagram(String s, String t) {
+// https://leetcode-cn.com/problems/valid-anagram/
+class L0242_Valid_Anagram {
+    public boolean isAnagram(String s, String t) {
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey(s.charAt(i))) {
+                map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
+            } else {
+                map.put(s.charAt(i), 1);
+            }
+        }
 
-		if (s == null || t == null) {
-			return false;
-		}
+        for (int i = 0; i < t.length(); i++) {
+            if (!map.containsKey(t.charAt(i))) {
+                return false;
+            }
+            int old = map.get(t.charAt(i));
+            if (old == 0) {
+                return false;
+            }
+            map.put(t.charAt(i), old - 1);
+        }
 
-		if (s.length() != t.length()) {
-			return false;
-		}
-
-		if (s.equals(t)) {
-			return false;
-		}
-
-		int len = s.length();
-		int[] map = new int[26];
-
-		// ͳ��s��ÿ���ַ����ֵĴ���
-		for (int i = 0; i < len; i++) {
-			map[s.charAt(i) - 'a']++;
-		}
-
-		// ��ȥt����Ӧ�ַ����ִ���
-		for (int i = 0; i < len; i++) {
-			map[t.charAt(i) - 'a']--;
-			if (map[t.charAt(i) - 'a'] < 0) {
-				return false;
-			}
-		}
-
-		for (int i = 0; i < 26; i++) {
-			if (map[i] != 0) {
-				return false;
-			}
-		}
-
-		return true;
-	}
-
+        return true;
+    }
 }

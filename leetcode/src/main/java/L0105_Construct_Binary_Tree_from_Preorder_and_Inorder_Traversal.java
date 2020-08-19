@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
-
+// https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
     public TreeNode buildTree(int[] pre, int[] in) {
         return robot(pre, in, 0, 0, in.length - 1);
     }

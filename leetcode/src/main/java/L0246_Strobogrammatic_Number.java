@@ -1,7 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class L0246_Strobogrammatic_Number {
+// https://leetcode-cn.com/problems/strobogrammatic-number/
+class L0246_Strobogrammatic_Number {
     public boolean isStrobogrammatic(String num) {
         if (num == null || num.length() == 0) {
             return false;

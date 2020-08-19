@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0543_Diameter_of_Binary_Tree {
-
+// https://leetcode-cn.com/problems/diameter-of-binary-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0543_Diameter_of_Binary_Tree {
     public int diameterOfBinaryTree(TreeNode root) {
         int[] ans = new int[1];
         robot(root, ans);

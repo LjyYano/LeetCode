@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+// https://leetcode-cn.com/problems/fraction-to-recurring-decimal/
 public class L0166_Fraction_to_Recurring_Decimal {
-
-	public String fractionToDecimal(int numerator, int denominator) {
+    public String fractionToDecimal(int numerator, int denominator) {
 
 		String sign = "";
 
@@ -16,12 +16,12 @@ public class L0166_Fraction_to_Recurring_Decimal {
 
 		String intPart = Math.abs(n / d) + "";
 
-		// ���������ֱ�ӷ��ؽ��
+		// 如果整除，直接返回结果
 		if (n % d == 0) {
 			return sign + intPart;
 		}
 
-		// ����С������
+		// 计算小数部分
 		n %= d;
 		n *= 10;
 
@@ -51,5 +51,4 @@ public class L0166_Fraction_to_Recurring_Decimal {
 
 		return sign + intPart + "." + fractionalPart;
 	}
-
 }

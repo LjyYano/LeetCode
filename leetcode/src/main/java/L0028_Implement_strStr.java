@@ -1,6 +1,7 @@
-public class L0028_Implement_strStr {
 
-	public int strStr(String haystack, String needle) {
+// https://leetcode-cn.com/problems/implement-strstr/
+public class L0028_Implement_strStr {
+    public int strStr(String haystack, String needle) {
 
 		if (haystack == null || needle == null
 				|| haystack.length() < needle.length()) {
@@ -31,6 +32,7 @@ public class L0028_Implement_strStr {
 		}
 
 		return -1;
-	}
-
+	
+        
+    }
 }

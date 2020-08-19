@@ -1,6 +1,7 @@
-public class L0009_Palindrome_Number {
 
-	public boolean isPalindrome(int x) {
+// https://leetcode-cn.com/problems/palindrome-number/
+public class L0009_Palindrome_Number {
+    public boolean isPalindrome(int x) {
 
 		if (x < 0) {
 			return false;
@@ -26,5 +27,7 @@ public class L0009_Palindrome_Number {
 		}
 
 		return true;
-	}
+	
+        
+    }
 }

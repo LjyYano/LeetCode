@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
+// https://leetcode-cn.com/problems/house-robber-ii/
 public class L0213_House_Robber_II {
-
-	public int rob(int[] nums) {
+	public static int rob(int[] nums) {
 
 		if (nums == null || nums.length == 0) {
 			return 0;
@@ -20,7 +20,7 @@ public class L0213_House_Robber_II {
 				help(Arrays.copyOfRange(nums, 1, nums.length)));
 	}
 
-	public int help(int[] nums) {
+	public static int help(int[] nums) {
 
 		if (nums.length == 0) {
 			return 0;
@@ -41,5 +41,4 @@ public class L0213_House_Robber_II {
 
 		return P[nums.length - 1];
 	}
-
 }

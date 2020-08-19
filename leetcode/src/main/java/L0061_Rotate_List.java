@@ -1,8 +1,17 @@
 import common.ListNode;
+import common.Node;
 
+// https://leetcode-cn.com/problems/rotate-list/
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
 public class L0061_Rotate_List {
-
-	public ListNode rotateRight(ListNode head, int k) {
+    public ListNode rotateRight(ListNode head, int k) {
 
 		if (head == null)
 			return null;
@@ -30,5 +39,4 @@ public class L0061_Rotate_List {
 			head.next = null; // cut
 		}
 	}
-
 }

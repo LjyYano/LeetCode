@@ -1,6 +1,7 @@
-public class L0275_H_Index_II {
 
-	public int hIndex(int[] citations) {
+// https://leetcode-cn.com/problems/h-index-ii/
+public class L0275_H_Index_II {
+    public int hIndex(int[] citations) {
 
 		int n = citations.length;
 		int low = 0, high = n - 1;
@@ -20,6 +21,7 @@ public class L0275_H_Index_II {
 		}
 
 		return n - low;
-	}
-
+	
+        
+    }
 }

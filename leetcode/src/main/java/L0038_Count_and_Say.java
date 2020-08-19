@@ -1,5 +1,6 @@
-public class L0038_Count_and_Say {
 
+// https://leetcode-cn.com/problems/count-and-say/
+public class L0038_Count_and_Say {
 	public String countAndSay(int n) {
 
 		String init = "1";
@@ -32,8 +33,7 @@ public class L0038_Count_and_Say {
 		}
 
 		s += "" + count + last;
-
+		
 		return s;
 	}
-
 }

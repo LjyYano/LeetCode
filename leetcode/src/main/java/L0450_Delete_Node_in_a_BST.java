@@ -1,8 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-
-public class L0450_Delete_Node_in_a_BST {
-
+// https://leetcode-cn.com/problems/delete-node-in-a-bst/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0450_Delete_Node_in_a_BST {
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {
             return null;
@@ -39,5 +48,4 @@ public class L0450_Delete_Node_in_a_BST {
         }
         return root;
     }
-
 }

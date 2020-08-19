@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+// https://leetcode-cn.com/problems/bulls-and-cows/
 public class L0299_Bulls_and_Cows {
-
-	public String getHint(String secret, String guess) {
+    public String getHint(String secret, String guess) {
 
 		if (secret == null || guess == null
 				|| secret.length() != guess.length()) {
@@ -13,10 +13,10 @@ public class L0299_Bulls_and_Cows {
 		char[] s = secret.toCharArray();
 		char[] g = guess.toCharArray();
 
-		int A = 0, B = 0, n = s.length;
+		int A = 0, B = 0;
 
-		// ͳ��bulls
-		for (int i = 0; i < n; i++) {
+		// 统计bulls
+		for (int i = 0; i < s.length; i++) {
 			if (s[i] == g[i]) {
 				s[i] = '#';
 				g[i] = '#';
@@ -24,11 +24,11 @@ public class L0299_Bulls_and_Cows {
 			}
 		}
 
-		// ͳ��cows
+		// 统计cows
 
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < s.length; i++) {
 			if (s[i] != '#') {
 				if (!map.containsKey(s[i])) {
 					map.put(s[i], 1);
@@ -40,7 +40,7 @@ public class L0299_Bulls_and_Cows {
 			}
 		}
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < g.length; i++) {
 			if (g[i] != '#') {
 				if (map.containsKey(g[i]) && map.get(g[i]) != 0) {
 					int times = map.get(g[i]);
@@ -52,5 +52,7 @@ public class L0299_Bulls_and_Cows {
 		}
 
 		return A + "A" + B + "B";
-	}
+	
+        
+    }
 }

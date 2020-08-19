@@ -1,8 +1,8 @@
-import java.util.LinkedList;
+import java.util.List;
 
+// https://leetcode-cn.com/problems/simplify-path/
 public class L0071_Simplify_Path {
-
-	public String simplifyPath(String path) {
+    public String simplifyPath(String path) {
 
 		if (path == null) {
 			return null;
@@ -18,11 +18,11 @@ public class L0071_Simplify_Path {
 
 			String token = names[i];
 
-			// token��".."�� ��ʾ�ϼ�·����ǰһ��·������ӡ
-			// token��"."�� ��ʾ��ǰ·����������ӡ
-			// token��"", ��ʾΪ����"/"��������������
-			// eat>0����ʾ��߲���ӡ
-			// ���򣬽�token��ջ
+			// token是".."， 表示上级路径，前一个路径不打印
+			// token是"."， 表示当前路径，自身不打印
+			// token是"", 表示为两个"/"相连，不做操作
+			// eat>0，表示左边不打印
+			// 否则，将token入栈
 			if (token.equals("..")) {
 				eat++;
 			} else if (token.equals(".")) {
@@ -43,18 +43,19 @@ public class L0071_Simplify_Path {
 
 		s.append("/");
 
-		// ���һ������"/"������while�ж�������>1
+		// 最后一个不加"/"，所以while判断条件是>1
 		while (stack.size() > 1) {
 			s.append(stack.pop());
 			s.append("/");
 		}
 
-		// ���һ������"/"
+		// 最后一个不加"/"
 		if (!stack.isEmpty()) {
 			s.append(stack.pop());
 		}
 
 		return s.toString();
-	}
-
+	
+        
+    }
 }

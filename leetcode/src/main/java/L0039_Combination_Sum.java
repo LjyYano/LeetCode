@@ -1,43 +1,33 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
-public class L0039_Combination_Sum {
-
-	public List<List<Integer>> combinationSum(int[] candidates, int target) {
-
-		if (candidates == null || candidates.length == 0) {
-			return new ArrayList<List<Integer>>();
-		}
-
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
-		ArrayList<Integer> cur = new ArrayList<Integer>();
-
-		Arrays.sort(candidates);
-		dfs(0, target, result, cur, candidates);
-
-		return result;
-	}
-
-	private void dfs(int start, int target, List<List<Integer>> result,
-			ArrayList<Integer> cur, int[] candidates) {
-
-		if (target == 0) {
-			result.add(new ArrayList<Integer>(cur));
-			return;
-		}
-
-		for (int i = start; i < candidates.length; i++) {
-
-			// candidates[i] > target����ݹ���������治�����ǽ�
-			if (candidates[i] > target) {
-				return;
-			}
-
-			cur.add(candidates[i]);
-			dfs(i, target - candidates[i], result, cur, candidates);
-			cur.remove(cur.size() - 1);
-		}
-	}
-
+// https://leetcode-cn.com/problems/combination-sum/
+class L0039_Combination_Sum {
+    public List<List<Integer>> combinationSum(int[] n, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if(n == null || n.length == 0) return ans;
+        
+        Arrays.sort(n);
+        robot(n, 0, target, ans, new ArrayList<Integer>());
+        return ans;
+    }
+    
+    private void robot(int[] n, int start, int left, List<List<Integer>> ans, List<Integer> tmp) {
+        if(left == 0) {
+            ans.add(new ArrayList<>(tmp));
+            return;
+        }
+        
+        for(int i = start; i < n.length; i++) {
+            // 如果不符合条件，则循环后面可以省略
+            if(left >= n[i]) {
+                tmp.add(n[i]);
+                robot(n, i, left - n[i], ans, tmp);
+                tmp.remove(tmp.size() - 1);
+            } else {
+                break;
+            }
+        }
+    }
 }

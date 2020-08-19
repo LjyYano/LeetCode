@@ -1,6 +1,7 @@
-public class L0036_Valid_Sudoku {
 
-	public boolean isValidSudoku(char[][] board) {
+// https://leetcode-cn.com/problems/valid-sudoku/
+public class L0036_Valid_Sudoku {
+    public boolean isValidSudoku(char[][] board) {
 
 		if (board == null || board.length != 9 || board[0].length != 9) {
 			return false;
@@ -65,5 +66,4 @@ public class L0036_Valid_Sudoku {
 
 		return true;
 	}
-
 }

@@ -1,35 +1,26 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-public class L0022_Generate_Parentheses {
+// https://leetcode-cn.com/problems/generate-parentheses/
+class L0022_Generate_Parentheses {
+    public List<String> generateParenthesis(int n) {
+        List<String> ans = new ArrayList<>();
+        generateParenthesisHelper(n, n, "", ans);
+        return ans;
+    }
 
-	public List<String> generateParenthesis(int n) {
+    private void generateParenthesisHelper(int left, int right, String gen, List<String> ans) {
+        if (left == 0 && right == 0) {
+            ans.add(gen);
+            return;
+        }
 
-		if (n <= 0) {
-			return new ArrayList<String>();
-		}
+        if (left > 0) {
+            generateParenthesisHelper(left - 1, right, gen + "(", ans);
+        }
 
-		ArrayList<String> rt = new ArrayList<String>();
-		dfs(rt, "", n, n);
-		return rt;
-	}
-
-	void dfs(ArrayList<String> rt, String s, int left, int right) {
-
-		if (left > right) {
-			return;
-		}
-
-		if (left == 0 && right == 0) {
-			rt.add(s);
-		}
-
-		if (left > 0) {
-			dfs(rt, s + "(", left - 1, right);
-		}
-
-		if (right > 0) {
-			dfs(rt, s + ")", left, right - 1);
-		}
-	}
+        if (right > left) {
+            generateParenthesisHelper(left, right - 1, gen + ")", ans);
+        }
+    }
 }

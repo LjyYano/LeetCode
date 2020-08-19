@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0104_Maximum_Depth_of_Binary_Tree {
-
+// https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0104_Maximum_Depth_of_Binary_Tree {
     public int maxDepth(TreeNode root) {
 
         if (root == null) {
@@ -13,5 +23,4 @@ public class L0104_Maximum_Depth_of_Binary_Tree {
 
         return left > right ? (left + 1) : (right + 1);
     }
-
 }

@@ -1,13 +1,19 @@
-import java.util.Objects;
-
+import common.Node;
 import common.TreeNode;
 
-public class L0449_Serialize_and_Deserialize_BST {
-
-    public class Codec {
+// https://leetcode-cn.com/problems/serialize-and-deserialize-bst/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Codec {
 
         // Encodes a tree to a single string.
-        // BST 的前序遍历
         public String serialize(TreeNode root) {
             if (root == null) {
                 return "";
@@ -41,7 +47,6 @@ public class L0449_Serialize_and_Deserialize_BST {
             }
             TreeNode root = new TreeNode(Integer.valueOf(pre[start]));
 
-            // 找到对应的 index
             int index = end + 1;
             for (int i = start + 1; i <= end; i++) {
                 if (Integer.valueOf(pre[i]) > root.val) {
@@ -56,7 +61,7 @@ public class L0449_Serialize_and_Deserialize_BST {
         }
 
     }
-    // Your Codec object will be instantiated and called as such:
-    // Codec codec = new Codec();
-    // codec.deserialize(codec.serialize(root));
-}
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec = new Codec();
+// codec.deserialize(codec.serialize(root));

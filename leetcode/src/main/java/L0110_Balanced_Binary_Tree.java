@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0110_Balanced_Binary_Tree {
-
+// https://leetcode-cn.com/problems/balanced-binary-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0110_Balanced_Binary_Tree {
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;

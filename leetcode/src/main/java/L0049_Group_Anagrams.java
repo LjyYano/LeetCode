@@ -1,55 +1,26 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
-public class L0049_Group_Anagrams {
-
+// https://leetcode-cn.com/problems/group-anagrams/
+class L0049_Group_Anagrams {
 	public List<List<String>> groupAnagrams(String[] strs) {
-
-		if (strs == null || strs.length == 0) {
-			return new ArrayList<List<String>>();
-		}
-
-		List<List<String>> rt = new ArrayList<List<String>>();
-
-		Map<String, ArrayList<Integer>> map = new HashMap<String, ArrayList<Integer>>();
-
-		// �ѵ��ʷ���
-		for (int i = 0; i < strs.length; i++) {
-			char[] c = strs[i].toCharArray();
-			Arrays.sort(c);
-			String k = Arrays.toString(c);
-			ArrayList<Integer> list = new ArrayList<Integer>();
-			if (map.containsKey(k)) {
-				list = map.get(k);
+		Map<String, List<String>> map = new HashMap<>();
+		for (String s : strs) {
+			// sort by letter
+			char[] array = s.toCharArray();
+			Arrays.sort(array);
+			String sortString = String.valueOf(array);
+			if (map.containsKey(sortString)) {
+				map.get(sortString).add(s);
+			} else {
+				List<String> list = new ArrayList<>();
+				list.add(s);
+				map.put(sortString, list);
 			}
-			list.add(i);
-			map.put(k, list);
 		}
-
-		for (String s : map.keySet()) {
-
-			List<Integer> l = map.get(s);
-			List<String> group = new ArrayList<String>();
-
-			// ����ͬ��ĸ�ĵ��ʷ���ͬһ��list
-			for (Integer i : l) {
-				group.add(strs[i]);
-			}
-
-			// ���ֵ�������
-			group.sort(new Comparator<String>() {
-				public int compare(String x, String y) {
-					return x.compareTo(y);
-				}
-			});
-
-			rt.add(group);
-		}
-
-		return rt;
+		return new ArrayList<>(map.values());
 	}
 }

@@ -1,42 +1,20 @@
-public class L0091_Decode_Ways {
 
-	public int numDecodings(String s) {
-
-		if (s == null || s.length() == 0) {
-			return 0;
-		}
-
-		int n = s.length();
-		char[] c = s.toCharArray();
-
-		// ����̨�ף���Ҫǰ������ֵ������������С��3
-		int[] step = new int[Math.max(n + 1, 3)];
-
-		step[0] = 1;
-		step[1] = 0;
-
-		// ��һ���ַ�����0�����һ����ʼΪ1
-		if (c[0] != '0') {
-			step[1] = 1;
-		}
-
-		// step[i] = step[i - 1] + step[i - 2];
-		// ֻ������step[i - 2]ʱ����Ҫ��c[i - 2]��c[i - 1]�жϣ�����Ƿ�<=26
-		for (int i = 2; i <= n; i++) {
-
-			step[i] = 0;
-
-			if (c[i - 1] != '0') {
-				step[i] += step[i - 1];
-			}
-
-			if (c[i - 2] != '0') {
-				if ((c[i - 2] - '0') * 10 + (c[i - 1] - '0') <= 26) {
-					step[i] += step[i - 2];
-				}
-			}
-		}
-
-		return step[n];
-	}
+// https://leetcode-cn.com/problems/decode-ways/
+class L0091_Decode_Ways {
+    public int numDecodings(String s) {
+        if(s == null || s.length() == 0) return 0;
+        int len = s.length();
+        int[] dp = new int[len + 1];
+        dp[0] = 1;
+        if(s.charAt(0) != '0') dp[1] = 1;
+        
+        for(int i = 2; i < len + 1; i ++){
+            if(s.charAt(i - 1) != '0')
+                dp[i] += dp[i - 1];
+            int val = Integer.valueOf(s.substring(i - 2, i));
+            if(val >= 10 && val <= 26)
+                dp[i] += dp[i - 2];
+        }
+        return dp[len];
+    }
 }

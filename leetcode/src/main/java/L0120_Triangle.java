@@ -1,34 +1,23 @@
 import java.util.List;
+import java.util.ArrayList;
 
-public class L0120_Triangle {
-
-	public int minimumTotal(List<List<Integer>> triangle) {
-
-		int size = triangle.size();
-
-		if (size == 0) {
-			return 0;
-		}
-
-		if (size == 1) {
-			return triangle.get(0).get(0);
-		}
-
-		int[] s = new int[size];
-
-		int k = 0;
-		for (Integer v : triangle.get(size - 1)) {
-			s[k++] = v;
-		}
-
-		for (int i = s.length - 2; i >= 0; i--) {
-			List<Integer> list = triangle.get(i);
-			for (int j = 0; j <= i; j++) {
-				s[j] = list.get(j) + Math.min(s[j], s[j + 1]);
-			}
-		}
-
-		return s[0];
-	}
-
+// https://leetcode-cn.com/problems/triangle/
+class L0120_Triangle {
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int k = triangle.size();
+        if(k == 0) return 0;
+        List<Integer> pre = triangle.get(0);
+        List<Integer> ans = new ArrayList<>();
+        for(int i = 1; i < triangle.size(); i++) {
+            List<Integer> now = triangle.get(i);
+            for(int j = 0; j < now.size(); j++) {
+                if(j == 0) ans.add(now.get(j) + pre.get(0));
+                else if(j == now.size() - 1) ans.add(now.get(j) + pre.get(j - 1));
+                else ans.add(now.get(j) + Math.min(pre.get(j), pre.get(j - 1)));
+            }
+            pre = new ArrayList(ans);
+            ans.clear();
+        }
+        return Collections.min(pre);
+    }
 }

@@ -1,61 +1,40 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
-public class L0018_4Sum {
+// https://leetcode-cn.com/problems/4sum/
+class L0018_4Sum {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+		List<List<Integer>> ans = new ArrayList<>();
+		if (nums == null || nums.length < 4)
+			return ans;
 
-	public List<List<Integer>> fourSum(int[] nums, int target) {
-
-		if (nums == null || nums.length < 4) {
-			return new ArrayList<List<Integer>>();
-		}
-
+		Set<List<Integer>> ansSet = new HashSet<>();
 		Arrays.sort(nums);
 
-		Set<List<Integer>> set = new HashSet<List<Integer>>();
-
-		// ��3Sumһ����ֻ�Ƕ���һ��ѭ��
-		for (int a = 0; a < nums.length - 3; a++) {
-
-			int target_3Sum = target - nums[a];
-
-			for (int b = a + 1; b < nums.length - 2; b++) {
-
-				int c = b + 1, d = nums.length - 1;
-
-				while (c < d) {
-
-					int sum = nums[b] + nums[c] + nums[d];
-
-					if (sum == target_3Sum) {
-
-						// ��������뼯��
-						List<Integer> tmp = new ArrayList<Integer>();
-						tmp.add(nums[a]);
-						tmp.add(nums[b]);
-						tmp.add(nums[c]);
-						tmp.add(nums[d]);
-						set.add(tmp);
-
-						// ȥ��
-						while (++c < d && nums[c - 1] == nums[c])
-							;
-						while (--d > c && nums[d + 1] == nums[d])
-							;
-					}
-
-					else if (sum < target_3Sum) {
-						c++;
+		for (int i0 = 0; i0 <= nums.length - 4; i0++) {
+			// 结果不会更好
+			if (i0 > 0 && nums[i0] == nums[i0 - 1])
+				continue;
+			for (int i1 = i0 + 1; i1 <= nums.length - 3; i1++) {
+				int sum = target - nums[i0] - nums[i1];
+				int i2 = i1 + 1, i3 = nums.length - 1;
+				while (i2 < i3) {
+					if (nums[i2] + nums[i3] > sum) {
+						i3--;
+					} else if (nums[i2] + nums[i3] < sum) {
+						i2++;
 					} else {
-						d--;
+						ansSet.add(Arrays.asList(nums[i0], nums[i1], nums[i2], nums[i3]));
+						i2++;
 					}
 				}
 			}
+
 		}
-
-		return new ArrayList<List<Integer>>(set);
-	}
-
+		ans.addAll(ansSet);
+		return ans;
+    }
 }

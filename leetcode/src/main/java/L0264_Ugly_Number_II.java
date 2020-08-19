@@ -1,31 +1,20 @@
-public class L0264_Ugly_Number_II {
+import java.util.List;
+import java.util.ArrayList;
 
+// https://leetcode-cn.com/problems/ugly-number-ii/
+class L0264_Ugly_Number_II {
 	public int nthUglyNumber(int n) {
-
-		int[] nums = new int[n];
-
-		nums[0] = 1;
-
-		int i = 0, j = 0, k = 0, t = 1;
-
-		while (t < n) {
-			int min = Math.min(Math.min(nums[i] * 2, nums[j] * 3), nums[k] * 5);
-
-			nums[t++] = min;
-
-			if (nums[i] * 2 == min) {
-				i++;
-			}
-
-			if (nums[j] * 3 == min) {
-				j++;
-			}
-
-			if (nums[k] * 5 == min) {
-				k++;
-			}
+		List<Integer> ans = new ArrayList<>();
+		ans.add(1);
+		int i0 = 0, i1 = 0, i2 = 0;
+		while (ans.size() < n) {
+			int m0 = 2 * ans.get(i0),m1 = 3 * ans.get(i1),m2 = 5 * ans.get(i2);
+			int min = Math.min(m0, Math.min(m1, m2));
+			if (min == m0) i0++;
+			if (min == m1) i1++;
+			if (min == m2) i2++;
+			ans.add(min);
 		}
-
-		return nums[n - 1];
+		return ans.get(n - 1);
 	}
 }

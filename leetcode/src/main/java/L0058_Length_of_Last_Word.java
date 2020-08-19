@@ -1,6 +1,7 @@
-public class L0058_Length_of_Last_Word {
 
-	public int lengthOfLastWord(String s) {
+// https://leetcode-cn.com/problems/length-of-last-word/
+public class L0058_Length_of_Last_Word {
+    public int lengthOfLastWord(String s) {
 
 		if (s == null || s.length() == 0) {
 			return 0;
@@ -19,6 +20,7 @@ public class L0058_Length_of_Last_Word {
 		}
 
 		return len;
-	}
-
+	
+        
+    }
 }

@@ -1,32 +1,19 @@
-public class L0003_Longest_Substring_Without_Repeating_Characters {
+import java.util.HashSet;
+import java.util.Set;
 
+// https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+class L0003_Longest_Substring_Without_Repeating_Characters {
 	public int lengthOfLongestSubstring(String s) {
-
-		if (s == null) {
-			return 0;
-		}
-
-		if (s.length() == 0 || s.length() == 1) {
-			return s.length();
-		}
-
-		char[] c = s.toCharArray();
-
-		// barrier��0~i�У���һ�����ظ��ַ���λ��
-		int barrier = 0;
-		int maxLen = 1;
-
-		for (int i = 1; i < c.length; i++) {
-			for (int j = i - 1; j >= barrier; j--) {
-				if (c[i] == c[j]) {
-					// ��һ�����ظ��ַ���λ��Ϊj+1����Ϊÿ��j��i-1�ݼ���barrier
-					barrier = j + 1;
-					break;
-				}
+		int start = 0, end = 0, ans = 0;
+		Set<Character> set = new HashSet<>();
+		while (end < s.length()) {
+			if (!set.contains(s.charAt(end))) {
+				set.add(s.charAt(end++));
+				ans = Math.max(ans, set.size());
+			} else {
+				set.remove(s.charAt(start++));
 			}
-			maxLen = Math.max(maxLen, i - barrier + 1);
 		}
-
-		return maxLen;
+		return ans;
 	}
 }

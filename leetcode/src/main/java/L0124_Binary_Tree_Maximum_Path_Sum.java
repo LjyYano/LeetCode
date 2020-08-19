@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0124_Binary_Tree_Maximum_Path_Sum {
-
+// https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0124_Binary_Tree_Maximum_Path_Sum {
     public int maxPathSum(TreeNode root) {
         int[] ans = new int[] { Integer.MIN_VALUE };
         robot(root, ans);

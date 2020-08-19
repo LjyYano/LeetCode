@@ -1,11 +1,11 @@
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
+import java.util.HashSet;
 import java.util.Set;
 
+// https://leetcode-cn.com/problems/isomorphic-strings/
 public class L0205_Isomorphic_Strings {
-
-	public boolean isIsomorphic(String s, String t) {
+    public boolean isIsomorphic(String s, String t) {
 
 		if (s == null || t == null) {
 			return false;
@@ -22,7 +22,6 @@ public class L0205_Isomorphic_Strings {
 			char c1 = s.charAt(i);
 			char c2 = t.charAt(i);
 
-			// ��֤һ��һ��ӳ���ϵ
 			if (map.containsKey(c1)) {
 				if (map.get(c1) != c2) {
 					return false;
@@ -37,6 +36,7 @@ public class L0205_Isomorphic_Strings {
 		}
 
 		return true;
-	}
-
+	
+        
+    }
 }

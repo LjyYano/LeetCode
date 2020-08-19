@@ -1,6 +1,7 @@
-public class L0263_Ugly_Number {
 
-	public boolean isUgly(int num) {
+// https://leetcode-cn.com/problems/ugly-number/
+public class L0263_Ugly_Number {
+    public boolean isUgly(int num) {
 
 		if (num < 1) {
 			return false;
@@ -19,5 +20,7 @@ public class L0263_Ugly_Number {
 		}
 
 		return true;
-	}
+	
+        
+    }
 }

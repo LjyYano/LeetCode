@@ -1,8 +1,16 @@
 import common.ListNode;
+import common.Node;
 
-public class L0148_Sort_List {
-
-	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+// https://leetcode-cn.com/problems/sort-list/
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class L0148_Sort_List {	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
 		ListNode rt = new ListNode(0);
 		ListNode h = rt;
@@ -47,6 +55,4 @@ public class L0148_Sort_List {
 
 		return mergeTwoLists(sortList(head), sortList(h2));
 
-	}
-
-}
+	}}

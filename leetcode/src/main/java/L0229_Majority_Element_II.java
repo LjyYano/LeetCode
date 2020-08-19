@@ -1,60 +1,40 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-public class L0229_Majority_Element_II {
-
-	public List<Integer> majorityElement(int[] nums) {
-
-		List<Integer> rt = new ArrayList<Integer>();
-
-		if (nums == null || nums.length == 0) {
-			return rt;
-		}
-
-		int m1 = nums[0];
-		int m2 = 0;
-
-		int c1 = 1;
-		int c2 = 0;
-
-		for (int i = 1; i < nums.length; i++) {
-			int x = nums[i];
-			if (x == m1) {
-				c1++;
-			} else if (x == m2) {
-				c2++;
-			} else if (c1 == 0) {
-				m1 = x;
-				c1 = 1;
-			} else if (c2 == 0) {
-				m2 = x;
-				c2 = 1;
-			} else {
-				c1--;
-				c2--;
-			}
-		}
-
-		c1 = 0;
-		c2 = 0;
-
-		for (int i = 0; i < nums.length; i++) {
-			if (m1 == nums[i]) {
-				c1++;
-			} else if (m2 == nums[i]) {
-				c2++;
-			}
-		}
-
-		if (c1 > nums.length / 3) {
-			rt.add(m1);
-		}
-
-		if (c2 > nums.length / 3) {
-			rt.add(m2);
-		}
-
-		return rt;
-	}
-
+// https://leetcode-cn.com/problems/majority-element-ii/
+class L0229_Majority_Element_II {
+    public List<Integer> majorityElement(int[] nums) {
+        List<Integer> ans = new ArrayList<>();
+        if(nums == null || nums.length == 0) return ans;
+        int n1 = 0, n2 = 0, c1 = 0, c2 = 0;
+        
+        for(int v : nums) {
+            if(v == n1) c1++;
+            else if(v == n2) c2++;
+            else if(c1 == 0) {
+                c1 = 1;
+                n1 = v;
+            }
+            else if(c2 == 0) {
+                c2 = 1;
+                n2 = v;
+            }
+            else {
+                c1--;
+                c2--;
+            }
+        }
+        
+        c1 = 0; c2 = 0;
+        
+        for(int v : nums) {
+            if(v == n1) c1++;
+            else if(v == n2) c2++;
+        }
+        
+        if(c1 > nums.length / 3) ans.add(n1);
+        if(c2 > nums.length / 3) ans.add(n2);
+        
+        return ans;
+    }
 }

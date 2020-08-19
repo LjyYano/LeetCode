@@ -1,6 +1,6 @@
-public class L0189_Rotate_Array {
 
-	void reverse(int[] nums, int st, int ed) {
+// https://leetcode-cn.com/problems/rotate-array/
+public class L0189_Rotate_Array {	static void reverse(int[] nums, int st, int ed) {
 
 		while (st < ed) {
 			int t = nums[st];
@@ -11,7 +11,7 @@ public class L0189_Rotate_Array {
 		}
 	}
 
-	public void rotate(int[] nums, int k) {
+	public static void rotate(int[] nums, int k) {
 
 		int length = nums.length;
 
@@ -23,6 +23,4 @@ public class L0189_Rotate_Array {
 		reverse(nums, 0, length - k - 1);
 		reverse(nums, length - k, length - 1);
 		reverse(nums, 0, length - 1);
-	}
-
-}
+	}}

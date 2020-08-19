@@ -1,6 +1,6 @@
-public class L0215_Kth_Largest_Element_in_an_Array {
 
-	public int findKthLargest(int[] nums, int k) {
+// https://leetcode-cn.com/problems/kth-largest-element-in-an-array/
+public class L0215_Kth_Largest_Element_in_an_Array {	public int findKthLargest(int[] nums, int k) {
 
 		return findK(nums, nums.length - k, 0, nums.length - 1);
 
@@ -17,7 +17,7 @@ public class L0215_Kth_Largest_Element_in_an_Array {
 		if (p == k) {
 			return nums[p];
 		} else if (p < k) {
-			// ���k��ģ�����Ҫ������
+			// 求第k大的，所以要反过来
 			return findK(nums, k, p + 1, high);
 		} else {
 			return findK(nums, k, low, p - 1);
@@ -48,6 +48,4 @@ public class L0215_Kth_Largest_Element_in_an_Array {
 		int t = nums[low];
 		nums[low] = nums[high];
 		nums[high] = t;
-	}
-
-}
+	}}

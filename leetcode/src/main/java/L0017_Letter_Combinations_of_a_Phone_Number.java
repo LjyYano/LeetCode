@@ -1,48 +1,29 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
-public class L0017_Letter_Combinations_of_a_Phone_Number {
-
-	static final char[][] CHAR_MAP = { {},// 0
-			{},// 1
-			{ 'a', 'b', 'c' },// 2
-			{ 'd', 'e', 'f' },// 3
-			{ 'g', 'h', 'i' },// 4
-			{ 'j', 'k', 'l' },// 5
-			{ 'm', 'n', 'o' },// 6
-			{ 'p', 'q', 'r', 's' },// 7
-			{ 't', 'u', 'v' },// 8
-			{ 'w', 'x', 'y', 'z' } // 9
-	};
-
-	List<String> result;
-	char[] stack;
-
+// https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+class L0017_Letter_Combinations_of_a_Phone_Number {
 	public List<String> letterCombinations(String digits) {
-
+		List<String> ans = new ArrayList<>();
 		if (digits == null || digits.length() == 0) {
-			return new ArrayList<String>();
+			return ans;
 		}
-
-		result = new ArrayList<String>();
-		stack = new char[digits.length()];
-
-		dfs(digits.toCharArray(), 0);
-
-		return result;
+		List<String> list = Arrays.asList("", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz");
+		robot(0, ans, list, "", digits);
+		return ans;
 	}
 
-	private void dfs(char[] digits, int p) {
+	private void robot(int start, List<String> ans, List<String> list, String tmp, String digits) {
+		if (tmp.length() == digits.length()) {
+			ans.add(tmp);
+			return;
+		}
 
-		if (p == digits.length) {
-			result.add(new String(stack));
-		} else {
-
-			int num = digits[p] - '0';
-
-			for (char c : CHAR_MAP[num]) {
-				stack[p] = c;
-				dfs(digits, p + 1);
+		int num = digits.charAt(start) - '0';
+		if (num > 1) {
+			for (Character c : list.get(num - 1).toCharArray()) {
+				robot(start + 1, ans, list, tmp + c, digits);
 			}
 		}
 	}

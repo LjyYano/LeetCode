@@ -1,14 +1,14 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
+// https://leetcode-cn.com/problems/spiral-matrix/
 public class L0054_Spiral_Matrix {
+    public List<Integer> spiralOrder(int[][] matrix) {
 
-	public List<Integer> spiralOrder(int[][] matrix) {
-
-		List<Integer> rt = new ArrayList<Integer>();
+		List<Integer> result = new ArrayList<Integer>();
 
 		if (matrix == null || matrix.length == 0) {
-			return rt;
+			return result;
 		}
 
 		int startx = 0, endx = matrix.length - 1;
@@ -16,29 +16,24 @@ public class L0054_Spiral_Matrix {
 
 		while (startx <= endx && starty <= endy) {
 
-			// �ϱߵ��У���������
 			for (int y = starty; y <= endy; y++) {
-				rt.add(matrix[startx][y]);
+				result.add(matrix[startx][y]);
 			}
 
-			// �ұߵ��У����ϵ���
 			for (int x = startx + 1; x <= endx; x++) {
-				rt.add(matrix[x][endy]);
+				result.add(matrix[x][endy]);
 			}
 
-			// ����л��б����꣬���˳�ѭ��
 			if (startx == endx || starty == endy) {
 				break;
 			}
 
-			// �±ߵ��У���������
 			for (int y = endy - 1; y >= starty; y--) {
-				rt.add(matrix[endx][y]);
+				result.add(matrix[endx][y]);
 			}
 
-			// ��ߵ��У����µ���
 			for (int x = endx - 1; x >= startx + 1; x--) {
-				rt.add(matrix[x][starty]);
+				result.add(matrix[x][starty]);
 			}
 
 			startx++;
@@ -47,7 +42,6 @@ public class L0054_Spiral_Matrix {
 			endy--;
 		}
 
-		return rt;
+		return result;
 	}
-
 }

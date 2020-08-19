@@ -1,45 +1,32 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.ArrayList;
 
-public class L0040_Combination_Sum_II {
+// https://leetcode-cn.com/problems/combination-sum-ii/
+class L0040_Combination_Sum_II {
+    public List<List<Integer>> combinationSum2(int[] n, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(n);
+        combinationSum2Dfs(n, 0, target, ans, new ArrayList<>());
+        return ans;
+    }
 
-	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+    private void combinationSum2Dfs(int[] n, int start, int left, List<List<Integer>> ans, List<Integer> tmp) {
+        if(left == 0) {
+            ans.add(new ArrayList<>(tmp));
+            return;
+        }
 
-		if (candidates == null || candidates.length == 0) {
-			return new ArrayList<List<Integer>>();
-		}
+        for (int i = start; i < n.length; i++) {
+            if (i > start && n[i] == n[i - 1]) continue;
 
-		Set<List<Integer>> rt = new HashSet<List<Integer>>();
-		ArrayList<Integer> cur = new ArrayList<Integer>();
+            if (left < n[i]) {
+                break;
+            }
 
-		Arrays.sort(candidates);
-		dfs(0, target, rt, cur, candidates);
-
-		return new ArrayList<List<Integer>>(rt);
-	}
-
-	private void dfs(int start, int target, Set<List<Integer>> rt,
-			ArrayList<Integer> cur, int[] candidates) {
-
-		if (target == 0) {
-			rt.add(new ArrayList<Integer>(cur));
-			return;
-		}
-
-		for (int i = start; i < candidates.length; i++) {
-
-			// candidates[i] > target����ݹ���������治�����ǽ�
-			if (candidates[i] > target) {
-				return;
-			}
-
-			cur.add(candidates[i]);
-			dfs(i + 1, target - candidates[i], rt, cur, candidates);
-			cur.remove(cur.size() - 1);
-		}
-	}
-
+            tmp.add(n[i]);
+            combinationSum2Dfs(n, i + 1, left - n[i], ans, tmp);
+            tmp.remove(tmp.size() - 1);
+        }
+    }
 }

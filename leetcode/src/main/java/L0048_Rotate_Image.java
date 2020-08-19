@@ -1,41 +1,27 @@
-public class L0048_Rotate_Image {
 
-	public void rotate(int[][] matrix) {
-
-		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-			return;
-		}
-
-		final int mx = matrix.length;
-		final int my = matrix[0].length;
-		int x, y;
-
-		int t;
-
-		int _my = my - 1;
-		for (x = 0; x < mx - 1; x++) {
-			for (y = 0; y < _my; y++) {
-				int ny = mx - 1 - x;
-				int nx = my - 1 - y;
-
-				t = matrix[y][x];
-				matrix[y][x] = matrix[ny][nx];
-				matrix[ny][nx] = t;
-
-			}
-			_my--;
-		}
-
-		for (x = 0; x < mx; x++) {
-			for (y = 0; y < my / 2; y++) {
-				int ny = my - 1 - y;
-				int nx = x;
-
-				t = matrix[y][x];
-				matrix[y][x] = matrix[ny][nx];
-				matrix[ny][nx] = t;
-			}
-		}
-
-	}
+// https://leetcode-cn.com/problems/rotate-image/
+class L0048_Rotate_Image {
+    public void rotate(int[][] matrix) {
+        if(matrix == null || matrix[0] == null || matrix.length != matrix[0].length) return;
+        int n = matrix.length;
+        // 中轴互换
+        for(int i = 0; i < n / 2; i++) {
+            for(int j = 0; j < n; j++) {
+                swap(matrix, i, j, n - i - 1, j);
+            }
+        }
+        
+        // 正对角线互换
+        for(int i = 0; i < n; i++) {
+            for(int j = i + 1; j < n; j++) {
+                swap(matrix, i, j, j, i);
+            }
+        }
+    }
+    
+    private void swap(int[][] matrix, int x0, int y0, int x1, int y1) {
+        int tmp = matrix[x0][y0];
+        matrix[x0][y0] = matrix[x1][y1];
+        matrix[x1][y1] = tmp;
+    }
 }

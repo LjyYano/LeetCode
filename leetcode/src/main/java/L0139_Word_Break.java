@@ -1,21 +1,26 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
-public class L0139_Word_Break {
-
-	public static boolean wordBreak(String s, Set<String> wordDict) {
-
-		boolean[] P = new boolean[s.length() + 1];
-		P[0] = true;
-
+// https://leetcode-cn.com/problems/word-break/
+class L0139_Word_Break {
+    public boolean wordBreak(String s, List<String> wordDict) {
+		if (s == null || s.length() == 0) {
+			return false;
+		}
+		Set<String> set = new HashSet<>(wordDict);
+		boolean[] dp = new boolean[s.length() + 1];
+		dp[0] = true;
 		for (int i = 0; i < s.length(); i++) {
 			for (int j = 0; j <= i; j++) {
-				if (P[j] && wordDict.contains(s.substring(j, i + 1))) {
-					P[i + 1] = true;
+				if (dp[j] && set.contains(s.substring(j, i + 1))) {
+					dp[i + 1] = true;
+					break;
 				}
 			}
+			// System.out.println(Arrays.toString(dp));
 		}
-
-		return P[s.length()];
+		return dp[s.length()];
 	}
-
 }

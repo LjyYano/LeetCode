@@ -1,81 +1,48 @@
-import java.util.Collections;
-import java.util.Stack;
+import java.util.List;
 
-public class L0227_Basic_Calculator_II {
-
+// https://leetcode-cn.com/problems/basic-calculator-ii/
+class L0227_Basic_Calculator_II {
 	public int calculate(String s) {
-
+		int ans = 0;
 		if (s == null || s.length() == 0) {
-			return 0;
+			return ans;
 		}
 
-		Stack<Integer> stack = new Stack<Integer>();
+		Deque<Integer> deque = new LinkedList<>();
+		char operator = '+'; // 记录上一个操作符
+		int tmp = 0;
 
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
-
-			if (Character.isDigit(c)) {
-				int val = c - '0';
-				// ������ȡ��
-				while (i + 1 < s.length() && Character.isDigit(s.charAt(i + 1))) {
-					val = val * 10 + s.charAt(++i) - '0';
-				}
-				// ջ���� * / �����������
-				if (!stack.isEmpty()
-						&& (stack.peek() == 2 || stack.peek() == 3)) {
-					int sign = stack.pop();
-					int op = stack.pop();
-					int rt = 0;
-					if (sign == 2) {
-						rt = op * val;
-					} else {
-						rt = op / val;
-					}
-					stack.push(rt);
-				} else {
-					stack.push(val);
-				}
-			} else if (c == ' ') {
+		for (int i = 0; i < s.length() || tmp > 0; i++) {
+			char c = i < s.length() ? s.charAt(i) : '+';
+			if (c == ' ') {
 				continue;
+			}
+			if (c >= '0' && c <= '9') {
+				tmp = tmp * 10 + c - '0';
 			} else {
-				switch (c) {
+				switch (operator) {
 				case '+':
-					stack.push(0);
+					deque.add(tmp);
 					break;
 				case '-':
-					stack.push(1);
+					deque.add(-tmp);
 					break;
 				case '*':
-					stack.push(2);
+					deque.add(deque.pollLast() * tmp);
 					break;
 				case '/':
-					stack.push(3);
+					deque.add(deque.pollLast() / tmp);
 					break;
-
 				}
+				tmp = 0;
+				operator = c;
 			}
 		}
 
-		if (stack.isEmpty()) {
-			return 0;
+		for (int v : deque) {
+			ans += v;
 		}
 
-		// ��ΪҪ�������Ҽ��㣬����Ҫreverse
-		Collections.reverse(stack);
-
-		// ����+-
-		int rt = stack.pop();
-		while (!stack.isEmpty()) {
-			int sign = stack.pop();
-			int op = stack.pop();
-			if (sign == 0) {
-				rt += op;
-			} else {
-				rt -= op;
-			}
-		}
-
-		return rt;
+		return ans;
 	}
-
 }

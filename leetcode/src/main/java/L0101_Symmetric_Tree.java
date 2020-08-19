@@ -1,29 +1,19 @@
+import common.Node;
 import java.util.Stack;
-
 import common.TreeNode;
 
-public class L0101_Symmetric_Tree {
-
-    // recursively
+// https://leetcode-cn.com/problems/symmetric-tree/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0101_Symmetric_Tree {
     public boolean isSymmetric(TreeNode root) {
-        return robot(root, root);
-    }
-
-    boolean robot(TreeNode p, TreeNode q) {
-
-        if (p == null && q == null) {
-            return true;
-        }
-
-        if (p == null || q == null) {
-            return false;
-        }
-
-        return p.val == q.val && robot(p.left, q.right) && robot(p.right, q.left);
-    }
-
-    // iteratively
-    public boolean isSymmetric2(TreeNode root) {
 
         if (root == null) {
             return true;
@@ -59,5 +49,4 @@ public class L0101_Symmetric_Tree {
 
         return true;
     }
-
 }

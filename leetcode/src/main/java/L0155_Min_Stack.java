@@ -1,8 +1,7 @@
 import java.util.Stack;
 
-public class L0155_Min_Stack {
-
-	class MinStack {
+// https://leetcode-cn.com/problems/min-stack/
+class MinStack {
 
 		Stack<Integer> stack = new Stack<Integer>();
 		Stack<Integer> min = new Stack<Integer>();
@@ -38,5 +37,3 @@ public class L0155_Min_Stack {
 			throw new IllegalStateException();
 		}
 	}
-
-}

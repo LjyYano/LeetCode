@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0563_Binary_Tree_Tilt {
-
+// https://leetcode-cn.com/problems/binary-tree-tilt/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0563_Binary_Tree_Tilt {
     public int findTilt(TreeNode root) {
         int[] ans = new int[1];
         robot(root, ans);

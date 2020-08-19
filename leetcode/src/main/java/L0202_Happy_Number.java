@@ -1,39 +1,7 @@
-import java.util.HashSet;
-import java.util.Set;
 
+// https://leetcode-cn.com/problems/happy-number/
 public class L0202_Happy_Number {
-
-	public boolean isHappy(int n) {
-
-		if (n < 1) {
-			return false;
-		}
-
-		if (n == 1) {
-			return true;
-		}
-
-		Set<Integer> set = new HashSet<Integer>();
-		set.add(n);
-
-		while (true) {
-			int s = 0;
-			while (n > 0) {
-				s += (n % 10) * (n % 10);
-				n /= 10;
-			}
-			System.out.println(s);
-			if (s == 1) {
-				return true;
-			} else if (set.contains(s)) {
-				return false;
-			}
-			set.add(s);
-			n = s;
-		}
-	}
-
-	public boolean isHappy2(int n) {
+    public boolean isHappy(int n) {
 
 		if (n < 1) {
 			return false;
@@ -51,7 +19,6 @@ public class L0202_Happy_Number {
 			n /= 10;
 		}
 
-		return isHappy2(s);
+		return isHappy(s);
 	}
-
 }

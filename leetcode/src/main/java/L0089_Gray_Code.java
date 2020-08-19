@@ -1,21 +1,21 @@
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
+// https://leetcode-cn.com/problems/gray-code/
 public class L0089_Gray_Code {
+    public List<Integer> grayCode(int n) {
 
-	public List<Integer> grayCode(int n) {
-
-		List<Integer> rt = new ArrayList<Integer>();
+		List<Integer> result = new ArrayList<Integer>();
 
 		if (n < 0) {
-			return rt;
+			return result;
 		}
 
 		for (int i = 0; i < Math.pow(2, n); i++) {
-			rt.add((i >> 1) ^ i);
+			result.add((i >> 1) ^ i);
 		}
 
-		return rt;
-	}
+		return result;
 
+	}
 }

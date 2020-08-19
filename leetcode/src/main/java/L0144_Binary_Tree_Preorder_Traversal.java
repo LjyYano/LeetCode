@@ -1,12 +1,19 @@
-import java.util.ArrayList;
+import common.Node;
 import java.util.List;
-import java.util.Stack;
-
+import java.util.ArrayList;
 import common.TreeNode;
 
-public class L0144_Binary_Tree_Preorder_Traversal {
-
-    // solution 1：递归
+// https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0144_Binary_Tree_Preorder_Traversal {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         robot(root, ans);
@@ -26,28 +33,4 @@ public class L0144_Binary_Tree_Preorder_Traversal {
             robot(p.right, ans);
         }
     }
-
-    // solution 2：迭代
-    public List<Integer> preorderTraversal2(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        // 将根节点入栈
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            // 取出栈顶元素
-            TreeNode tmp = stack.pop();
-            if (tmp != null) {
-                ans.add(tmp.val);
-                // 将其孩子节点压入栈中（先右节点、再左节点）
-                if (tmp.right != null) {
-                    stack.add(tmp.right);
-                }
-                if (tmp.left != null) {
-                    stack.add(tmp.left);
-                }
-            }
-        }
-        return ans;
-    }
-
 }

@@ -1,35 +1,20 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
+import common.Node;
 import java.util.List;
-import java.util.Queue;
-
+import java.util.ArrayList;
 import common.TreeNode;
 
-public class L0515_Find_Largest_Value_in_Each_Tree_Row {
-
-    // solution 1：递归
+// https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0515_Find_Largest_Value_in_Each_Tree_Row {
     public List<Integer> largestValues(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
-        robot(root, ans, 0);
-        return ans;
-    }
-
-    private void robot(TreeNode root, List<Integer> ans, int level) {
-        if (root == null) {
-            return;
-        }
-
-        if (ans.size() <= level) {
-            ans.add(Integer.MIN_VALUE);
-        }
-
-        ans.set(level, Math.max(ans.get(level), root.val));
-        robot(root.left, ans, level + 1);
-        robot(root.right, ans, level + 1);
-    }
-
-    // solution 2：迭代
-    public List<Integer> largestValues2(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         if (root == null) {
             return ans;

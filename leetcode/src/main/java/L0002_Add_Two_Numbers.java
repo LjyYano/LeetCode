@@ -1,49 +1,65 @@
 import common.ListNode;
+import common.Node;
 
-public class L0002_Add_Two_Numbers {
+// https://leetcode-cn.com/problems/add-two-numbers/
 
-	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode(int x) { val = x; }
+ * }
+ */
+class L0002_Add_Two_Numbers {
 
-		if (l1 == null && l2 == null) {
-			return null;
-		}
+    /**
+     * auto generate, don't delete start
+     */
+    public class ListNode {
+        int val;
+        ListNode next;
 
-		if (l1 == null) {
-			return l2;
-		}
+        ListNode(int x) {
+            val = x;
+        }
+    }
 
-		if (l2 == null) {
-			return l1;
-		}
+    /**
+     * end
+     */
 
-		ListNode p1 = l1;
-		ListNode p2 = l2;
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-		int carry = 0;
+        if (l1 == null || l2 == null) {
+            return null;
+        }
 
-		ListNode head = new ListNode(0);
-		ListNode result = head;
+        ListNode rt = new ListNode(0);
+        ListNode head = rt;
 
-		while (carry != 0 || p1 != null || p2 != null) {
+        while (l1 != null || l2 != null) {
 
-			int v1 = 0;
-			if (p1 != null) {
-				v1 = p1.val;
-				p1 = p1.next;
-			}
+            int v1 = l1 == null ? 0 : l1.val;
+            int v2 = l2 == null ? 0 : l2.val;
 
-			int v2 = 0;
-			if (p2 != null) {
-				v2 = p2.val;
-				p2 = p2.next;
-			}
+            int carry = (rt.val + v1 + v2) / 10;
+            rt.val = (rt.val + v1 + v2) % 10;
 
-			int tmp = v1 + v2 + carry;
-			carry = tmp / 10;
-			head.next = new ListNode(tmp % 10);
-			head = head.next;
-		}
+            if (l1 != null) {
+                l1 = l1.next;
+            }
 
-		return result.next;
-	}
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+
+            if (l1 != null || l2 != null || carry != 0) {
+                rt.next = new ListNode(carry);
+                rt = rt.next;
+            }
+        }
+
+        return head;
+    }
 }

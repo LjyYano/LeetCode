@@ -1,40 +1,28 @@
+
+// https://leetcode-cn.com/problems/house-robber/
 public class L0198_House_Robber {
-
-	public int rob(int[] nums) {
-
-		int take = 0;
-		int nonTake = 0;
-		int max = 0;
-
-		for (int i = 0; i < nums.length; i++) {
-			take = nums[i] + nonTake;
-			nonTake = max;
-			max = Math.max(take, nonTake);
-		}
-
-		return max;
-	}
-
-	public int rob2(int[] nums) {
-
-		if (nums.length == 0) {
-			return 0;
-		}
-
-		if (nums.length == 1) {
-			return nums[0];
-		}
-
-		int[] P = new int[nums.length];
-
-		P[0] = nums[0];
-		P[1] = Math.max(nums[0], nums[1]);
-
-		for (int i = 2; i < nums.length; i++) {
-			P[i] = Math.max(nums[i] + P[i - 2], P[i - 1]);
-		}
-
-		return P[nums.length - 1];
-	}
-
+    
+    public static int[] rt;
+    
+    public int solve(int idx, int[] nums) {
+        if(idx < 0) {
+            return 0;
+        }
+        
+        if(rt[idx] >= 0) {
+            return rt[idx];
+        }
+        
+        rt[idx] = Math.max(solve(idx - 2, nums) + nums[idx],
+            solve(idx - 1, nums));
+        return rt[idx];
+    }
+    
+    public int rob(int[] nums) {
+        rt = new int[nums.length];
+        for(int i = 0; i < nums.length; i++) {
+            rt[i] = -1;
+        }
+        return solve(nums.length- 1, nums);
+    }
 }

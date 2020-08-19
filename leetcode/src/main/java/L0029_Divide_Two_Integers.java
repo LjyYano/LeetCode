@@ -1,6 +1,7 @@
-public class L0029_Divide_Two_Integers {
 
-	public int divide(int dividend, int divisor) {
+// https://leetcode-cn.com/problems/divide-two-integers/
+public class L0029_Divide_Two_Integers {
+    public int divide(int dividend, int divisor) {
 
 		if (divisor == 0) {
 			return Integer.MAX_VALUE;

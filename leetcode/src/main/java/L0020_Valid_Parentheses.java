@@ -1,38 +1,32 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
-public class L0020_Valid_Parentheses {
+// https://leetcode-cn.com/problems/valid-parentheses/
+class L0020_Valid_Parentheses {
+    public boolean isValid(String s) {
+        Map<Character, Character> map = new HashMap<>();
+        map.put(')', '(');
+        map.put(']', '[');
+        map.put('}', '{');
 
-	public boolean isValid(String s) {
+        Stack<Character> vector = new Stack<>();
 
-		if (s == null || s.length() % 2 == 1) {
-			return false;
-		}
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!map.keySet().contains(c)) {
+                vector.push(c);
+            } else {
+                Character d = map.get(c);
+                if (d == null || vector.isEmpty()) {
+                    return false;
+                }
+                if (d != vector.pop()) {
+                    return false;
+                }
+            }
+        }
 
-		HashMap<Character, Character> map = new HashMap<Character, Character>();
-		map.put('(', ')');
-		map.put('[', ']');
-		map.put('{', '}');
-
-		Stack<Character> stack = new Stack<Character>();
-
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
-
-			if (map.keySet().contains(c)) {
-				stack.push(c);
-
-			} else if (map.values().contains(c)) {
-
-				if (!stack.empty() && map.get(stack.peek()) == c) {
-					stack.pop();
-				} else {
-					return false;
-				}
-			}
-		}
-
-		return stack.empty();
-	}
-
+        return vector.isEmpty();
+    }
 }

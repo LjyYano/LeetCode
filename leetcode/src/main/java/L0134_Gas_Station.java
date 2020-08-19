@@ -1,6 +1,7 @@
-public class L0134_Gas_Station {
 
-	public static int canCompleteCircuit(int[] gas, int[] cost) {
+// https://leetcode-cn.com/problems/gas-station/
+public class L0134_Gas_Station {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
 
 		int start = 0;
 		int from_start = 0;
@@ -24,5 +25,4 @@ public class L0134_Gas_Station {
 
 		return -1;
 	}
-
 }

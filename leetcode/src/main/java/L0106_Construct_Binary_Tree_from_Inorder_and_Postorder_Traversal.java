@@ -1,7 +1,17 @@
+import common.Node;
 import common.TreeNode;
 
-public class L0106_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
-
+// https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0106_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
     public TreeNode buildTree(int[] in, int[] post) {
         return robot(in, post, 0, in.length - 1, 0, post.length - 1);
     }
@@ -24,5 +34,4 @@ public class L0106_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
         root.right = robot(in, post, pos + 1, inEnd, postEnd + pos - inEnd, postEnd - 1);
         return root;
     }
-
 }

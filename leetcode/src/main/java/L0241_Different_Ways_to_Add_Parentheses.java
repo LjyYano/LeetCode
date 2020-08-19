@@ -1,9 +1,8 @@
-import java.util.LinkedList;
 import java.util.List;
 
+// https://leetcode-cn.com/problems/different-ways-to-add-parentheses/
 public class L0241_Different_Ways_to_Add_Parentheses {
-
-	public List<Integer> diffWaysToCompute(String input) {
+    public List<Integer> diffWaysToCompute(String input) {
 
 		List<Integer> rt = new LinkedList<Integer>();
 		int len = input.length();
@@ -43,5 +42,7 @@ public class L0241_Different_Ways_to_Add_Parentheses {
 		}
 
 		return rt;
-	}
+	
+        
+    }
 }

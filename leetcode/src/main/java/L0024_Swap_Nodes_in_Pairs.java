@@ -1,35 +1,28 @@
-public class L0024_Swap_Nodes_in_Pairs {
+import common.ListNode;
+import common.Node;
 
-	public static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-	}
-
-	public ListNode swapPairs(ListNode head) {
-
-		if (head == null || head.next == null) {
-			return head;
-		}
-
-		ListNode fakeHead = new ListNode(0);
-		fakeHead.next = head;
-
-		ListNode p1 = fakeHead;
-		ListNode p2 = head;
-
-		while (p2 != null && p2.next != null) {
-			ListNode nextStart = p2.next.next;
-			p2.next.next = p2;
-			p1.next = p2.next;
-			p2.next = nextStart;
-			p1 = p2;
-			p2 = p2.next;
-		}
-
-		return fakeHead.next;
-	}
+// https://leetcode-cn.com/problems/swap-nodes-in-pairs/
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class L0024_Swap_Nodes_in_Pairs {
+    public ListNode swapPairs(ListNode head) {
+        ListNode pre = null, cur = head;
+        while(cur != null && cur.next != null) {
+            ListNode after = cur.next;
+            cur.next = after.next;
+            after.next = cur;
+            if(pre != null) pre.next = after;
+            if(after.next == head) head = after;
+            pre = cur;
+            cur = cur.next;
+        }
+        return head;
+    }
 }
+

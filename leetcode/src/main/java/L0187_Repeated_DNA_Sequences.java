@@ -1,13 +1,13 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
+// https://leetcode-cn.com/problems/repeated-dna-sequences/
 public class L0187_Repeated_DNA_Sequences {
-
-	public List<String> findRepeatedDnaSequences(String s) {
+    public List<String> findRepeatedDnaSequences(String s) {
 
 		if (s == null || s.length() < 11) {
 			return new ArrayList<String>();
@@ -25,7 +25,6 @@ public class L0187_Repeated_DNA_Sequences {
 		map.put('T', 3);
 
 		for (int i = 0; i < s.length(); i++) {
-
 			char c = s.charAt(i);
 
 			hash = (hash << 2) + map.get(c);
@@ -41,6 +40,7 @@ public class L0187_Repeated_DNA_Sequences {
 		}
 
 		return new ArrayList<String>(set);
-	}
-
+	
+        
+    }
 }

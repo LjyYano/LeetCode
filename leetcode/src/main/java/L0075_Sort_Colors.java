@@ -1,37 +1,18 @@
-public class L0075_Sort_Colors {
 
-	public void sortColors(int[] nums) {
-
-		if (nums == null || nums.length == 0) {
-			return;
-		}
-
-		// ���������������洢������ɫ���ִ���
-		int red = 0;
-		int white = 0;
-		int blue = 0;
-
-		// ѭ��һ�Σ���¼ÿ����ɫ���ִ���
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] == 0) {
-				red++;
-			} else if (nums[i] == 1) {
-				white++;
-			} else {
-				blue++;
-			}
-		}
-
-		// ��nums�������¸�ֵ
-		int i = 0;
-		while (red-- > 0) {
-			nums[i++] = 0;
-		}
-		while (white-- > 0) {
-			nums[i++] = 1;
-		}
-		while (blue-- > 0) {
-			nums[i++] = 2;
-		}
+// https://leetcode-cn.com/problems/sort-colors/
+class L0075_Sort_Colors {
+    public void sortColors(int[] nums) {
+        int start = 0, end = nums.length - 1;
+        for(int i = 0; i <= end; i++) {
+            // 顺序不能换，因为i后面可能换到0，但是i前面是不可能有2的
+            while(nums[i] == 2 && i < end) swap(nums, i, end--);
+            while(nums[i] == 0 && i > start) swap(nums, i, start++);
+        }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+		int tmp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = tmp;
 	}
 }

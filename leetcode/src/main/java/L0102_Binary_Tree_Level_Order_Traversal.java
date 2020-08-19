@@ -1,33 +1,20 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
+import common.Node;
 import java.util.List;
-import java.util.Queue;
-
+import java.util.ArrayList;
 import common.TreeNode;
 
-public class L0102_Binary_Tree_Level_Order_Traversal {
-
-    // solution 1：递归
+// https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L0102_Binary_Tree_Level_Order_Traversal {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> ans = new ArrayList<>();
-        robot(root, ans, 0);
-        return ans;
-    }
-
-    private void robot(TreeNode root, List<List<Integer>> ans, int level) {
-        if (root == null) {
-            return;
-        }
-        if (ans.size() == level) {
-            ans.add(new ArrayList());
-        }
-        ans.get(level).add(root.val);
-        robot(root.left, ans, level + 1);
-        robot(root.right, ans, level + 1);
-    }
-
-    // solution 2：迭代
-    public List<List<Integer>> levelOrder2(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
         if (root == null) {
             return ans;
@@ -59,5 +46,4 @@ public class L0102_Binary_Tree_Level_Order_Traversal {
         }
         return ans;
     }
-
 }
