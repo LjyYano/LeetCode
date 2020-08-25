@@ -1,7 +1,0 @@
-
-// https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/
-class L1352_Maximum_Profit_in_Job_Scheduling {
-    public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
-
-    }
-}

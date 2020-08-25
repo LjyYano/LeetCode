@@ -1,0 +1,24 @@
+import common.Node;
+import common.TreeNode;
+
+// https://leetcode-cn.com/problems/moving-stones-until-consecutive-ii/
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class L1040_Moving_Stones_Until_Consecutive_II {
+    public TreeNode insertIntoMaxTree(TreeNode root, int val) {
+        if (root == null || val > root.val) {
+            TreeNode n = new TreeNode(val);
+            n.left = root;
+            return n;
+        }
+        root.right = insertIntoMaxTree(root.right, val);
+        return root;
+    }
+}
