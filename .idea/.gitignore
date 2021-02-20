@@ -6,3 +6,5 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/leetcode/target/
+/Users/yano/code/LeetCode/leetcode/target
