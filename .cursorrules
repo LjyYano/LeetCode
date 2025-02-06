@@ -1,0 +1,31 @@
+这是一个 Github 项目，项目名称叫 LeetCode，详细且全面记录 LeetCode 题解。
+
+在我输入一个以 https://leetcode.cn/problems/ 开头的链接时，请根据链接生成对应的 Java 代码文件和题解文件。
+
+# 项目文件结构说明
+- src/main/java/ 存放 Java 题解代码
+- 题解/ 存放题解文件
+- 强制：中文和英文间要有一个空格，例如 "i=0时，补数=7" 要写成 "i=0 时，补数 =7"
+
+# Java 代码要求
+- Java 文件要能够编译运行，且能够通过 LeetCode 的测试用例
+- Java 文件格式参考模板文件：L0000_Template.java
+- Java class 的类名就使用文件名，例如 "L0001_TwoSum.java" 对应的类名就是 "L0001_TwoSum"
+- 代码要简洁，思路清晰，注释要详细。强制：注释代码放在对应代码行的上方，而不是代码的右边。注释要使用中文。
+- java 文件名明明规则是 "Lxxxx_{description}.java"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "L0001_TwoSum.java"，L 后面的数字固定为 4 位，且是对应的数字编号。
+- 只能使用 JDK 1.8 版本的语法，不能引入第三方包
+- src/main/java/common 是通用的工具类、数据结构等，可以被其他题目复用
+- Java class 的 main 方法运行几个典型的测试用例，要保证能够运行
+- 要保证整个 java 文件可以正常运行，不要丢失对应的 import 语句
+
+# 题解文件说明
+- 题解文件放在 题解/ 目录下，且文件名规则是 "Lxxxx_{chinese_description}.md"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "题解/L0001_两数之和.md"，其“两数之和”中是题目的标题。
+- 题解文件参考模板文件：L0000_模板.md
+- 题解文件依次包括：
+  - 题目链接
+  - 相关标签
+  - 题目描述
+  - 解题思路
+  - 代码实现
+  - 复杂度分析
+- 解题思路要详细，给出解题步骤、分析过程，并针对一个典型示例逐步分析

@@ -16,3 +16,6 @@ target/
 # Temp files
 *.swp
 *~
+
+# vscode
+.vscode/
