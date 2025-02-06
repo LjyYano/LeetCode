@@ -48,7 +48,7 @@ public class L0000_Template {
         l2.next = new ListNode(6);
         l2.next.next = new ListNode(4);
 
-        L0002_AddTwoNumbers solution = new L0002_AddTwoNumbers();
+        L0000_Template solution = new L0000_Template();
         ListNode result = solution.addTwoNumbers(l1, l2);
 
         // 打印结果
