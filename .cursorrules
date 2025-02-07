@@ -3,6 +3,7 @@
 # 输入规则
 - 强制：在我输入一个以 https://leetcode.cn/problems/ 开头的链接时，请根据链接生成对应的 Java 代码文件和题解文件。
 - 强制：在我输入 https://leetcode.cn/problemset 开头的链接时，根据 record.txt 文件，找到合适题目，然后生成对应的 Java 代码文件和题解文件。
+- 强制：在我输 “继续 n 个” 入时，根据 record.txt 文件，找到合适题目，然后生成对应的 Java 代码文件和题解文件。
 
 # 项目文件结构说明
 - src/main/java/ 存放 Java 题解代码
@@ -21,7 +22,7 @@
 - src/main/java/common 是通用的工具类、数据结构等，可以被其他题目复用
 - Java class 的 main 方法运行几个典型的测试用例，要保证能够运行。
 - 要保证整个 java 文件可以正常运行，不要丢失对应的 import 语句。
-- 强制：在生成好对应的代码时，运行 main 方法，确保输出符合预期
+- 强制：在生成好对应的 Java 代码文件后，运行 main 方法，验证输出符合预期
 
 # 题解文件说明
 - 题解文件放在 题解/ 目录下，且文件名规则是 "Lxxxx_{chinese_description}.md"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "题解/L0001_两数之和.md"，其“两数之和”中是题目的标题。
