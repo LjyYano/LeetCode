@@ -1,11 +1,15 @@
 这是一个 Github 项目，项目名称叫 LeetCode，详细且全面记录 LeetCode 题解。
 
-在我输入一个以 https://leetcode.cn/problems/ 开头的链接时，请根据链接生成对应的 Java 代码文件和题解文件。
+# 输入规则
+- 强制：在我输入一个以 https://leetcode.cn/problems/ 开头的链接时，请根据链接生成对应的 Java 代码文件和题解文件。
+- 强制：在我输入 https://leetcode.cn/problemset 开头的链接时，根据 record.txt 文件，找到合适题目，然后生成对应的 Java 代码文件和题解文件。
 
 # 项目文件结构说明
 - src/main/java/ 存放 Java 题解代码
 - 题解/ 存放题解文件
 - 强制：不需要暴力解法的代码，只需要最优解的代码
+- 强制：在生成代码时，要参考 record.txt 文件，不要生成已经解决的题目。生成好后将对应的题目编号写入 record.txt 文件。
+- 强制：有一些题目可能是会员题目打不开，此时不用生成对应的文件，但是要在 record.txt 文件中记录对应的题目编号。
 
 # Java 代码要求
 - Java 文件要能够编译运行，且能够通过 LeetCode 的测试用例
@@ -15,8 +19,9 @@
 - java 文件名明明规则是 "Lxxxx_{description}.java"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "L0001_TwoSum.java"，L 后面的数字固定为 4 位，且是对应的数字编号。
 - 只能使用 JDK 1.8 版本的语法，不能引入第三方包
 - src/main/java/common 是通用的工具类、数据结构等，可以被其他题目复用
-- Java class 的 main 方法运行几个典型的测试用例，要保证能够运行
-- 要保证整个 java 文件可以正常运行，不要丢失对应的 import 语句
+- Java class 的 main 方法运行几个典型的测试用例，要保证能够运行。
+- 要保证整个 java 文件可以正常运行，不要丢失对应的 import 语句。
+- 强制：在生成好对应的代码时，运行 main 方法，确保输出符合预期
 
 # 题解文件说明
 - 题解文件放在 题解/ 目录下，且文件名规则是 "Lxxxx_{chinese_description}.md"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "题解/L0001_两数之和.md"，其“两数之和”中是题目的标题。
