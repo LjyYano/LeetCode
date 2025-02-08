@@ -55,11 +55,7 @@
      - 代码实现前
      - 复杂度分析前
      - LeetCode 题解前
-  5. 代码实现部分必须包含：
-     ```markdown
-     完整的可运行代码：[文件名](../src/main/java/文件名)
-     ```
-  6. 必须在最后添加 LeetCode 题解部分：
+  5. 必须在最后添加 LeetCode 题解部分：
      ```markdown
      ## LeetCode 题解
      
