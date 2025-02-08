@@ -110,4 +110,4 @@
    - 指出需要注意的边界情况
 </示例分析最佳实践>
 
-在生成完一道新的题目后，通过 git 提交到远程仓库，comment 为 "update {chinese_description}"。
+强制：在每生成完一道新的题目后，就通过 git 提交到远程仓库，comment 为 "update {chinese_description}"。不能一次提交两道题目。
