@@ -8,39 +8,30 @@ import common.ListNode;
 public class L0021_MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        // 创建一个哑节点作为新链表的头部
+        // 创建一个哑节点作为合并后链表的头部
         ListNode dummy = new ListNode(0);
-        ListNode current = dummy;
+        ListNode curr = dummy;
         
-        // 当两个链表都不为空时，比较节点值并连接
+        // 当两个链表都不为空时，比较节点值并合并
         while (list1 != null && list2 != null) {
             if (list1.val <= list2.val) {
-                current.next = list1;
+                curr.next = list1;
                 list1 = list1.next;
             } else {
-                current.next = list2;
+                curr.next = list2;
                 list2 = list2.next;
             }
-            current = current.next;
+            curr = curr.next;
         }
         
-        // 如果 list1 还有剩余节点，直接连接到末尾
-        if (list1 != null) {
-            current.next = list1;
-        }
-        
-        // 如果 list2 还有剩余节点，直接连接到末尾
-        if (list2 != null) {
-            current.next = list2;
-        }
+        // 处理剩余的节点
+        curr.next = list1 != null ? list1 : list2;
         
         return dummy.next;
     }
 
     public static void main(String[] args) {
-        L0021_MergeTwoSortedLists solution = new L0021_MergeTwoSortedLists();
-
-        // 测试用例 1
+        // 创建测试用例
         ListNode list1 = new ListNode(1);
         list1.next = new ListNode(2);
         list1.next.next = new ListNode(4);
@@ -49,48 +40,17 @@ public class L0021_MergeTwoSortedLists {
         list2.next = new ListNode(3);
         list2.next.next = new ListNode(4);
 
-        System.out.println("Input: list1 = [1,2,4], list2 = [1,3,4]");
-        ListNode result1 = solution.mergeTwoLists(list1, list2);
-        System.out.print("Output: [");
-        while (result1 != null) {
-            System.out.print(result1.val);
-            if (result1.next != null) {
-                System.out.print(",");
-            }
-            result1 = result1.next;
-        }
-        System.out.println("]");
-        // 预期输出：[1,1,2,3,4,4]
+        L0021_MergeTwoSortedLists solution = new L0021_MergeTwoSortedLists();
+        ListNode result = solution.mergeTwoLists(list1, list2);
 
-        // 测试用例 2
-        System.out.println("\nInput: list1 = [], list2 = []");
-        ListNode result2 = solution.mergeTwoLists(null, null);
-        System.out.print("Output: [");
-        while (result2 != null) {
-            System.out.print(result2.val);
-            if (result2.next != null) {
-                System.out.print(",");
+        // 打印结果
+        while (result != null) {
+            System.out.print(result.val);
+            if (result.next != null) {
+                System.out.print(" -> ");
             }
-            result2 = result2.next;
+            result = result.next;
         }
-        System.out.println("]");
-        // 预期输出：[]
-
-        // 测试用例 3
-        ListNode list3 = null;
-        ListNode list4 = new ListNode(0);
-
-        System.out.println("\nInput: list1 = [], list2 = [0]");
-        ListNode result3 = solution.mergeTwoLists(list3, list4);
-        System.out.print("Output: [");
-        while (result3 != null) {
-            System.out.print(result3.val);
-            if (result3.next != null) {
-                System.out.print(",");
-            }
-            result3 = result3.next;
-        }
-        System.out.println("]");
-        // 预期输出：[0]
+        // 预期输出：1 -> 1 -> 2 -> 3 -> 4 -> 4
     }
 } 
