@@ -11,32 +11,6 @@
  */
 public class L0033_SearchInRotatedSortedArray {
 
-    public static void main(String[] args) {
-        // 测试用例
-        L0033_SearchInRotatedSortedArray solution = new L0033_SearchInRotatedSortedArray();
-        
-        // 测试用例 1
-        int[] nums1 = {4, 5, 6, 7, 0, 1, 2};
-        int target1 = 0;
-        System.out.println("测试用例 1：");
-        System.out.println("输入：nums = [4,5,6,7,0,1,2], target = 0");
-        System.out.println("输出：" + solution.search(nums1, target1));  // 预期输出：4
-        
-        // 测试用例 2
-        int[] nums2 = {4, 5, 6, 7, 0, 1, 2};
-        int target2 = 3;
-        System.out.println("\n测试用例 2：");
-        System.out.println("输入：nums = [4,5,6,7,0,1,2], target = 3");
-        System.out.println("输出：" + solution.search(nums2, target2));  // 预期输出：-1
-        
-        // 测试用例 3
-        int[] nums3 = {1};
-        int target3 = 0;
-        System.out.println("\n测试用例 3：");
-        System.out.println("输入：nums = [1], target = 0");
-        System.out.println("输出：" + solution.search(nums3, target3));  // 预期输出：-1
-    }
-
     public int search(int[] nums, int target) {
         // 特殊情况处理
         if (nums == null || nums.length == 0) {
@@ -74,5 +48,31 @@ public class L0033_SearchInRotatedSortedArray {
         }
         
         return -1;  // 未找到目标值
+    }
+
+    public static void main(String[] args) {
+        // 测试用例
+        L0033_SearchInRotatedSortedArray solution = new L0033_SearchInRotatedSortedArray();
+        
+        // 测试用例 1
+        int[] nums1 = {4, 5, 6, 7, 0, 1, 2};
+        int target1 = 0;
+        System.out.println("测试用例 1：");
+        System.out.println("输入：nums = [4,5,6,7,0,1,2], target = 0");
+        System.out.println("输出：" + solution.search(nums1, target1));  // 预期输出：4
+        
+        // 测试用例 2
+        int[] nums2 = {4, 5, 6, 7, 0, 1, 2};
+        int target2 = 3;
+        System.out.println("\n测试用例 2：");
+        System.out.println("输入：nums = [4,5,6,7,0,1,2], target = 3");
+        System.out.println("输出：" + solution.search(nums2, target2));  // 预期输出：-1
+        
+        // 测试用例 3
+        int[] nums3 = {1};
+        int target3 = 0;
+        System.out.println("\n测试用例 3：");
+        System.out.println("输入：nums = [1], target = 0");
+        System.out.println("输出：" + solution.search(nums3, target3));  // 预期输出：-1
     }
 } 

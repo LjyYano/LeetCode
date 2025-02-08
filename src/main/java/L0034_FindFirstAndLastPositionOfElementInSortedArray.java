@@ -27,26 +27,6 @@
  */
 public class L0034_FindFirstAndLastPositionOfElementInSortedArray {
 
-    public static void main(String[] args) {
-        // 测试用例 1
-        int[] nums1 = {5, 7, 7, 8, 8, 10};
-        int target1 = 8;
-        int[] result1 = new L0034_FindFirstAndLastPositionOfElementInSortedArray().searchRange(nums1, target1);
-        System.out.println("测试用例 1：" + result1[0] + ", " + result1[1]); // 预期输出：[3, 4]
-
-        // 测试用例 2
-        int[] nums2 = {5, 7, 7, 8, 8, 10};
-        int target2 = 6;
-        int[] result2 = new L0034_FindFirstAndLastPositionOfElementInSortedArray().searchRange(nums2, target2);
-        System.out.println("测试用例 2：" + result2[0] + ", " + result2[1]); // 预期输出：[-1, -1]
-
-        // 测试用例 3
-        int[] nums3 = {};
-        int target3 = 0;
-        int[] result3 = new L0034_FindFirstAndLastPositionOfElementInSortedArray().searchRange(nums3, target3);
-        System.out.println("测试用例 3：" + result3[0] + ", " + result3[1]); // 预期输出：[-1, -1]
-    }
-
     public int[] searchRange(int[] nums, int target) {
         // 初始化结果数组
         int[] result = {-1, -1};
@@ -117,5 +97,25 @@ public class L0034_FindFirstAndLastPositionOfElementInSortedArray {
         }
         
         return -1;
+    }
+
+    public static void main(String[] args) {
+        // 测试用例 1
+        int[] nums1 = {5, 7, 7, 8, 8, 10};
+        int target1 = 8;
+        int[] result1 = new L0034_FindFirstAndLastPositionOfElementInSortedArray().searchRange(nums1, target1);
+        System.out.println("测试用例 1：" + result1[0] + ", " + result1[1]); // 预期输出：[3, 4]
+
+        // 测试用例 2
+        int[] nums2 = {5, 7, 7, 8, 8, 10};
+        int target2 = 6;
+        int[] result2 = new L0034_FindFirstAndLastPositionOfElementInSortedArray().searchRange(nums2, target2);
+        System.out.println("测试用例 2：" + result2[0] + ", " + result2[1]); // 预期输出：[-1, -1]
+
+        // 测试用例 3
+        int[] nums3 = {};
+        int target3 = 0;
+        int[] result3 = new L0034_FindFirstAndLastPositionOfElementInSortedArray().searchRange(nums3, target3);
+        System.out.println("测试用例 3：" + result3[0] + ", " + result3[1]); // 预期输出：[-1, -1]
     }
 } 
