@@ -19,3 +19,6 @@ target/
 
 # vscode
 .vscode/
+
+# Local config files
+.cursorrules
