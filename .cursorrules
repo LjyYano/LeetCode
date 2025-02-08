@@ -20,7 +20,7 @@
 - Java class 的 main 方法运行几个典型的测试用例，要保证能够运行。
 - Java class 的类名就使用文件名，例如 "L0001_TwoSum.java" 对应的类名就是 "L0001_TwoSum"
 - 代码要简洁，思路清晰，注释要详细。强制：注释代码放在对应代码行的上方，而不是代码的右边。注释要使用中文。
-- java 文件名命名规则是 "Lxxxx_{description}.java"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "L0001_TwoSum.java"，L 后面的数字固定为 4 位，且是对应的数字编号。
+- Java 文件名命名规则是 "Lxxxx_{description}.java"。例如 https://leetcode.cn/problems/two-sum/description/ 链接下 "L0001_TwoSum.java"，L 后面的数字固定为 4 位，且是对应的数字编号。
 - 只能使用 JDK 1.8 版本的语法，不能引入第三方包
 - src/main/java/common 是通用的工具类、数据结构等，可以被其他题目复用
 - 要保证整个 java 文件可以正常运行，不要丢失对应的 import 语句。
