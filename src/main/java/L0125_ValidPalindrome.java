@@ -26,7 +26,7 @@ import java.util.*;
  * 由于空字符串正着反着读都一样，所以是回文串。
  * 
  * 提示：
- * - 1 <= s.length <= 2 * 10^5
+ * - 1 <= s.length <= 2 * 10⁵
  * - s 仅由可打印的 ASCII 字符组成
  */
 public class L0125_ValidPalindrome {
@@ -58,9 +58,27 @@ public class L0125_ValidPalindrome {
     public static void main(String[] args) {
         L0125_ValidPalindrome solution = new L0125_ValidPalindrome();
         
-        // 测试用例
-        System.out.println(solution.isPalindrome("A man, a plan, a canal: Panama")); // true
-        System.out.println(solution.isPalindrome("race a car")); // false
-        System.out.println(solution.isPalindrome(" ")); // true
+        // 测试用例 1：普通回文串
+        String s1 = "A man, a plan, a canal: Panama";
+        System.out.println("测试用例 1：");
+        System.out.println("输入：" + s1);
+        System.out.println("输出：" + solution.isPalindrome(s1));
+        System.out.println("预期：true");
+        System.out.println();
+        
+        // 测试用例 2：非回文串
+        String s2 = "race a car";
+        System.out.println("测试用例 2：");
+        System.out.println("输入：" + s2);
+        System.out.println("输出：" + solution.isPalindrome(s2));
+        System.out.println("预期：false");
+        System.out.println();
+        
+        // 测试用例 3：空字符串
+        String s3 = " ";
+        System.out.println("测试用例 3：");
+        System.out.println("输入：" + s3);
+        System.out.println("输出：" + solution.isPalindrome(s3));
+        System.out.println("预期：true");
     }
 } 
