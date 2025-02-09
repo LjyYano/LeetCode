@@ -31,77 +31,75 @@ import java.util.*;
  * - wordList 中的所有字符串 互不相同
  */
 public class L0127_WordLadder {
-    public static class Solution {
-        public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-            // 将 wordList 转换为 HashSet，提高查找效率
-            Set<String> wordSet = new HashSet<>(wordList);
-            
-            // 如果 endWord 不在 wordList 中，直接返回 0
-            if (!wordSet.contains(endWord)) {
-                return 0;
-            }
-            
-            // 创建访问集合，记录已访问的单词
-            Set<String> visited = new HashSet<>();
-            visited.add(beginWord);
-            
-            // 创建队列，用于 BFS
-            Queue<String> queue = new LinkedList<>();
-            queue.offer(beginWord);
-            
-            // 记录转换序列的长度
-            int level = 1;
-            
-            // BFS
-            while (!queue.isEmpty()) {
-                int size = queue.size();
-                
-                // 遍历当前层的所有单词
-                for (int i = 0; i < size; i++) {
-                    String currentWord = queue.poll();
-                    char[] wordChars = currentWord.toCharArray();
-                    
-                    // 尝试改变每个位置的字母
-                    for (int j = 0; j < wordChars.length; j++) {
-                        char originalChar = wordChars[j];
-                        
-                        // 尝试替换为 a-z 的每个字母
-                        for (char c = 'a'; c <= 'z'; c++) {
-                            if (c == originalChar) {
-                                continue;
-                            }
-                            
-                            wordChars[j] = c;
-                            String newWord = new String(wordChars);
-                            
-                            // 如果找到 endWord，返回当前层数 + 1
-                            if (newWord.equals(endWord)) {
-                                return level + 1;
-                            }
-                            
-                            // 如果新单词在字典中且未被访问过，加入队列
-                            if (wordSet.contains(newWord) && !visited.contains(newWord)) {
-                                visited.add(newWord);
-                                queue.offer(newWord);
-                            }
-                        }
-                        
-                        // 恢复原字符，准备改变下一个位置
-                        wordChars[j] = originalChar;
-                    }
-                }
-                
-                // 当前层遍历完成，层数加 1
-                level++;
-            }
-            
-            // 未找到转换序列，返回 0
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        // 将 wordList 转换为 HashSet，提高查找效率
+        Set<String> wordSet = new HashSet<>(wordList);
+        
+        // 如果 endWord 不在 wordList 中，直接返回 0
+        if (!wordSet.contains(endWord)) {
             return 0;
         }
+        
+        // 创建访问集合，记录已访问的单词
+        Set<String> visited = new HashSet<>();
+        visited.add(beginWord);
+        
+        // 创建队列，用于 BFS
+        Queue<String> queue = new LinkedList<>();
+        queue.offer(beginWord);
+        
+        // 记录转换序列的长度
+        int level = 1;
+        
+        // BFS
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            
+            // 遍历当前层的所有单词
+            for (int i = 0; i < size; i++) {
+                String currentWord = queue.poll();
+                char[] wordChars = currentWord.toCharArray();
+                
+                // 尝试改变每个位置的字母
+                for (int j = 0; j < wordChars.length; j++) {
+                    char originalChar = wordChars[j];
+                    
+                    // 尝试替换为 a-z 的每个字母
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        if (c == originalChar) {
+                            continue;
+                        }
+                        
+                        wordChars[j] = c;
+                        String newWord = new String(wordChars);
+                        
+                        // 如果找到 endWord，返回当前层数 + 1
+                        if (newWord.equals(endWord)) {
+                            return level + 1;
+                        }
+                        
+                        // 如果新单词在字典中且未被访问过，加入队列
+                        if (wordSet.contains(newWord) && !visited.contains(newWord)) {
+                            visited.add(newWord);
+                            queue.offer(newWord);
+                        }
+                    }
+                    
+                    // 恢复原字符，准备改变下一个位置
+                    wordChars[j] = originalChar;
+                }
+            }
+            
+            // 当前层遍历完成，层数加 1
+            level++;
+        }
+        
+        // 未找到转换序列，返回 0
+        return 0;
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        L0127_WordLadder solution = new L0127_WordLadder();
         
         // 测试用例 1
         String beginWord1 = "hit";

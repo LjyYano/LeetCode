@@ -22,46 +22,44 @@ import java.util.*;
  * - -10^9 <= nums[i] <= 10^9
  */
 public class L0128_LongestConsecutiveSequence {
-    static class Solution {
-        public int longestConsecutive(int[] nums) {
-            // 如果数组为空，直接返回 0
-            if (nums == null || nums.length == 0) {
-                return 0;
-            }
-            
-            // 使用 HashSet 存储所有数字，方便快速查找
-            Set<Integer> numSet = new HashSet<>();
-            for (int num : nums) {
-                numSet.add(num);
-            }
-            
-            int maxLength = 0;
-            
-            // 遍历数组中的每个数字
-            for (int num : numSet) {
-                // 只有当 num-1 不存在时，才开始计算以 num 为起点的序列
-                // 这样可以保证每个序列只会被计算一次
-                if (!numSet.contains(num - 1)) {
-                    int currentNum = num;
-                    int currentLength = 1;
-                    
-                    // 不断查找下一个连续的数字
-                    while (numSet.contains(currentNum + 1)) {
-                        currentNum++;
-                        currentLength++;
-                    }
-                    
-                    // 更新最大长度
-                    maxLength = Math.max(maxLength, currentLength);
-                }
-            }
-            
-            return maxLength;
+    public int longestConsecutive(int[] nums) {
+        // 如果数组为空，直接返回 0
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
+        
+        // 使用 HashSet 存储所有数字，方便快速查找
+        Set<Integer> numSet = new HashSet<>();
+        for (int num : nums) {
+            numSet.add(num);
+        }
+        
+        int maxLength = 0;
+        
+        // 遍历数组中的每个数字
+        for (int num : numSet) {
+            // 只有当 num-1 不存在时，才开始计算以 num 为起点的序列
+            // 这样可以保证每个序列只会被计算一次
+            if (!numSet.contains(num - 1)) {
+                int currentNum = num;
+                int currentLength = 1;
+                
+                // 不断查找下一个连续的数字
+                while (numSet.contains(currentNum + 1)) {
+                    currentNum++;
+                    currentLength++;
+                }
+                
+                // 更新最大长度
+                maxLength = Math.max(maxLength, currentLength);
+            }
+        }
+        
+        return maxLength;
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        L0128_LongestConsecutiveSequence solution = new L0128_LongestConsecutiveSequence();
         
         // 测试用例 1
         int[] nums1 = {100, 4, 200, 1, 3, 2};
