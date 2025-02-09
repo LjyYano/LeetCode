@@ -5,6 +5,7 @@
  * 求在该柱状图中，能够勾勒出来的矩形的最大面积。
  * 
  * 示例 1：
+ * ![img](https://assets.leetcode.com/uploads/2021/01/04/histogram.jpg)
  * 输入：heights = [2,1,5,6,2,3]
  * 输出：10
  * 解释：最大的矩形为图中红色区域，面积为 10
