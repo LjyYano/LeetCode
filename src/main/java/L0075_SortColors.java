@@ -53,4 +53,31 @@ public class L0075_SortColors {
         nums[i] = nums[j];
         nums[j] = temp;
     }
+
+    public static void main(String[] args) {
+        L0075_SortColors solution = new L0075_SortColors();
+
+        // 测试用例 1
+        int[] nums1 = {2, 0, 2, 1, 1, 0};
+        System.out.println("测试用例 1:");
+        System.out.println("输入: " + Arrays.toString(nums1));
+        solution.sortColors(nums1);
+        System.out.println("输出: " + Arrays.toString(nums1));
+        System.out.println();
+
+        // 测试用例 2
+        int[] nums2 = {2, 0, 1};
+        System.out.println("测试用例 2:");
+        System.out.println("输入: " + Arrays.toString(nums2));
+        solution.sortColors(nums2);
+        System.out.println("输出: " + Arrays.toString(nums2));
+        System.out.println();
+
+        // 测试用例 3：全部相同的颜色
+        int[] nums3 = {1, 1, 1};
+        System.out.println("测试用例 3:");
+        System.out.println("输入: " + Arrays.toString(nums3));
+        solution.sortColors(nums3);
+        System.out.println("输出: " + Arrays.toString(nums3));
+    }
 } 
