@@ -49,27 +49,17 @@ public class L0171_ExcelSheetColumnNumber {
     public static void main(String[] args) {
         L0171_ExcelSheetColumnNumber solution = new L0171_ExcelSheetColumnNumber();
         
-        // 测试用例 1
-        String columnTitle1 = "A";
-        System.out.println("测试用例 1：");
-        System.out.println("输入：columnTitle = \"" + columnTitle1 + "\"");
-        System.out.println("输出：" + solution.titleToNumber(columnTitle1));
-        System.out.println("预期：1");
-        System.out.println();
+        // 测试用例
+        System.out.println("Input: columnTitle = \"A\"");
+        System.out.println("Output: " + solution.titleToNumber("A"));
+        System.out.println("Expected: 1");
         
-        // 测试用例 2
-        String columnTitle2 = "AB";
-        System.out.println("测试用例 2：");
-        System.out.println("输入：columnTitle = \"" + columnTitle2 + "\"");
-        System.out.println("输出：" + solution.titleToNumber(columnTitle2));
-        System.out.println("预期：28");
-        System.out.println();
+        System.out.println("\nInput: columnTitle = \"AB\"");
+        System.out.println("Output: " + solution.titleToNumber("AB"));
+        System.out.println("Expected: 28");
         
-        // 测试用例 3
-        String columnTitle3 = "ZY";
-        System.out.println("测试用例 3：");
-        System.out.println("输入：columnTitle = \"" + columnTitle3 + "\"");
-        System.out.println("输出：" + solution.titleToNumber(columnTitle3));
-        System.out.println("预期：701");
+        System.out.println("\nInput: columnTitle = \"ZY\"");
+        System.out.println("Output: " + solution.titleToNumber("ZY"));
+        System.out.println("Expected: 701");
     }
 } 
