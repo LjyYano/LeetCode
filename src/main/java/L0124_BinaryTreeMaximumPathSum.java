@@ -1,6 +1,4 @@
-package com.yano.leetcode;
-
-import com.yano.leetcode.model.TreeNode;
+import common.TreeNode;
 
 /**
  * 124. 二叉树中的最大路径和
@@ -58,5 +56,33 @@ public class L0124_BinaryTreeMaximumPathSum {
 
         // 返回节点的最大贡献值
         return node.val + Math.max(leftGain, rightGain);
+    }
+
+    public static void main(String[] args) {
+        L0124_BinaryTreeMaximumPathSum solution = new L0124_BinaryTreeMaximumPathSum();
+
+        // 测试用例 1
+        TreeNode root1 = new TreeNode(1);
+        root1.left = new TreeNode(2);
+        root1.right = new TreeNode(3);
+        System.out.println(solution.maxPathSum(root1)); // 应输出 6
+
+        // 测试用例 2
+        TreeNode root2 = new TreeNode(-10);
+        root2.left = new TreeNode(9);
+        root2.right = new TreeNode(20);
+        root2.right.left = new TreeNode(15);
+        root2.right.right = new TreeNode(7);
+        System.out.println(solution.maxPathSum(root2)); // 应输出 42
+
+        // 测试用例 3：单节点
+        TreeNode root3 = new TreeNode(1);
+        System.out.println(solution.maxPathSum(root3)); // 应输出 1
+
+        // 测试用例 4：全负数
+        TreeNode root4 = new TreeNode(-3);
+        root4.left = new TreeNode(-2);
+        root4.right = new TreeNode(-1);
+        System.out.println(solution.maxPathSum(root4)); // 应输出 -1
     }
 } 
