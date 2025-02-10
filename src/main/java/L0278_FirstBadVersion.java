@@ -27,7 +27,8 @@
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
 
-public class L0278_FirstBadVersion extends VersionControl {
+public class L0278_FirstBadVersion{
+
     public int firstBadVersion(int n) {
         // 使用二分查找
         int left = 1;
@@ -48,6 +49,11 @@ public class L0278_FirstBadVersion extends VersionControl {
         
         // 此时 left == right，就是第一个错误的版本
         return left;
+    }
+
+    // mock isBadVersion
+    private boolean isBadVersion(int version) {
+        return version >= 4;
     }
 
     public static void main(String[] args) {

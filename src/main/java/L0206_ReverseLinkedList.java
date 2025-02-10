@@ -84,11 +84,5 @@ public class L0206_ReverseLinkedList {
         }
         System.out.println("]");
         System.out.println();
-        
-        // 测试用例 3
-        System.out.println("Test case 3:");
-        System.out.println("Input: []");
-        ListNode result3 = solution.reverseList(null);
-        System.out.println("Output: []");
     }
 } 
