@@ -46,13 +46,28 @@ public class L0303_RangeSumQueryImmutable {
     }
 
     public static void main(String[] args) {
-        // 测试用例
-        int[] nums = {-2, 0, 3, -5, 2, -1};
-        L0303_RangeSumQueryImmutable numArray = new L0303_RangeSumQueryImmutable(nums);
+        // 测试用例 1
+        System.out.println("测试用例 1：");
+        int[] nums1 = {-2, 0, 3, -5, 2, -1};
+        L0303_RangeSumQueryImmutable numArray1 = new L0303_RangeSumQueryImmutable(nums1);
+        System.out.println("Input: nums = [-2, 0, 3, -5, 2, -1]");
+        System.out.println("sumRange(0, 2) = " + numArray1.sumRange(0, 2) + " (Expected: 1)");
+        System.out.println("sumRange(2, 5) = " + numArray1.sumRange(2, 5) + " (Expected: -1)");
+        System.out.println("sumRange(0, 5) = " + numArray1.sumRange(0, 5) + " (Expected: -3)");
         
-        // 测试区间和查询
-        System.out.println(numArray.sumRange(0, 2)); // 预期输出：1
-        System.out.println(numArray.sumRange(2, 5)); // 预期输出：-1
-        System.out.println(numArray.sumRange(0, 5)); // 预期输出：-3
+        // 测试用例 2 - 测试单个元素
+        System.out.println("\n测试用例 2：");
+        int[] nums2 = {5};
+        L0303_RangeSumQueryImmutable numArray2 = new L0303_RangeSumQueryImmutable(nums2);
+        System.out.println("Input: nums = [5]");
+        System.out.println("sumRange(0, 0) = " + numArray2.sumRange(0, 0) + " (Expected: 5)");
+        
+        // 测试用例 3 - 测试连续正数
+        System.out.println("\n测试用例 3：");
+        int[] nums3 = {1, 2, 3, 4, 5};
+        L0303_RangeSumQueryImmutable numArray3 = new L0303_RangeSumQueryImmutable(nums3);
+        System.out.println("Input: nums = [1, 2, 3, 4, 5]");
+        System.out.println("sumRange(1, 3) = " + numArray3.sumRange(1, 3) + " (Expected: 9)");
+        System.out.println("sumRange(0, 4) = " + numArray3.sumRange(0, 4) + " (Expected: 15)");
     }
 } 
