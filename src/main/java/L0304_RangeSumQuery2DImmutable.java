@@ -30,11 +30,11 @@
  * - 0 <= col1 <= col2 < n
  * - 最多调用 10⁴ 次 sumRegion 方法
  */
-public class L0304_RangeSumQuery2DImmutable {
+class NumMatrix {
     
     private final int[][] prefixSum;
     
-    public L0304_RangeSumQuery2DImmutable(int[][] matrix) {
+    public NumMatrix(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             prefixSum = new int[0][0];
             return;
@@ -60,7 +60,16 @@ public class L0304_RangeSumQuery2DImmutable {
         return prefixSum[row2 + 1][col2 + 1] - prefixSum[row2 + 1][col1] 
                 - prefixSum[row1][col2 + 1] + prefixSum[row1][col1];
     }
+}
 
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix obj = new NumMatrix(matrix);
+ * int param_1 = obj.sumRegion(row1,col1,row2,col2);
+ */
+
+// 仅用于本地测试
+public class L0304_RangeSumQuery2DImmutable {
     public static void main(String[] args) {
         // 测试用例 1
         System.out.println("测试用例 1：");
@@ -71,7 +80,7 @@ public class L0304_RangeSumQuery2DImmutable {
             {4, 1, 0, 1, 7},
             {1, 0, 3, 0, 5}
         };
-        L0304_RangeSumQuery2DImmutable numMatrix1 = new L0304_RangeSumQuery2DImmutable(matrix1);
+        NumMatrix numMatrix1 = new NumMatrix(matrix1);
         System.out.println("Input: matrix = [");
         for (int[] row : matrix1) {
             System.out.println("  " + java.util.Arrays.toString(row));
@@ -84,7 +93,7 @@ public class L0304_RangeSumQuery2DImmutable {
         // 测试用例 2 - 测试 1x1 矩阵
         System.out.println("\n测试用例 2：");
         int[][] matrix2 = {{5}};
-        L0304_RangeSumQuery2DImmutable numMatrix2 = new L0304_RangeSumQuery2DImmutable(matrix2);
+        NumMatrix numMatrix2 = new NumMatrix(matrix2);
         System.out.println("Input: matrix = [[5]]");
         System.out.println("sumRegion(0, 0, 0, 0) = " + numMatrix2.sumRegion(0, 0, 0, 0) + " (Expected: 5)");
         
@@ -94,7 +103,7 @@ public class L0304_RangeSumQuery2DImmutable {
             {1, 2},
             {3, 4}
         };
-        L0304_RangeSumQuery2DImmutable numMatrix3 = new L0304_RangeSumQuery2DImmutable(matrix3);
+        NumMatrix numMatrix3 = new NumMatrix(matrix3);
         System.out.println("Input: matrix = [");
         for (int[] row : matrix3) {
             System.out.println("  " + java.util.Arrays.toString(row));

@@ -28,11 +28,11 @@
  * - 0 <= left <= right < nums.length
  * - 最多调用 10⁴ 次 sumRange 方法
  */
-public class L0303_RangeSumQueryImmutable {
+class NumArray {
     
     private final int[] prefixSum;
     
-    public L0303_RangeSumQueryImmutable(int[] nums) {
+    public NumArray(int[] nums) {
         // 计算前缀和数组
         prefixSum = new int[nums.length + 1];
         for (int i = 0; i < nums.length; i++) {
@@ -44,12 +44,21 @@ public class L0303_RangeSumQueryImmutable {
         // 返回区间和：prefixSum[right + 1] - prefixSum[left]
         return prefixSum[right + 1] - prefixSum[left];
     }
+}
 
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * int param_1 = obj.sumRange(left,right);
+ */
+
+// 仅用于本地测试
+public class L0303_RangeSumQueryImmutable {
     public static void main(String[] args) {
         // 测试用例 1
         System.out.println("测试用例 1：");
         int[] nums1 = {-2, 0, 3, -5, 2, -1};
-        L0303_RangeSumQueryImmutable numArray1 = new L0303_RangeSumQueryImmutable(nums1);
+        NumArray numArray1 = new NumArray(nums1);
         System.out.println("Input: nums = [-2, 0, 3, -5, 2, -1]");
         System.out.println("sumRange(0, 2) = " + numArray1.sumRange(0, 2) + " (Expected: 1)");
         System.out.println("sumRange(2, 5) = " + numArray1.sumRange(2, 5) + " (Expected: -1)");
@@ -58,14 +67,14 @@ public class L0303_RangeSumQueryImmutable {
         // 测试用例 2 - 测试单个元素
         System.out.println("\n测试用例 2：");
         int[] nums2 = {5};
-        L0303_RangeSumQueryImmutable numArray2 = new L0303_RangeSumQueryImmutable(nums2);
+        NumArray numArray2 = new NumArray(nums2);
         System.out.println("Input: nums = [5]");
         System.out.println("sumRange(0, 0) = " + numArray2.sumRange(0, 0) + " (Expected: 5)");
         
         // 测试用例 3 - 测试连续正数
         System.out.println("\n测试用例 3：");
         int[] nums3 = {1, 2, 3, 4, 5};
-        L0303_RangeSumQueryImmutable numArray3 = new L0303_RangeSumQueryImmutable(nums3);
+        NumArray numArray3 = new NumArray(nums3);
         System.out.println("Input: nums = [1, 2, 3, 4, 5]");
         System.out.println("sumRange(1, 3) = " + numArray3.sumRange(1, 3) + " (Expected: 9)");
         System.out.println("sumRange(0, 4) = " + numArray3.sumRange(0, 4) + " (Expected: 15)");
