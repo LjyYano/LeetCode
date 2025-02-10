@@ -28,32 +28,25 @@
  * - 0 <= left <= right < nums.length
  * - 最多调用 10⁴ 次 sumRange 方法
  */
-class NumArray {
+public class L0303_RangeSumQueryImmutable {
     
-    private final int[] prefixSum;
-    
-    public NumArray(int[] nums) {
-        // 计算前缀和数组
-        prefixSum = new int[nums.length + 1];
-        for (int i = 0; i < nums.length; i++) {
-            prefixSum[i + 1] = prefixSum[i] + nums[i];
+    static class NumArray {
+        private final int[] prefixSum;
+        
+        public NumArray(int[] nums) {
+            // 计算前缀和数组
+            prefixSum = new int[nums.length + 1];
+            for (int i = 0; i < nums.length; i++) {
+                prefixSum[i + 1] = prefixSum[i] + nums[i];
+            }
+        }
+        
+        public int sumRange(int left, int right) {
+            // 返回区间和：prefixSum[right + 1] - prefixSum[left]
+            return prefixSum[right + 1] - prefixSum[left];
         }
     }
-    
-    public int sumRange(int left, int right) {
-        // 返回区间和：prefixSum[right + 1] - prefixSum[left]
-        return prefixSum[right + 1] - prefixSum[left];
-    }
-}
 
-/**
- * Your NumArray object will be instantiated and called as such:
- * NumArray obj = new NumArray(nums);
- * int param_1 = obj.sumRange(left,right);
- */
-
-// 仅用于本地测试
-public class L0303_RangeSumQueryImmutable {
     public static void main(String[] args) {
         // 测试用例 1
         System.out.println("测试用例 1：");
