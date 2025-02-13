@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * https://leetcode.cn/problems/reconstruct-original-digits-from-english/description/
  * 

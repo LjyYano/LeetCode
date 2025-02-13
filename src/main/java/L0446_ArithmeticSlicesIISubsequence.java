@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * https://leetcode.cn/problems/arithmetic-slices-ii-subsequence/
  * 
@@ -41,9 +43,9 @@ public class L0446_ArithmeticSlicesIISubsequence {
     public int numberOfArithmeticSlices(int[] nums) {
         int n = nums.length;
         // dp[i][d] 表示以 nums[i] 结尾，公差为 d 的等差序列的个数
-        java.util.Map<Long, Integer>[] dp = new java.util.HashMap[n];
+        Map<Long, Integer>[] dp = new HashMap<>[n];
         for (int i = 0; i < n; i++) {
-            dp[i] = new java.util.HashMap<>();
+            dp[i] = new HashMap<>();
         }
 
         int result = 0;

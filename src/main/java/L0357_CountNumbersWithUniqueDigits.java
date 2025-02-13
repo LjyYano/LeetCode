@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * https://leetcode.cn/problems/count-numbers-with-unique-digits/
  * 

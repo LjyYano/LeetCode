@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * https://leetcode.cn/problems/longest-repeating-character-replacement/description/
  * 

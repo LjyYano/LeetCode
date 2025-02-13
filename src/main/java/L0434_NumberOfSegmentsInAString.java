@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * https://leetcode.cn/problems/number-of-segments-in-a-string/description/
  * 

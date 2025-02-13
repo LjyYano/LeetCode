@@ -113,7 +113,7 @@ public class L0427_ConstructQuadTree {
         int[][] grid1 = {{0,1}, {1,0}};
         System.out.println("测试用例1：");
         System.out.println("输入：grid = " + Arrays.deepToString(grid1));
-        Node result1 = solution.construct(grid1);
+        solution.construct(grid1);
         System.out.println("输出：四叉树已构建");
         
         // 测试用例2
@@ -129,7 +129,7 @@ public class L0427_ConstructQuadTree {
         };
         System.out.println("\n测试用例2：");
         System.out.println("输入：grid = " + Arrays.deepToString(grid2));
-        Node result2 = solution.construct(grid2);
+        solution.construct(grid2);
         System.out.println("输出：四叉树已构建");
     }
 } 
