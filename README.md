@@ -1,10 +1,8 @@
 # 公众号
 
-coding 笔记、点滴记录，以后的文章也会同步到公众号（Coding Insight）中，希望大家关注^_^
+LeetCode 系列题解致力于帮助程序员更好地理解和掌握算法思维，内容包含详细的解题思路分析、图文并茂的示例讲解和完整的代码实现。
 
-https://github.com/LjyYano/Thinking_in_Java_MindMapping
-
-![](http://yano.oss-cn-beijing.aliyuncs.com/2019-07-29-qrcode_for_gh_a26ce4572791_258.jpg)
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="20" style="vertical-align: middle; margin-right: 5px"> [LeetCode 最全题解](https://github.com/LjyYano/LeetCode)：持续更新中，欢迎 Star ⭐️ 关注，一起探讨算法之美。 
 
 # LeetCode 题解（非会员题目）
 
@@ -177,29 +175,33 @@ https://github.com/LjyYano/Thinking_in_Java_MindMapping
 | 172 | [阶乘后的零](https://github.com/LjyYano/LeetCode/blob/master/题解/L0172_阶乘后的零.md) | [L0172](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0172_FactorialTrailingZeroes.java) | `数学` | `简单` |
 | 173 | [二叉搜索树迭代器](https://github.com/LjyYano/LeetCode/blob/master/题解/L0173_二叉搜索树迭代器.md) | [L0173](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0173_BinarySearchTreeIterator.java) | `栈` `树` `设计` | `中等` |
 | 174 | [地下城游戏](https://github.com/LjyYano/LeetCode/blob/master/题解/L0174_地下城游戏.md) | [L0174](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0174_DungeonGame.java) | `数组` `动态规划` `矩阵` | `困难` |
+| 175 | [组合两个表](https://github.com/LjyYano/LeetCode/blob/master/题解/L0175_组合两个表.md) | [L0175](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0175_CombineTwoTables.sql) | `JOIN操作` `数据库` | `简单` |
+| 176 | [第二高的薪水](https://github.com/LjyYano/LeetCode/blob/master/题解/L0176_第二高的薪水.md) | [L0176](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0176_SecondHighestSalary.sql) | `子查询` `聚合函数` | `简单` |
+| 177 | [第N高的薪水](https://github.com/LjyYano/LeetCode/blob/master/题解/L0177_第N高的薪水.md) | [L0177](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0177_NthHighestSalary.sql) | `窗口函数` `自定义函数` | `中等` |
+| 178 | [分数排名](https://github.com/LjyYano/LeetCode/blob/master/题解/L0178_分数排名.md) | [L0178](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0178_RankScores.sql) | `窗口函数` `排序` | `中等` |
 | 179 | [最大数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0179_最大数.md) | [L0179](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0179_LargestNumber.java) | `排序` `贪心` `字符串` | `中等` |
-| 180 | [连续出现的数字](https://github.com/LjyYano/LeetCode/blob/master/题解/L0180_连续出现的数字.md) | [L0180](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0180_ConsecutiveNumbers.java) | `数据库` | `中等` |
-| 181 | [超过经理收入的员工](https://github.com/LjyYano/LeetCode/blob/master/题解/L0181_超过经理收入的员工.md) | [L0181](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0181_ConsecutiveNumbers.java) | `数据库` | `简单` |
-| 182 | [查找重复的电子邮箱](https://github.com/LjyYano/LeetCode/blob/master/题解/L0182_查找重复的电子邮箱.md) | [L0182](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0182_DuplicateEmails.java) | `数据库` | `简单` |
-| 183 | [从不订购的客户](https://github.com/LjyYano/LeetCode/blob/master/题解/L0183_从不订购的客户.md) | [L0183](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0183_CustomersWhoNeverOrder.java) | `数据库` | `简单` |
-| 184 | [部门工资最高的员工](https://github.com/LjyYano/LeetCode/blob/master/题解/L0184_部门工资最高的员工.md) | [L0184](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0184_DepartmentHighestSalary.java) | `数据库` | `中等` |
-| 185 | [部门工资前三高的所有员工](https://github.com/LjyYano/LeetCode/blob/master/题解/L0185_部门工资前三高的所有员工.md) | [L0185](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0185_DepartmentTopThreeSalaries.java) | `数据库` | `困难` |
+| 180 | [连续出现的数字](https://github.com/LjyYano/LeetCode/blob/master/题解/L0180_连续出现的数字.md) | [L0180](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0180_ConsecutiveNumbers.sql) | `自连接` `连续问题` | `中等` |
+| 181 | [超过经理收入的员工](https://github.com/LjyYano/LeetCode/blob/master/题解/L0181_超过经理收入的员工.md) | [L0181](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0181_EmployeesEarningMoreThanTheirManagers.sql) | `自连接` `比较查询` | `简单` |
+| 182 | [查找重复的电子邮箱](https://github.com/LjyYano/LeetCode/blob/master/题解/L0182_查找重复的电子邮箱.md) | [L0182](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0182_DuplicateEmails.sql) | `分组统计` `HAVING子句` | `简单` |
+| 183 | [从不订购的客户](https://github.com/LjyYano/LeetCode/blob/master/题解/L0183_从不订购的客户.md) | [L0183](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0183_CustomersWhoNeverOrder.sql) | `左连接` `NULL判断` | `简单` |
+| 184 | [部门工资最高的员工](https://github.com/LjyYano/LeetCode/blob/master/题解/L0184_部门工资最高的员工.md) | [L0184](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0184_DepartmentHighestSalary.sql) | `子查询` `IN操作符` | `中等` |
+| 185 | [部门工资前三高的所有员工](https://github.com/LjyYano/LeetCode/blob/master/题解/L0185_部门工资前三高的所有员工.md) | [L0185](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0185_DepartmentTopThreeSalaries.sql) | `子查询` `关联比较` | `困难` |
 | 187 | [重复的DNA序列](https://github.com/LjyYano/LeetCode/blob/master/题解/L0187_重复的DNA序列.md) | [L0187](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0187_RepeatedDNASequences.java) | `哈希表` `位运算` `滑动窗口` | `中等` |
 | 188 | [买卖股票的最佳时机 IV](https://github.com/LjyYano/LeetCode/blob/master/题解/L0188_买卖股票的最佳时机IV.md) | [L0188](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0188_BestTimeToBuyAndSellStockIV.java) | `动态规划` | `困难` |
 | 189 | [轮转数组](https://github.com/LjyYano/LeetCode/blob/master/题解/L0189_轮转数组.md) | [L0189](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0189_RotateArray.java) | `数组` `数学` | `中等` |
 | 190 | [颠倒二进制位](https://github.com/LjyYano/LeetCode/blob/master/题解/L0190_颠倒二进制位.md) | [L0190](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0190_ReverseBits.java) | `位运算` | `简单` |
 | 191 | [位1的个数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0191_位1的个数.md) | [L0191](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0191_NumberOf1Bits.java) | `位运算` | `简单` |
-| 192 | [统计词频](https://github.com/LjyYano/LeetCode/blob/master/题解/L0192_统计词频.md) | [L0192](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0192_WordFrequency.java) | `Shell` | `中等` |
-| 193 | [有效电话号码](https://github.com/LjyYano/LeetCode/blob/master/题解/L0193_有效电话号码.md) | [L0193](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0193_ValidPhoneNumbers.java) | `Shell` | `简单` |
-| 194 | [转置文件](https://github.com/LjyYano/LeetCode/blob/master/题解/L0194_转置文件.md) | [L0194](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0194_TransposeFile.java) | `Shell` | `中等` |
+| 192 | [统计词频](https://github.com/LjyYano/LeetCode/blob/master/题解/L0192_统计词频.md) | [L0192](https://github.com/LjyYano/LeetCode/blob/master/src/main/shell/L0192_WordFrequency.sh) | `文本处理` `统计` | `中等` |
+| 193 | [有效电话号码](https://github.com/LjyYano/LeetCode/blob/master/题解/L0193_有效电话号码.md) | [L0193](https://github.com/LjyYano/LeetCode/blob/master/src/main/shell/L0193_ValidPhoneNumbers.sh) | `正则表达式` | `简单` |
+| 194 | [转置文件](https://github.com/LjyYano/LeetCode/blob/master/题解/L0194_转置文件.md) | [L0194](https://github.com/LjyYano/LeetCode/blob/master/src/main/shell/L0194_TransposeFile.sh) | `文本处理` `转置` | `中等` |
 | 195 | [第十行](https://github.com/LjyYano/LeetCode/blob/master/题解/L0195_第十行.md) | [L0195](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0195_TenthLine.java) | `Shell` | `简单` |
-| 196 | [删除重复的电子邮箱](https://github.com/LjyYano/LeetCode/blob/master/题解/L0196_删除重复的电子邮箱.md) | [L0196](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0196_DeleteDuplicateEmails.java) | `数据库` | `简单` |
-| 197 | [上升的温度](https://github.com/LjyYano/LeetCode/blob/master/题解/L0197_上升的温度.md) | [L0197](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0197_RisingTemperature.java) | `数据库` | `简单` |
-| 198 | [打家劫舍](https://github.com/LjyYano/LeetCode/blob/master/题解/L0198_打家劫舍.md) | [L0198](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0198_HouseRobber.java) | `动态规划` | `中等` |
-| 199 | [二叉树的右视图](https://github.com/LjyYano/LeetCode/blob/master/题解/L0199_二叉树的右视图.md) | [L0199](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0199_BinaryTreeRightSideView.java) | `树` `深度优先搜索` `广度优先搜索` | `中等` |
-| 200 | [岛屿数量](https://github.com/LjyYano/LeetCode/blob/master/题解/L0200_岛屿数量.md) | [L0200](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0200_NumberOfIslands.java) | `深度优先搜索` `广度优先搜索` `并查集` | `中等` |
-| 201 | [数字范围按位与](https://github.com/LjyYano/LeetCode/blob/master/题解/L0201_数字范围按位与.md) | [L0201](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0201_BitwiseANDOfNumbersRange.java) | `位运算` | `中等` |
-| 202 | [快乐数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0202_快乐数.md) | [L0202](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0202_HappyNumber.java) | `哈希表` `数学` | `简单` |
+| 196 | [删除重复的电子邮箱](https://github.com/LjyYano/LeetCode/blob/master/题解/L0196_删除重复的电子邮箱.md) | [L0196](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0196_DeleteDuplicateEmails.sql) | `自连接删除` `重复处理` | `简单` |
+| 197 | [上升的温度](https://github.com/LjyYano/LeetCode/blob/master/题解/L0197_上升的温度.md) | [L0197](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0197_RisingTemperature.sql) | `日期函数` `自连接` | `简单` |
+| 198 | [部门工资中位数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0198_部门工资中位数.md) | [L0198](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0198_DepartmentMedianSalary.sql) | `窗口函数` `中位数计算` | `中等` |
+| 199 | [最近的订单](https://github.com/LjyYano/LeetCode/blob/master/题解/L0199_最近的订单.md) | [L0199](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0199_RecentOrders.sql) | `子查询` `分组聚合` | `简单` |
+| 200 | [第N高的工资](https://github.com/LjyYano/LeetCode/blob/master/题解/L0200_第N高的工资.md) | [L0200](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0200_NthHighestSalary.sql) | `窗口函数` `自定义函数` | `中等` |
+| 201 | [学生和考试](https://github.com/LjyYano/LeetCode/blob/master/题解/L0201_学生和考试.md) | [L0201](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0201_StudentsAndExaminations.sql) | `JOIN操作` `条件过滤` | `简单` |
+| 202 | [用户购买模式](https://github.com/LjyYano/LeetCode/blob/master/题解/L0202_用户购买模式.md) | [L0202](https://github.com/LjyYano/LeetCode/blob/master/src/main/sql/L0202_UserPurchasePattern.sql) | `存在性检查` `日期函数` | `中等` |
 | 203 | [移除链表元素](https://github.com/LjyYano/LeetCode/blob/master/题解/L0203_移除链表元素.md) | [L0203](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0203_RemoveLinkedListElements.java) | `链表` | `简单` |
 | 204 | [计数质数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0204_计数质数.md) | [L0204](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0204_CountPrimes.java) | `哈希表` `数学` | `中等` |
 | 205 | [同构字符串](https://github.com/LjyYano/LeetCode/blob/master/题解/L0205_同构字符串.md) | [L0205](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0205_IsomorphicStrings.java) | `哈希表` | `简单` |
@@ -375,3 +377,7 @@ https://github.com/LjyYano/Thinking_in_Java_MindMapping
 | 473 | [火柴拼正方形](https://github.com/LjyYano/LeetCode/blob/master/题解/L0473_火柴拼正方形.md) | [L0473](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0473_MatchsticksToSquare.java) | `回溯` `位运算` | `中等` |
 | 474 | [一和零](https://github.com/LjyYano/LeetCode/blob/master/题解/L0474_一和零.md) | [L0474](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0474_OnesAndZeroes.java) | `动态规划` `背包问题` | `中等` |
 | 475 | [供暖器](https://github.com/LjyYano/LeetCode/blob/master/题解/L0475_供暖器.md) | [L0475](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0475_Heaters.java) | `二分查找` `排序` | `中等` |
+
+# 其他项目
+
+[coding 笔记、点滴记录](https://github.com/LjyYano/Thinking_in_Java_MindMapping)，希望大家关注 `^_^`
