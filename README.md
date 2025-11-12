@@ -377,6 +377,11 @@ LeetCode 系列题解致力于帮助程序员更好地理解和掌握算法思�
 | 473 | [火柴拼正方形](https://github.com/LjyYano/LeetCode/blob/master/题解/L0473_火柴拼正方形.md) | [L0473](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0473_MatchsticksToSquare.java) | `回溯` `位运算` | `中等` |
 | 474 | [一和零](https://github.com/LjyYano/LeetCode/blob/master/题解/L0474_一和零.md) | [L0474](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0474_OnesAndZeroes.java) | `动态规划` `背包问题` | `中等` |
 | 475 | [供暖器](https://github.com/LjyYano/LeetCode/blob/master/题解/L0475_供暖器.md) | [L0475](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0475_Heaters.java) | `二分查找` `排序` | `中等` |
+| 476 | [数字的补数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0476_数字的补数.md) | [L0476](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0476_NumberComplement.java) | `位运算` `数学` | `简单` |
+| 477 | [汉明距离总和](https://github.com/LjyYano/LeetCode/blob/master/题解/L0477_汉明距离总和.md) | [L0477](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0477_TotalHammingDistance.java) | `位运算` `数组` `数学` | `中等` |
+| 478 | [在圆内随机生成点](https://github.com/LjyYano/LeetCode/blob/master/题解/L0478_在圆内随机生成点.md) | [L0478](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0478_GenerateRandomPointInACircle.java) | `几何` `数学` `拒绝采样` `随机化` | `中等` |
+| 479 | [最大回文数乘积](https://github.com/LjyYano/LeetCode/blob/master/题解/L0479_最大回文数乘积.md) | [L0479](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0479_LargestPalindromeProduct.java) | `数学` `回溯` | `困难` |
+| 480 | [滑动窗口中位数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0480_滑动窗口中位数.md) | [L0480](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0480_SlidingWindowMedian.java) | `数组` `哈希表` `滑动窗口` `堆（优先队列）` | `困难` |
 
 # 其他项目
 
