@@ -387,6 +387,8 @@ LeetCode 系列题解致力于帮助程序员更好地理解和掌握算法思�
 | 483 | [最小好进制](https://github.com/LjyYano/LeetCode/blob/master/题解/L0483_最小好进制.md) | [L0483](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0483_SmallestGoodBase.java) | `数学` `二分查找` | `困难` |
 | 484 | [寻找排列](https://github.com/LjyYano/LeetCode/blob/master/题解/L0484_寻找排列.md) | [L0484](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0484_FindPermutation.java) | `贪心` `栈` `字符串` | `中等` |
 | 485 | [最大连续1的个数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0485_最大连续1的个数.md) | [L0485](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0485_MaxConsecutiveOnes.java) | `数组` | `简单` |
+| 486 | [预测赢家](https://github.com/LjyYano/LeetCode/blob/master/题解/L0486_预测赢家.md) | [L0486](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0486_PredictTheWinner.java) | `递归` `动态规划` `博弈` | `中等` |
+| 488 | [祖玛游戏](https://github.com/LjyYano/LeetCode/blob/master/题解/L0488_祖玛游戏.md) | [L0488](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0488_ZumaGame.java) | `栈` `广度优先搜索` `动态规划` | `困难` |
 
 # 其他项目
 
