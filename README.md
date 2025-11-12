@@ -389,6 +389,11 @@ LeetCode 系列题解致力于帮助程序员更好地理解和掌握算法思�
 | 485 | [最大连续1的个数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0485_最大连续1的个数.md) | [L0485](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0485_MaxConsecutiveOnes.java) | `数组` | `简单` |
 | 486 | [预测赢家](https://github.com/LjyYano/LeetCode/blob/master/题解/L0486_预测赢家.md) | [L0486](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0486_PredictTheWinner.java) | `递归` `动态规划` `博弈` | `中等` |
 | 488 | [祖玛游戏](https://github.com/LjyYano/LeetCode/blob/master/题解/L0488_祖玛游戏.md) | [L0488](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0488_ZumaGame.java) | `栈` `广度优先搜索` `动态规划` | `困难` |
+| 492 | [构造矩形](https://github.com/LjyYano/LeetCode/blob/master/题解/L0492_构造矩形.md) | [L0492](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0492_ConstructTheRectangle.java) | `数学` | `简单` |
+| 493 | [翻转对](https://github.com/LjyYano/LeetCode/blob/master/题解/L0493_翻转对.md) | [L0493](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0493_ReversePairs.java) | `归并排序` `分治` | `困难` |
+| 496 | [下一个更大元素 I](https://github.com/LjyYano/LeetCode/blob/master/题解/L0496_下一个更大元素I.md) | [L0496](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0496_NextGreaterElementI.java) | `栈` `单调栈` | `简单` |
+| 497 | [非重叠矩形中的随机点](https://github.com/LjyYano/LeetCode/blob/master/题解/L0497_非重叠矩形中的随机点.md) | [L0497](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0497_RandomPointInNonOverlappingRectangles.java) | `前缀和` `二分查找` `随机化` | `中等` |
+| 498 | [对角线遍历](https://github.com/LjyYano/LeetCode/blob/master/题解/L0498_对角线遍历.md) | [L0498](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0498_DiagonalTraverse.java) | `数组` `矩阵` `模拟` | `中等` |
 
 # 其他项目
 
