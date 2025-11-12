@@ -382,6 +382,11 @@ LeetCode 系列题解致力于帮助程序员更好地理解和掌握算法思�
 | 478 | [在圆内随机生成点](https://github.com/LjyYano/LeetCode/blob/master/题解/L0478_在圆内随机生成点.md) | [L0478](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0478_GenerateRandomPointInACircle.java) | `几何` `数学` `拒绝采样` `随机化` | `中等` |
 | 479 | [最大回文数乘积](https://github.com/LjyYano/LeetCode/blob/master/题解/L0479_最大回文数乘积.md) | [L0479](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0479_LargestPalindromeProduct.java) | `数学` `回溯` | `困难` |
 | 480 | [滑动窗口中位数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0480_滑动窗口中位数.md) | [L0480](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0480_SlidingWindowMedian.java) | `数组` `哈希表` `滑动窗口` `堆（优先队列）` | `困难` |
+| 481 | [最大连续1的个数 II](https://github.com/LjyYano/LeetCode/blob/master/题解/L0481_最大连续1的个数II.md) | [L0481](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0481_MaxConsecutiveOnesII.java) | `数组` `动态规划` `滑动窗口` | `中等` |
+| 482 | [密钥格式化](https://github.com/LjyYano/LeetCode/blob/master/题解/L0482_密钥格式化.md) | [L0482](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0482_LicenseKeyFormatting.java) | `字符串` | `简单` |
+| 483 | [最小好进制](https://github.com/LjyYano/LeetCode/blob/master/题解/L0483_最小好进制.md) | [L0483](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0483_SmallestGoodBase.java) | `数学` `二分查找` | `困难` |
+| 484 | [寻找排列](https://github.com/LjyYano/LeetCode/blob/master/题解/L0484_寻找排列.md) | [L0484](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0484_FindPermutation.java) | `贪心` `栈` `字符串` | `中等` |
+| 485 | [最大连续1的个数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0485_最大连续1的个数.md) | [L0485](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0485_MaxConsecutiveOnes.java) | `数组` | `简单` |
 
 # 其他项目
 
