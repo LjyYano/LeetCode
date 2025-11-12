@@ -394,6 +394,15 @@ LeetCode 系列题解致力于帮助程序员更好地理解和掌握算法思�
 | 496 | [下一个更大元素 I](https://github.com/LjyYano/LeetCode/blob/master/题解/L0496_下一个更大元素I.md) | [L0496](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0496_NextGreaterElementI.java) | `栈` `单调栈` | `简单` |
 | 497 | [非重叠矩形中的随机点](https://github.com/LjyYano/LeetCode/blob/master/题解/L0497_非重叠矩形中的随机点.md) | [L0497](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0497_RandomPointInNonOverlappingRectangles.java) | `前缀和` `二分查找` `随机化` | `中等` |
 | 498 | [对角线遍历](https://github.com/LjyYano/LeetCode/blob/master/题解/L0498_对角线遍历.md) | [L0498](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0498_DiagonalTraverse.java) | `数组` `矩阵` `模拟` | `中等` |
+| 501 | [二叉搜索树中的众数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0501_二叉搜索树中的众数.md) | [L0501](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0501_FindModeInBinarySearchTree.java) | `树` `深度优先搜索` `二叉搜索树` | `简单` |
+| 502 | [IPO](https://github.com/LjyYano/LeetCode/blob/master/题解/L0502_IPO.md) | [L0502](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0502_IPO.java) | `贪心` `堆` `排序` | `困难` |
+| 503 | [下一个更大元素 II](https://github.com/LjyYano/LeetCode/blob/master/题解/L0503_下一个更大元素II.md) | [L0503](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0503_NextGreaterElementII.java) | `栈` `单调栈` | `中等` |
+| 504 | [七进制数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0504_七进制数.md) | [L0504](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0504_Base7.java) | `数学` | `简单` |
+| 506 | [相对名次](https://github.com/LjyYano/LeetCode/blob/master/题解/L0506_相对名次.md) | [L0506](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0506_RelativeRanks.java) | `数组` `排序` | `简单` |
+| 507 | [完美数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0507_完美数.md) | [L0507](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0507_PerfectNumber.java) | `数学` | `简单` |
+| 508 | [出现次数最多的子树元素和](https://github.com/LjyYano/LeetCode/blob/master/题解/L0508_出现次数最多的子树元素和.md) | [L0508](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0508_MostFrequentSubtreeSum.java) | `树` `深度优先搜索` `哈希表` | `中等` |
+| 509 | [斐波那契数](https://github.com/LjyYano/LeetCode/blob/master/题解/L0509_斐波那契数.md) | [L0509](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0509_FibonacciNumber.java) | `递归` `动态规划` | `简单` |
+| 516 | [最长回文子序列](https://github.com/LjyYano/LeetCode/blob/master/题解/L0516_最长回文子序列.md) | [L0516](https://github.com/LjyYano/LeetCode/blob/master/src/main/java/L0516_LongestPalindromicSubsequence.java) | `字符串` `动态规划` | `中等` |
 
 # 其他项目
 
